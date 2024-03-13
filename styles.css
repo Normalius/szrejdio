@@ -1,1 +1,399 @@
+/* Resetowanie domyślnych styli */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Verdana", sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Reszta stylów CSS */
+
+/* Dodatkowe reguły CSS dla sekcji komentarzy */
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-form button {
+    background-color: #659F22;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #4F7F16;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-text {
+    margin-bottom: 5px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-date {
+    color: #777;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; /* Rozłożenie elementów na przeciwnych końcach */
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-centered {
+    text-align: center; /* Wyśrodkowanie logo */
+}
+
+.logo-centered img {
+    width: 150px; /* Rozmiar logo */
+    height: auto;
+}
+
+.listen-right {
+    margin-left: auto; /* Przesunięcie przycisku "Słuchaj na stronie" na prawo */
+}
+
+.listen-right img {
+    width: 150px; /* Rozmiar przycisku "Słuchaj na stronie" */
+    height: auto;
+}
+
+/* Stylizacja przycisków akcji */
+.action-button {
+    background-color: #659F22;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px; /* Dostosowanie marginesu */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #4F7F16;
+}
+
+/* Wyśrodkowanie przycisków */
+.actions {
+    flex-grow: 1; /* Wypełnienie dostępnego miejsca */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+/* Ukrycie przycisków akcji na mniejszych ekranach */
+@media screen and (max-width: 768px) {
+    .actions {
+        display: none;
+    }
+}
+
+
+/* Dodatkowe reguły CSS dla responsywności */
+@media screen and (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Zmniejszenie rozmiaru logo na mniejszych ekranach */
+    }
+
+    .social {
+        display: none; /* Ukrycie sekcji społecznościowej na mniejszych ekranach */
+    }
+
+    .listen {
+        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na mniejszych ekranach */
+    }
+}
+
+
+.listen a {
+    margin-right: 10px;
+}
+
+/* Nawigacja */
+nav {
+    background-color: #83a400;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrowanie elementów na osi pionowej */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s; /* Dodanie animacji zmiany koloru tła */
+}
+
+nav ul li a:hover {
+    background-color: #659F22; /* Zmiana koloru tła po najechaniu kursorem */
+}
+
+/* Responsywność */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Zmiana układu na kolumnowy na mniejszych ekranach */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Zwiększenie odstępu między elementami na mniejszych ekranach */
+    }
+}
+/* Dodatkowe reguły CSS dla responsywności */
+@media screen and (max-width: 768px) {
+    .logo-centered img {
+        width: 100px; /* Zmniejszenie rozmiaru logo na mniejszych ekranach */
+    }
+
+    .social-media {
+        display: none; /* Ukrycie sekcji społecznościowej na mniejszych ekranach */
+    }
+
+    .listen-right {
+        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na mniejszych ekranach */
+    }
+}
+
+/* Dodatkowe reguły CSS dla orientacji poziomej */
+@media screen and (orientation: landscape) {
+    .logo-centered img {
+        width: 120px; /* Zwiększenie rozmiaru logo na ekranach o orientacji poziomej */
+    }
+}
+
+/* Dodatkowe reguły CSS dla ekranów o szerokości mniejszej niż 480px */
+@media screen and (max-width: 480px) {
+    .logo-centered img {
+        width: 80px; /* Dalsze zmniejszenie rozmiaru logo na bardzo małych ekranach */
+    }
+
+    .listen-right img {
+        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na bardzo małych ekranach */
+    }
+}
+
+/* Online */
+.online {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Main */
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.send-greetings,
+.send-message {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.send-greetings img,
+.send-message img {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+
+/* Stylizacja stopki */
+footer {
+    background-color: #eee;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.footer-info p {
+    margin-right: 20px;
+}
+
+.social-media a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Styl ikon mediów społecznościowych */
+.social-media a i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover i {
+    color: #659F22; /* Zmiana koloru ikony po najechaniu */
+}
+
+
+/* Radio Stats */
+.radio-stats {
+    width: 80%; /* Szerokość sekcji */
+    margin: 20px auto; /* Wyśrodkowanie w poziomie */
+    text-align: center; /* Wyśrodkowanie treści w sekcji */
+}
+
+.radio-stats h2 {
+    margin-bottom: 10px;
+}
+
+.radio-stats ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.radio-stats li {
+    margin-bottom: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Domyślnie ukrywamy okno modalne */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Ciemne tło z przezroczystością */
+    overflow: auto;
+}
+
+/* Zawartość okna modalnego */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Wycentrowanie okna modalnego */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    max-width: 600px; /* Maksymalna szerokość okna modalnego */
+}
+
+/* Przycisk zamykania */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Style dla sekcji Aktualności */
+.news-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto; /* Zmiana marginesu na auto wyśrodkuje sekcję */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
+    max-width: 800px; /* Dodanie maksymalnej szerokości dla lepszej czytelności */
+}
+
+
+.news-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.news-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news-section li {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.news-section li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.news-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.news-section p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.news-section span {
+    color: #999;
+    font-size: 14px;
+    display: block;
+}
 
