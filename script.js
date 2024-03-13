@@ -25,52 +25,30 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Dane statystyk radia
-    const radioData = {
-        name: "SZRejdio",
+// Skrypt JavaScript do aktualizacji statystyk radia
+
+// Funkcja do pobierania statystyk radia z serwera Shoutcast
+function fetchRadioStats() {
+    // Tutaj będziemy pobierać dane z serwera Shoutcast i aktualizować elementy HTML
+    // Użyjemy odpowiednich metod do komunikacji z serwerem, na przykład fetch lub AJAX
+    // Poniżej znajdziesz przykładowy kod, którego możesz użyć
+
+    // Wartości przykładowe dla testowania
+    const radioStats = {
+        radioName: "SZRejdio",
         host: "John Doe",
-        listeners: 150,
-        maxListeners: 200,
-        currentListeners: 180
+        listeners: 50,
+        maxListeners: 100,
+        currentListeners: 45
     };
 
-    updateRadioStats(radioData);
-});
-
-// Funkcja do aktualizowania statystyk radia
-function updateRadioStats(data) {
-    document.getElementById("radioName").textContent = data.name;
-    document.getElementById("host").textContent = data.host;
-    document.getElementById("listeners").textContent = data.listeners;
-    document.getElementById("maxListeners").textContent = data.maxListeners;
-    document.getElementById("currentListeners").textContent = data.currentListeners;
-}
-// Pobieranie danych ze zdalnego serwera Shoutcast
-function fetchRadioStats() {
-    const url = 'http://145.239.26.150:7466/stats';
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            updateRadioStats(data);
-        })
-        .catch(error => {
-            console.error('Błąd pobierania danych z serwera Shoutcast:', error);
-        });
+    // Aktualizacja elementów HTML z pobranymi statystykami
+    document.getElementById("radioName").textContent = radioStats.radioName;
+    document.getElementById("host").textContent = radioStats.host;
+    document.getElementById("listeners").textContent = radioStats.listeners;
+    document.getElementById("maxListeners").textContent = radioStats.maxListeners;
+    document.getElementById("currentListeners").textContent = radioStats.currentListeners;
 }
 
-// Aktualizacja statystyk radia na stronie
-function updateRadioStats(data) {
-    document.getElementById('radioName').textContent = data.server_name;
-    document.getElementById('listeners').textContent = data.currentlisteners;
-    document.getElementById('maxListeners').textContent = data.maxlisteners;
-    document.getElementById('radioIP').textContent = '145.239.26.150';
-}
-
-// Pobieranie statystyk radia po załadowaniu strony
-window.addEventListener('load', () => {
-    fetchRadioStats();
-    // Odświeżanie co 60 sekund
-    setInterval(fetchRadioStats, 60000);
-});
-
+// Wywołanie funkcji do pobierania statystyk radia po załadowaniu strony
+window.addEventListener("load", fetchRadioStats);
