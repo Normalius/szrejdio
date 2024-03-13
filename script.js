@@ -25,49 +25,53 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-// Funkcja pobierająca statystyki radia z serwera Shoutcast
-function fetchRadioStats() {
-    // Dane do uwierzytelnienia na serwerze Shoutcast
-    const authPassword = "XagDuJ7kSJGp"; // Hasło do nadawania
-    const serverAddress = "s3.slotex.pl"; // Adres serwera Shoutcast
-    const serverPort = 7466; // Port serwera Shoutcast
-    const streamID = 1; // ID strumienia
+document.addEventListener("DOMContentLoaded", function() {
+    // Funkcja pobierająca statystyki radia z serwera Shoutcast
+    function fetchRadioStats() {
+        // Dane do uwierzytelnienia na serwerze Shoutcast
+        const authPassword = "Rhkde8TaBTBr"; // Hasło do nadawania
+        const serverAddress = "s3.slotex.pl"; // Adres serwera Shoutcast
+        const serverPort = 7466; // Port serwera Shoutcast
+        const streamID = 1; // ID strumienia
 
-    // Tworzenie zapytania HTTP do pobrania statystyk radia
-    const request = new XMLHttpRequest();
-    const url = `http://${serverAddress}:${serverPort}/admin.cgi?pass=${authPassword}&mode=viewxml&sid=${streamID}`;
-    request.open("GET", url, true);
+        // Tworzenie zapytania HTTP do pobrania statystyk radia
+        const request = new XMLHttpRequest();
+        const url = `http://${serverAddress}:${serverPort}/admin.cgi?pass=${authPassword}&mode=viewxml&sid=${streamID}`;
+        request.open("GET", url, true);
 
-    // Obsługa odpowiedzi z serwera Shoutcast
-    request.onload = function () {
-        if (request.status === 200) {
-            const xmlResponse = request.responseXML;
-            const stats = xmlResponse.getElementsByTagName("STREAM")[0];
-            
-            // Pobieranie danych statystycznych z XML
-            const radioName = stats.getElementsByTagName("SERVERTITLE")[0].textContent;
-            const host = stats.getElementsByTagName("DJ")[0].textContent;
-            const listeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
-            const maxListeners = stats.getElementsByTagName("MAXLISTENERS")[0].textContent;
+        // Obsługa odpowiedzi z serwera Shoutcast
+        request.onload = function () {
+            if (request.status === 200) {
+                const xmlResponse = request.responseXML;
+                const listeners = xmlResponse.getElementsByTagName("LISTENERS")[0];
+                
+                // Pobieranie liczby aktualnie słuchających użytkowników
+                const currentListenersCount = listeners.children.length;
 
-            // Aktualizacja elementów na stronie z pobranymi danymi
-            document.getElementById("radioName").innerText = radioName;
-            document.getElementById("host").innerText = host;
-            document.getElementById("listeners").innerText = listeners;
-            document.getElementById("maxListeners").innerText = maxListeners;
-        } else {
-            console.error("Błąd podczas pobierania danych statystycznych radia:", request.statusText);
-        }
-    };
+                // Aktualizacja elementu na stronie z liczbą aktualnie słuchających
+                document.getElementById("currentListeners").innerText = currentListenersCount;
+            } else {
+                console.error("Błąd podczas pobierania danych statystycznych radia:", request.statusText);
+            }
+        };
 
-    // Obsługa błędów
-    request.onerror = function () {
-        console.error("Błąd podczas komunikacji z serwerem Shoutcast.");
-    };
+        // Obsługa błędów
+        request.onerror = function () {
+            console.error("Błąd podczas komunikacji z serwerem Shoutcast.");
+        };
 
-    // Wysłanie zapytania HTTP
-    request.send();
-}
+        // Wysłanie zapytania HTTP
+        request.send();
+    }
 
-// Wywołanie funkcji pobierającej statystyki radia po załadowaniu strony
-window.onload = fetchRadioStats;
+    // Funkcja do regularnego odświeżania danych co określony czas (np. co 10 sekund)
+    function refreshStatsInterval() {
+        fetchRadioStats(); // Wywołanie funkcji pobierającej statystyki po raz pierwszy
+        
+        // Ustawienie interwału odświeżania co 10 sekund
+        setInterval(fetchRadioStats, 10000); // 10000 ms = 10 sekund
+    }
+
+    // Wywołanie funkcji do regularnego odświeżania danych po załadowaniu strony
+    refreshStatsInterval();
+});
