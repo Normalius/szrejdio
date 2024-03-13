@@ -240,6 +240,12 @@ footer {
     width: 80%; /* Szerokość sekcji */
     margin: 20px auto; /* Wyśrodkowanie w poziomie */
     text-align: center; /* Wyśrodkowanie treści w sekcji */
+    margin-top: 20px; /* Dodanie marginesu z góry, aby oddzielić statystyki radia od innych elementów */
+}
+
+.news-section {
+    margin-bottom: 20px; /* Dodanie marginesu z dołu, aby oddzielić sekcję z aktualnościami od innych elementów */
+}
 }
 
 .radio-stats h2 {
