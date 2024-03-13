@@ -20,51 +20,34 @@ body {
 
 /* Reszta stylów CSS */
 
-/* Dodatkowe reguły CSS dla sekcji komentarzy */
-/* Pominięto sekcję komentarzy */
-
 /* Header */
 header {
     background-color: #fff;
     padding: 10px 0;
     display: flex;
-    justify-content: space-between; /* Rozłożenie elementów na przeciwnych końcach */
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
 }
 
 .logo-centered {
-    text-align: center; /* Wyśrodkowanie logo */
-}
-
-.logo-centered h1 {
-    font-size: 36px;
-    color: #333; /* Kolor tekstu */
-}
-
-/* Styl dla napisu "Słuchaj na stronie" */
-.listen-on-site {
     text-align: center;
 }
 
-.listen-on-site h2 {
-    font-size: 24px;
-    color: #fff; /* Kolor tekstu */
-    background-color: #659F22; /* Kolor tła */
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-/* Styl dla napisu "Słuchaj na stronie" */
-.listen-on-site h2 {
-    font-size: 24px;
-    color: #fff; /* Kolor tekstu */
-    background-color: #659F22; /* Kolor tła */
-    padding: 10px 20px;
-    border-radius: 5px;
-    animation: pulse 1s infinite alternate; /* Dodanie animacji */
+.logo-centered img {
+    width: 200px;
+    height: auto;
 }
 
-/* Animacja */
+.listen-on-site h2 {
+    font-size: 24px;
+    color: #fff;
+    background-color: #659F22;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: pulse 1s infinite alternate;
+}
+
 @keyframes pulse {
     from {
         transform: scale(1);
@@ -73,19 +56,18 @@ header {
         transform: scale(1.1);
     }
 }
-.logo-centered img {
-    width: 300px; /* Zwiększenie szerokości logo */
-    height: auto; /* Zachowanie proporcji */
+
+.listen-right {
+    margin-left: auto;
 }
 
-.listen-right img {
-    width: 300px; /* Zwiększenie szerokości przycisku "Słuchaj na stronie" */
-    height: auto; /* Zachowanie proporcji */
-}
-
-.listen-right img {
-    width: 250px; /* Rozmiar przycisku "Słuchaj na stronie" */
-    height: auto;
+.listen-right h2 {
+    font-size: 24px;
+    color: #fff;
+    background-color: #659F22;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: pulse 1s infinite alternate;
 }
 
 /* Stylizacja przycisków akcji */
@@ -94,7 +76,7 @@ header {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin: 0 5px; /* Dostosowanie marginesu */
+    margin: 0 5px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -107,32 +89,10 @@ header {
     background-color: #4F7F16;
 }
 
-/* Wyśrodkowanie przycisków */
-.actions {
-    flex-grow: 1; /* Wypełnienie dostępnego miejsca */
-    text-align: center; /* Wyśrodkowanie tekstu */
-}
-
 /* Ukrycie przycisków akcji na mniejszych ekranach */
 @media screen and (max-width: 768px) {
     .actions {
         display: none;
-    }
-}
-
-
-/* Dodatkowe reguły CSS dla responsywności */
-@media screen and (max-width: 768px) {
-    .logo img {
-        width: 100px; /* Zmniejszenie rozmiaru logo na mniejszych ekranach */
-    }
-
-    .social {
-        display: none; /* Ukrycie sekcji społecznościowej na mniejszych ekranach */
-    }
-
-    .listen {
-        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na mniejszych ekranach */
     }
 }
 
@@ -146,7 +106,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centrowanie elementów na osi pionowej */
+    align-items: center;
 }
 
 nav ul li {
@@ -157,83 +117,22 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px;
-    transition: background-color 0.3s; /* Dodanie animacji zmiany koloru tła */
+    transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #659F22; /* Zmiana koloru tła po najechaniu kursorem */
+    background-color: #659F22;
 }
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Zmiana układu na kolumnowy na mniejszych ekranach */
+        flex-direction: column;
     }
 
     nav ul li {
-        margin: 10px 0; /* Zwiększenie odstępu między elementami na mniejszych ekranach */
+        margin: 10px 0;
     }
-}
-
-/* Dodatkowe reguły CSS dla responsywności */
-@media screen and (max-width: 768px) {
-    .logo-centered img {
-        width: 100px; /* Zmniejszenie rozmiaru logo na mniejszych ekranach */
-    }
-
-    .social-media {
-        display: none; /* Ukrycie sekcji społecznościowej na mniejszych ekranach */
-    }
-
-    .listen-right {
-        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na mniejszych ekranach */
-    }
-}
-
-/* Dodatkowe reguły CSS dla orientacji poziomej */
-@media screen and (orientation: landscape) {
-    .logo-centered img {
-        width: 300px; /* Zwiększenie rozmiaru logo na ekranach o orientacji poziomej */
-    }
-}
-
-/* Dodatkowe reguły CSS dla ekranów o szerokości mniejszej niż 480px */
-@media screen and (max-width: 480px) {
-    .logo-centered img {
-        width: 80px; /* Dalsze zmniejszenie rozmiaru logo na bardzo małych ekranach */
-    }
-
-    .listen-right img {
-        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na bardzo małych ekranach */
-    }
-}
-
-/* Online */
-.online {
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Main */
-main {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-top: 20px;
-}
-
-.send-greetings,
-.send-message {
-    background-color: #fff;
-    padding: 20px;
-}
-
-.send-greetings img,
-.send-message img {
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 150px;
-    height: auto;
 }
 
 /* Stylizacja stopki */
@@ -261,27 +160,20 @@ footer {
     margin-right: 10px;
 }
 
-/* Styl ikon mediów społecznościowych */
 .social-media a i {
     font-size: 24px;
     transition: color 0.3s ease;
 }
 
 .social-media a:hover i {
-    color: #659F22; /* Zmiana koloru ikony po najechaniu */
+    color: #659F22;
 }
 
 /* Radio Stats */
 .radio-stats {
-    width: 80%; /* Szerokość sekcji */
-    margin: 20px auto; /* Wyśrodkowanie w poziomie */
-    text-align: center; /* Wyśrodkowanie treści w sekcji */
-    margin-top: 20px; /* Dodanie marginesu z góry, aby oddzielić statystyki radia od innych elementów */
-}
-
-.news-section {
-    margin-bottom: 20px; /* Dodanie marginesu z dołu, aby oddzielić sekcję z aktualnościami od innych elementów */
-}
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .radio-stats h2 {
@@ -299,28 +191,26 @@ footer {
 
 /* Modal */
 .modal {
-    display: none; /* Domyślnie ukrywamy okno modalne */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5); /* Ciemne tło z przezroczystością */
+    background-color: rgba(0,0,0,0.5);
     overflow: auto;
 }
 
-/* Zawartość okna modalnego */
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto; /* Wycentrowanie okna modalnego */
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 5px;
-    max-width: 600px; /* Maksymalna szerokość okna modalnego */
+    max-width: 600px;
 }
 
-/* Przycisk zamykania */
 .close {
     color: #aaa;
     float: right;
@@ -337,11 +227,12 @@ footer {
 
 /* Style dla sekcji Aktualności */
 .news-section {
-    margin: 20px auto; /* Ustawienie marginesów zewnętrznych na auto powoduje wyśrodkowanie w poziomie */
-    text-align: left; /* Ustawienie justyfikacji tekstu na lewą stronę */
-    max-width: 800px; /* Ustawienie maksymalnej szerokości sekcji */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
-    max-width: 800px; /* Dodanie maksymalnej szerokości dla lepszej czytelności */
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
 }
 
 .news-section h2 {
