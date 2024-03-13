@@ -36,44 +36,39 @@ document.addEventListener("DOMContentLoaded", function() {
         let songTitle = "N/A";
         let djName = "N/A";
 
-        // Dane z serwera Shoutcast (zamień na odpowiednie dane z JSON)
-        const responseJSON = '{"totalstreams":1,"activestreams":1,"currentlisteners":1,"peaklisteners":2,"maxlisteners":50,"uniquelisteners":1,"averagetime":24,"version":"2.6.1.777 (posix(linux x64))","streams":[{"id":1,"currentlisteners":1,"peaklisteners":2,"maxlisteners":50,"uniquelisteners":1,"averagetime":24,"servergenre":"Misc","servergenre2":"","servergenre3":"","servergenre4":"","servergenre5":"","serverurl":"https:\/\/normalius.github.io\/szrejdio\/","servertitle":"Audycja","songtitle":"cute trance song catJAM","dj":"Test","songurl":"","streamhits":30,"streamstatus":1,"backupstatus":0,"streamlisted":0,"streamlistederror":847993365,"streampath":"\/","streamuptime":1964,"bitrate":"96","samplerate":"44100","content":"audio\/mpeg"}]}';
-        const data = JSON.parse(responseJSON);
-        const stream = data.streams[0];
-
-        // Aktualizacja zmiennych
-        currentListeners = stream.currentlisteners;
-        peakListeners = stream.peaklisteners;
-        maxListeners = stream.maxlisteners;
-        uniqueListeners = stream.uniquelisteners;
-        songTitle = stream.songtitle;
-        djName = stream.dj;
+ document.addEventListener("DOMContentLoaded", function() {
+    // Funkcja pobierająca statystyki radia z serwera Shoutcast
+    function fetchRadioStats() {
+        // Dane z serwera Shoutcast
+        const responseXML = `
+            <SHOUTCASTSERVER>
+                <CURRENTLISTENERS>1</CURRENTLISTENERS>
+                <PEAKLISTENERS>2</PEAKLISTENERS>
+                <MAXLISTENERS>50</MAXLISTENERS>
+                <UNIQUELISTENERS>1</UNIQUELISTENERS>
+                <AVERAGETIME>33</AVERAGETIME>
+                <SERVERGENRE>Misc</SERVERGENRE>
+                <SERVERURL>https://normalius.github.io/szrejdio/</SERVERURL>
+                <SERVERTITLE>Audycja</SERVERTITLE>
+                <SONGTITLE>cute trance song catJAM</SONGTITLE>
+                <DJ>Test</DJ>
+                <STREAMUPTIME>3186</STREAMUPTIME>
+                <BITRATE>96</BITRATE>
+                <SAMPLERATE>44100</SAMPLERATE>
+                <CONTENT>audio/mpeg</CONTENT>
+                <VERSION>2.6.1.777 (posix(linux x64))</VERSION>
+            </SHOUTCASTSERVER>
+        `;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(responseXML, "text/xml");
 
         // Aktualizacja elementów na stronie z danymi statystycznymi
-        document.getElementById("currentListeners").innerText = currentListeners;
-        document.getElementById("peakListeners").innerText = peakListeners;
-        document.getElementById("maxListeners").innerText = maxListeners;
-        document.getElementById("uniqueListeners").innerText = uniqueListeners;
-        document.getElementById("songTitle").innerText = songTitle;
-        document.getElementById("djName").innerText = djName;
-    }
-
-    // Funkcja do otwierania i zamykania modala z ustawieniami
-    function openStatsModal() {
-        document.getElementById("statsModal").style.display = "block";
-        fetchRadioStats(); // Pobranie statystyk przy otwarciu modala
-    }
-
-    function closeStatsModal() {
-        document.getElementById("statsModal").style.display = "none";
-    }
-
-    function openSettingsModal() {
-        document.getElementById("settingsModal").style.display = "block";
-    }
-
-    function closeSettingsModal() {
-        document.getElementById("settingsModal").style.display = "none";
+        document.getElementById("currentListeners").innerText = xmlDoc.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
+        document.getElementById("peakListeners").innerText = xmlDoc.getElementsByTagName("PEAKLISTENERS")[0].textContent;
+        document.getElementById("maxListeners").innerText = xmlDoc.getElementsByTagName("MAXLISTENERS")[0].textContent;
+        document.getElementById("uniqueListeners").innerText = xmlDoc.getElementsByTagName("UNIQUELISTENERS")[0].textContent;
+        document.getElementById("songTitle").innerText = xmlDoc.getElementsByTagName("SONGTITLE")[0].textContent;
+        document.getElementById("djName").innerText = xmlDoc.getElementsByTagName("DJ")[0].textContent;
     }
 
     // Wywołanie funkcji do pobrania statystyk po załadowaniu strony
