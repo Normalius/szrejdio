@@ -52,32 +52,30 @@
     </div>
 </div>
 
-<body>
-    <h1>Informacje o radio</h1>
-    <p>Aktualnie słuchających: <span id="currentListeners">0</span></p>
-    <p>Pik słuchalność: <span id="peakListeners">0</span></p>
-    <p>Maksymalna liczba słuchaczy: <span id="maxListeners">0</span></p>
-    <p>Unikalni słuchacze: <span id="uniqueListeners">0</span></p>
-    <p>Gatunek: <span id="serverGenre">Brak informacji</span></p>
-    <p>URL serwera: <a id="serverURL" href="#">Brak informacji</a></p>
-    <p>Tytuł audycji: <span id="serverTitle">Brak informacji</span></p>
-    <p>Tytuł piosenki: <span id="songTitle">Brak informacji</span></p>
-    <p>DJ: <span id="dj">Brak informacji</span></p>
+<div id="radioStats" class="radio-stats">
+    <h2>Statystyki Radia</h2>
+    <ul>
+        <li>Nazwa: <span id="radioName">...</span></li>
+        <li>Prowadzący: <span id="host">...</span></li>
+        <li>Słucha: <span id="listeners">...</span></li>
+        <li>Maxymalnie słuchało: <span id="maxListeners">...</span></li>
+        <li>Aktualnie: <span id="currentListeners">...</span></li>
+    </ul>
 </div>
 
 <main>
-<section class="news-section">
-    <h2>Aktualności</h2>
-    <ul class="news-list">
-        <li>
-            <h3>Nowy program na antenie - "Szalona Niedziela"</h3>
-            <p>Mamy przyjemność ogłosić premierę naszego najnowszego programu radiowego - "Szalona Niedziela"! To niezwykłe wydarzenie, które ma na celu zapewnić Ci rozrywkę i radość w każdą niedzielę wieczorem.</p>
-            <p>W programie "Szalona Niedziela" możesz spodziewać się dynamicznej muzyki, fascynujących rozmów z gośćmi specjalnymi oraz konkursów z atrakcyjnymi nagrodami. Przygotuj się na niezapomniane doświadczenie, które sprawi, że każda niedziela stanie się wyjątkowa!</p>
-            <p>Dołącz do nas już w najbliższą niedzielę o godzinie 20:00 i weź udział w szalonym show, które rozświetli Twój wieczór!</p>
-            <p>Nie przegap premiery programu "Szalona Niedziela" tylko na SZRejdio!</p>
-        </li>
-    </ul>
-</section>
+    <section class="news-section">
+        <h2>Aktualności</h2>
+        <ul class="news-list">
+            <li>
+                <h3>Nowy program na antenie - "Szalona Niedziela"</h3>
+                <p>Mamy przyjemność ogłosić premierę naszego najnowszego programu radiowego - "Szalona Niedziela"! To niezwykłe wydarzenie, które ma na celu zapewnić Ci rozrywkę i radość w każdą niedzielę wieczorem.</p>
+                <p>W programie "Szalona Niedziela" możesz spodziewać się dynamicznej muzyki, fascynujących rozmów z gośćmi specjalnymi oraz konkursów z atrakcyjnymi nagrodami. Przygotuj się na niezapomniane doświadczenie, które sprawi, że każda niedziela stanie się wyjątkowa!</p>
+                <p>Dołącz do nas już w najbliższą niedzielę o godzinie 20:00 i weź udział w szalonym show, które rozświetli Twój wieczór!</p>
+                <p>Nie przegap premiery programu "Szalona Niedziela" tylko na SZRejdio!</p>
+            </li>
+        </ul>
+    </section>
 </main>
 
 <footer>
@@ -97,6 +95,7 @@
         </div>
     </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
