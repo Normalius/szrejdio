@@ -106,7 +106,6 @@ function loadComments() {
         console.error('IndexedDB error:', event.target.error);
     };
 }
-
 // Funkcja do dodawania komentarza do interfejsu użytkownika
 function appendComment(comment) {
     const commentList = document.querySelector('.comment-list');
