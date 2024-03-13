@@ -49,7 +49,7 @@ function fetchRadioStats() {
             const host = stats.getElementsByTagName("SERVERGENRE")[0].textContent;
             const listeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
             const maxListeners = stats.getElementsByTagName("MAXLISTENERS")[0].textContent;
-            const currentListeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
+            const currentListeners = stats.getElementsByTagName("UNIQUELISTENERS")[0].textContent;
 
             // Aktualizacja elementów na stronie z pobranymi danymi
             document.getElementById("radioName").innerText = radioName;
