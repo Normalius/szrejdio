@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Funkcja pobierająca statystyki radia z serwera Shoutcast
     function fetchRadioStats() {
-        // Dane z serwera Shoutcast
+        // Dane z serwera Shoutcast (tymczasowo przykładowe dane)
         const responseXML = `
             <SHOUTCASTSERVER>
                 <STREAMSTATS>
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </STREAMSTATS>
             </SHOUTCASTSERVER>
         `;
-        
+
         // Parsowanie XML
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(responseXML, "text/xml");
@@ -54,4 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Wywołanie funkcji do pobrania statystyk po załadowaniu strony
     fetchRadioStats();
+
+    // Odświeżanie danych co 60 sekund
+    setInterval(fetchRadioStats, 60000);
 });
