@@ -169,26 +169,6 @@ footer {
     color: #659F22;
 }
 
-/* Radio Stats */
-.radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.radio-stats h2 {
-    margin-bottom: 10px;
-}
-
-.radio-stats ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.radio-stats li {
-    margin-bottom: 10px;
-}
-
 /* Modal */
 .modal {
     display: none;
@@ -224,7 +204,7 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
-/* CSS */
+/* Usuń powtórzone style dla radio-stats */
 .radio-stats {
     width: 80%;
     margin: 20px auto;
@@ -262,3 +242,4 @@ footer {
 .radio-stats li:nth-child(even) {
     background-color: #f2f2f2;
 }
+
