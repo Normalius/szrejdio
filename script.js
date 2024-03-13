@@ -43,29 +43,13 @@ document.addEventListener("DOMContentLoaded", function() {
         request.onload = function () {
             if (request.status === 200) {
                 const xmlResponse = request.responseXML;
-                const stats = xmlResponse.getElementsByTagName("SHOUTCASTSERVER")[0];
+                const listeners = xmlResponse.getElementsByTagName("LISTENERS")[0];
                 
-                // Pobieranie danych statystycznych
-                const currentListeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
-                const peakListeners = stats.getElementsByTagName("PEAKLISTENERS")[0].textContent;
-                const maxListeners = stats.getElementsByTagName("MAXLISTENERS")[0].textContent;
-                const uniqueListeners = stats.getElementsByTagName("UNIQUELISTENERS")[0].textContent;
-                const serverGenre = stats.getElementsByTagName("SERVERGENRE")[0].textContent;
-                const serverURL = stats.getElementsByTagName("SERVERURL")[0].textContent;
-                const serverTitle = stats.getElementsByTagName("SERVERTITLE")[0].textContent;
-                const songTitle = stats.getElementsByTagName("SONGTITLE")[0].textContent;
-                const dj = stats.getElementsByTagName("DJ")[0].textContent;
+                // Pobieranie liczby aktualnie słuchających użytkowników
+                const currentListenersCount = listeners.children.length;
 
-                // Aktualizacja elementów na stronie z pobranymi danymi
-                document.getElementById("currentListeners").innerText = currentListeners;
-                document.getElementById("peakListeners").innerText = peakListeners;
-                document.getElementById("maxListeners").innerText = maxListeners;
-                document.getElementById("uniqueListeners").innerText = uniqueListeners;
-                document.getElementById("serverGenre").innerText = serverGenre;
-                document.getElementById("serverURL").innerText = serverURL;
-                document.getElementById("serverTitle").innerText = serverTitle;
-                document.getElementById("songTitle").innerText = songTitle;
-                document.getElementById("dj").innerText = dj;
+                // Aktualizacja elementu na stronie z liczbą aktualnie słuchających
+                document.getElementById("currentListeners").innerText = currentListenersCount;
             } else {
                 console.error("Błąd podczas pobierania danych statystycznych radia:", request.statusText);
             }
