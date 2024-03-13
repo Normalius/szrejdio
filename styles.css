@@ -54,6 +54,25 @@ header {
     padding: 10px 20px;
     border-radius: 5px;
 }
+/* Styl dla napisu "Słuchaj na stronie" */
+.listen-on-site h2 {
+    font-size: 24px;
+    color: #fff; /* Kolor tekstu */
+    background-color: #659F22; /* Kolor tła */
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: pulse 1s infinite alternate; /* Dodanie animacji */
+}
+
+/* Animacja */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
 .logo-centered img {
     width: 300px; /* Zwiększenie szerokości logo */
     height: auto; /* Zachowanie proporcji */
