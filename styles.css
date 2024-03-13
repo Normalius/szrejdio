@@ -295,10 +295,9 @@ footer {
 
 /* Style dla sekcji Aktualności */
 .news-section {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px auto; /* Zmiana marginesu na auto wyśrodkuje sekcję */
-    border-radius: 5px;
+    margin: 20px auto; /* Ustawienie marginesów zewnętrznych na auto powoduje wyśrodkowanie w poziomie */
+    text-align: left; /* Ustawienie justyfikacji tekstu na lewą stronę */
+    max-width: 800px; /* Ustawienie maksymalnej szerokości sekcji */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
     max-width: 800px; /* Dodanie maksymalnej szerokości dla lepszej czytelności */
 }
