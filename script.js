@@ -28,50 +28,54 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     // Funkcja pobierająca statystyki radia z serwera Shoutcast
     function fetchRadioStats() {
-        // Dane do uwierzytelnienia na serwerze Shoutcast
-        const authPassword = "Rhkde8TaBTBr"; // Hasło do nadawania
-        const serverAddress = "s3.slotex.pl"; // Adres serwera Shoutcast
-        const serverPort = 7466; // Port serwera Shoutcast
-        const streamID = 1; // ID strumienia
+        // Zmienne do przechowywania danych o statystykach radia
+        let currentListeners = 0;
+        let peakListeners = 0;
+        let maxListeners = 0;
+        let uniqueListeners = 0;
+        let songTitle = "N/A";
+        let djName = "N/A";
 
-        // Tworzenie zapytania HTTP do pobrania statystyk radia
-        const request = new XMLHttpRequest();
-        const url = `http://${serverAddress}:${serverPort}/admin.cgi?pass=${authPassword}&mode=viewxml&sid=${streamID}`;
-        request.open("GET", url, true);
+        // Dane z serwera Shoutcast (zamień na odpowiednie dane z JSON)
+        const responseJSON = '{"totalstreams":1,"activestreams":1,"currentlisteners":1,"peaklisteners":2,"maxlisteners":50,"uniquelisteners":1,"averagetime":24,"version":"2.6.1.777 (posix(linux x64))","streams":[{"id":1,"currentlisteners":1,"peaklisteners":2,"maxlisteners":50,"uniquelisteners":1,"averagetime":24,"servergenre":"Misc","servergenre2":"","servergenre3":"","servergenre4":"","servergenre5":"","serverurl":"https:\/\/normalius.github.io\/szrejdio\/","servertitle":"Audycja","songtitle":"cute trance song catJAM","dj":"Test","songurl":"","streamhits":30,"streamstatus":1,"backupstatus":0,"streamlisted":0,"streamlistederror":847993365,"streampath":"\/","streamuptime":1964,"bitrate":"96","samplerate":"44100","content":"audio\/mpeg"}]}';
+        const data = JSON.parse(responseJSON);
+        const stream = data.streams[0];
 
-        // Obsługa odpowiedzi z serwera Shoutcast
-        request.onload = function () {
-            if (request.status === 200) {
-                const xmlResponse = request.responseXML;
-                const listeners = xmlResponse.getElementsByTagName("LISTENERS")[0];
-                
-                // Pobieranie liczby aktualnie słuchających użytkowników
-                const currentListenersCount = listeners.children.length;
+        // Aktualizacja zmiennych
+        currentListeners = stream.currentlisteners;
+        peakListeners = stream.peaklisteners;
+        maxListeners = stream.maxlisteners;
+        uniqueListeners = stream.uniquelisteners;
+        songTitle = stream.songtitle;
+        djName = stream.dj;
 
-                // Aktualizacja elementu na stronie z liczbą aktualnie słuchających
-                document.getElementById("currentListeners").innerText = currentListenersCount;
-            } else {
-                console.error("Błąd podczas pobierania danych statystycznych radia:", request.statusText);
-            }
-        };
-
-        // Obsługa błędów
-        request.onerror = function () {
-            console.error("Błąd podczas komunikacji z serwerem Shoutcast.");
-        };
-
-        // Wysłanie zapytania HTTP
-        request.send();
+        // Aktualizacja elementów na stronie z danymi statystycznymi
+        document.getElementById("currentListeners").innerText = currentListeners;
+        document.getElementById("peakListeners").innerText = peakListeners;
+        document.getElementById("maxListeners").innerText = maxListeners;
+        document.getElementById("uniqueListeners").innerText = uniqueListeners;
+        document.getElementById("songTitle").innerText = songTitle;
+        document.getElementById("djName").innerText = djName;
     }
 
-    // Funkcja do regularnego odświeżania danych co określony czas (np. co 10 sekund)
-    function refreshStatsInterval() {
-        fetchRadioStats(); // Wywołanie funkcji pobierającej statystyki po raz pierwszy
-        
-        // Ustawienie interwału odświeżania co 10 sekund
-        setInterval(fetchRadioStats, 10000); // 10000 ms = 10 sekund
+    // Funkcja do otwierania i zamykania modala z ustawieniami
+    function openStatsModal() {
+        document.getElementById("statsModal").style.display = "block";
+        fetchRadioStats(); // Pobranie statystyk przy otwarciu modala
     }
 
-    // Wywołanie funkcji do regularnego odświeżania danych po załadowaniu strony
-    refreshStatsInterval();
+    function closeStatsModal() {
+        document.getElementById("statsModal").style.display = "none";
+    }
+
+    function openSettingsModal() {
+        document.getElementById("settingsModal").style.display = "block";
+    }
+
+    function closeSettingsModal() {
+        document.getElementById("settingsModal").style.display = "none";
+    }
+
+    // Wywołanie funkcji do pobrania statystyk po załadowaniu strony
+    fetchRadioStats();
 });
