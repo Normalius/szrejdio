@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Funkcja pobierająca statystyki radia z serwera Shoutcast
     function fetchRadioStats() {
-        // Dane z serwera Shoutcast
+        // Dane z serwera Shoutcast (zastąp je prawdziwymi danymi, gdy będą dostępne)
         const responseXML = `
             <SHOUTCASTSERVER>
                 <CURRENTLISTENERS>1</CURRENTLISTENERS>
@@ -47,18 +47,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 <VERSION>2.6.1.777 (posix(linux x64))</VERSION>
             </SHOUTCASTSERVER>
         `;
+        
+        // Parsowanie danych XML
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(responseXML, "text/xml");
-
+        
         // Aktualizacja elementów na stronie z danymi statystycznymi
-        document.getElementById("currentListeners").innerText = xmlDoc.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
-        document.getElementById("peakListeners").innerText = xmlDoc.getElementsByTagName("PEAKLISTENERS")[0].textContent;
-        document.getElementById("maxListeners").innerText = xmlDoc.getElementsByTagName("MAXLISTENERS")[0].textContent;
-        document.getElementById("uniqueListeners").innerText = xmlDoc.getElementsByTagName("UNIQUELISTENERS")[0].textContent;
-        document.getElementById("songTitle").innerText = xmlDoc.getElementsByTagName("SONGTITLE")[0].textContent;
-        document.getElementById("djName").innerText = xmlDoc.getElementsByTagName("DJ")[0].textContent;
+        radioNameElement.innerText = xmlDoc.getElementsByTagName("SERVERTITLE")[0].textContent;
+        hostElement.innerText = xmlDoc.getElementsByTagName("DJ")[0].textContent;
+        listenersElement.innerText = xmlDoc.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
+        maxListenersElement.innerText = xmlDoc.getElementsByTagName("MAXLISTENERS")[0].textContent;
+        currentListenersElement.innerText = xmlDoc.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
     }
-
+    
     // Wywołanie funkcji do pobrania statystyk po załadowaniu strony
     fetchRadioStats();
 });
