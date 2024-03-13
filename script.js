@@ -46,17 +46,15 @@ function fetchRadioStats() {
             
             // Pobieranie danych statystycznych z XML
             const radioName = stats.getElementsByTagName("SERVERTITLE")[0].textContent;
-            const host = stats.getElementsByTagName("SERVERGENRE")[0].textContent;
+            const host = stats.getElementsByTagName("DJ")[0].textContent;
             const listeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
             const maxListeners = stats.getElementsByTagName("MAXLISTENERS")[0].textContent;
-            const currentListeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
 
             // Aktualizacja elementów na stronie z pobranymi danymi
             document.getElementById("radioName").innerText = radioName;
             document.getElementById("host").innerText = host;
             document.getElementById("listeners").innerText = listeners;
             document.getElementById("maxListeners").innerText = maxListeners;
-            document.getElementById("currentListeners").innerText = currentListeners;
         } else {
             console.error("Błąd podczas pobierania danych statystycznych radia:", request.statusText);
         }
