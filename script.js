@@ -1,7 +1,8 @@
+// Plik JavaScript (script.js)
 document.addEventListener("DOMContentLoaded", function() {
     // Funkcja pobierająca statystyki radia z zewnętrznego źródła
     function fetchRadioStats() {
-        // Adres URL do pobrania danych statystycznych
+        // Adres URL do pobrania danych statystycznych z PHP
         const url = "http://s3.slotex.pl:7466/statistics";
 
         // Wywołanie żądania HTTP GET do serwera
