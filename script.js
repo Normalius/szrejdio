@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     // Funkcja pobierająca statystyki radia z serwera Shoutcast
     function fetchRadioStats() {
         // Dane do uwierzytelnienia na serwerze Shoutcast
@@ -43,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function() {
         request.onload = function () {
             if (request.status === 200) {
                 const xmlResponse = request.responseXML;
-                const listeners = xmlResponse.getElementsByTagName("LISTENERS")[0];
+                const listeners = xmlResponse.getElementsByTagName("LISTENER");
                 
                 // Pobieranie liczby aktualnie słuchających użytkowników
-                const currentListenersCount = listeners.children.length;
+                const currentListenersCount = listeners.length;
 
                 // Aktualizacja elementu na stronie z liczbą aktualnie słuchających
                 document.getElementById("currentListeners").innerText = currentListenersCount;
