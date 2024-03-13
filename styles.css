@@ -245,11 +245,18 @@ footer {
 /* Dodaj te reguły CSS do istniejącego pliku styles.css */
 /* Reszta stylów CSS */
 
+/* Dodaj te reguły CSS do istniejącego pliku styles.css */
+/* Reszta stylów CSS */
+
 /* Sekcja Aktualności */
 .news-section {
     max-width: 800px; /* Dostosuj maksymalną szerokość do swoich potrzeb */
     margin: 0 auto; /* Ustawia sekcję na środku strony */
     text-align: center; /* Wyśrodkowanie tekstu w sekcji */
+    border: 2px solid #ccc; /* Dodaj ramkę wokół sekcji */
+    border-radius: 10px; /* Zaokrągl brzegi ramki */
+    padding: 20px; /* Dodaj wewnętrzny odstęp do ramki */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodaj cień do ramki */
 }
 
 .news-list {
@@ -260,4 +267,3 @@ footer {
 .news-list li {
     margin-bottom: 20px; /* Dla oddzielenia poszczególnych aktualności */
 }
-
