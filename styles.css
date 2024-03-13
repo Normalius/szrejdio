@@ -38,12 +38,13 @@ header {
 }
 
 .logo-centered img {
-    width: 150px; /* Rozmiar logo */
-    height: auto;
+    width: 200px; /* Zwiększenie szerokości logo */
+    height: auto; /* Zachowanie proporcji */
 }
 
-.listen-right {
-    margin-left: auto; /* Przesunięcie przycisku "Słuchaj na stronie" na prawo */
+.listen-right img {
+    width: 200px; /* Zwiększenie szerokości przycisku "Słuchaj na stronie" */
+    height: auto; /* Zachowanie proporcji */
 }
 
 .listen-right img {
