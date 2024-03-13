@@ -23,33 +23,15 @@ body {
 /* Dodatkowe reguły CSS dla sekcji komentarzy */
 .comment-section {
     margin-top: 20px;
-}
-
-.comment-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.comment-form button {
-    background-color: #659F22;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.comment-form button:hover {
-    background-color: #4F7F16;
+    max-width: 800px; /* Dodaj maksymalną szerokość */
+    margin-left: auto; /* Wyśrodkuj sekcję komentarzy */
+    margin-right: auto;
 }
 
 .comment-list {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Zresetuj margines */
 }
 
 .comment-item {
@@ -73,6 +55,13 @@ body {
 .comment-date {
     color: #777;
 }
+
+.comment-form {
+    max-width: 800px; /* Dodaj maksymalną szerokość dla formularza */
+    margin-left: auto; /* Wyśrodkuj formularz */
+    margin-right: auto;
+}
+
 
 /* Header */
 header {
