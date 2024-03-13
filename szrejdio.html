@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZRejdio :: www.szrejdio.pl</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="logo-centered">
+        <img src="images/logo.png" alt="SZRejdio Logo">
+    </div>
+    <div class="actions">
+        <button class="action-button">Kontakt</button>
+        <button class="action-button">Wsparcie</button>
+    </div>
+    <div class="listen-right">
+        <a href="javascript:player()"><img src="images/sluchaj_player.png" alt="Słuchaj na stronie"></a>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Index</a></li>
+        <li><a href="#"><i class="fas fa-newspaper"></i> Aktualności</a></li>
+        <li><a href="#"><i class="fas fa-comments"></i> Forum</a></li>
+        <li><a href="#"><i class="fas fa-headphones"></i> Jak słuchać?</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i> Ramówka</a></li>
+        <li><a href="#"><i class="fas fa-users"></i> Ekipa</a></li>
+        <li><a href="#"><i class="fas fa-music"></i> Audycje</a></li>
+        <li><a href="#"><i class="fas fa-star"></i> Lista Przebojów</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i> Pomoc</a></li>
+    </ul>
+</nav>
+<div id="greetingModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Wyślij pozdrowienie</h2>
+        <form id="greetingForm" action="send_greeting.php" method="post">
+            <label for="greetingName">Imię:</label>
+            <input type="text" id="greetingName" name="name" required>
+            <label for="greetingMessage">Pozdrowienie:</label>
+            <textarea id="greetingMessage" name="message" rows="4" required></textarea>
+            <button type="submit">Wyślij</button>
+        </form>
+    </div>
+</div>
+
+<div id="songModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Wyślij piosenkę</h2>
+        <!-- Formularz do wysyłania piosenki -->
+    </div>
+</div>
+
+<div id="radioStats" class="radio-stats">
+    <h2>Statystyki Radia</h2>
+    <ul>
+        <li>Nazwa: <span id="radioName">...</span></li>
+        <li>Prowadzący: <span id="host">...</span></li>
+        <li>Słucha: <span id="listeners">...</span></li>
+        <li>Maxymalnie słuchało: <span id="maxListeners">...</span></li>
+        <li>Aktualnie: <span id="currentListeners">...</span></li>
+    </ul>
+</div>
+<main>
+    <div class="send-greetings">
+        <button id="openGreetingModal">Wyślij pozdrowienie</button>
+    </div>
+    <div class="send-message">
+        <button id="openSongModal">Wyślij piosenkę</button>
+    </div>
+</main>
+<section class="news-section">
+    <h2>Aktualności</h2>
+    <ul class="news-list">
+        <!-- Tutaj będą wyświetlane aktualności -->
+        <li>
+            <h3>Tytuł aktualności</h3>
+            <p>Treść aktualności...</p>
+            <span>Data publikacji</span>
+            <button class="show-comments">Pokaż komentarze</button>
+            <div class="comment-section">
+                <h3>Komentarze</h3>
+                <ul class="comment-list">
+                    <!-- Tutaj będą wyświetlane komentarze -->
+                </ul>
+                <form class="comment-form">
+                    <textarea placeholder="Dodaj komentarz" required></textarea>
+                    <button type="submit">Dodaj</button>
+                </form>
+            </div>
+        </li>
+    </ul>
+</section>
+<footer>
+    <div class="footer-links">
+        <a href="#">Kontakt</a>
+        <a href="#">Wsparcie</a>
+        <a href="#">Regulamin</a>
+        <a href="#">Polityka prywatności</a>
+    </div>
+    <div class="footer-info">
+        <p>Copyright&copy; SZRejdio&reg; 2013</p>
+        <p>Powered by: SZR.Script v3.0</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
