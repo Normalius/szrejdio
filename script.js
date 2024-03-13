@@ -1,7 +1,7 @@
 // Funkcja pobierająca i aktualizująca statystyki radia
 function updateRadioStats() {
     // Adres URL do pobrania danych statystycznych z serwera Shoutcast2
-    const url = "http://s3.slotex.pl:7466/statistics";
+    const url = "http://s3.slotex.pl:7466;
 
     // Wywołanie żądania HTTP GET do serwera
     fetch(url)
