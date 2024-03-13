@@ -62,7 +62,6 @@ body {
     margin-right: auto;
 }
 
-
 /* Header */
 header {
     background-color: #fff;
@@ -123,27 +122,6 @@ header {
     }
 }
 
-
-/* Dodatkowe reguły CSS dla responsywności */
-@media screen and (max-width: 768px) {
-    .logo img {
-        width: 100px; /* Zmniejszenie rozmiaru logo na mniejszych ekranach */
-    }
-
-    .social {
-        display: none; /* Ukrycie sekcji społecznościowej na mniejszych ekranach */
-    }
-
-    .listen {
-        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na mniejszych ekranach */
-    }
-}
-
-
-.listen a {
-    margin-right: 10px;
-}
-
 /* Nawigacja */
 nav {
     background-color: #83a400;
@@ -182,66 +160,6 @@ nav ul li a:hover {
         margin: 10px 0; /* Zwiększenie odstępu między elementami na mniejszych ekranach */
     }
 }
-/* Dodatkowe reguły CSS dla responsywności */
-@media screen and (max-width: 768px) {
-    .logo-centered img {
-        width: 100px; /* Zmniejszenie rozmiaru logo na mniejszych ekranach */
-    }
-
-    .social-media {
-        display: none; /* Ukrycie sekcji społecznościowej na mniejszych ekranach */
-    }
-
-    .listen-right {
-        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na mniejszych ekranach */
-    }
-}
-
-/* Dodatkowe reguły CSS dla orientacji poziomej */
-@media screen and (orientation: landscape) {
-    .logo-centered img {
-        width: 120px; /* Zwiększenie rozmiaru logo na ekranach o orientacji poziomej */
-    }
-}
-
-/* Dodatkowe reguły CSS dla ekranów o szerokości mniejszej niż 480px */
-@media screen and (max-width: 480px) {
-    .logo-centered img {
-        width: 80px; /* Dalsze zmniejszenie rozmiaru logo na bardzo małych ekranach */
-    }
-
-    .listen-right img {
-        display: none; /* Ukrycie przycisku "Słuchaj na stronie" na bardzo małych ekranach */
-    }
-}
-
-/* Online */
-.online {
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Main */
-main {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-top: 20px;
-}
-
-.send-greetings,
-.send-message {
-    background-color: #fff;
-    padding: 20px;
-}
-
-.send-greetings img,
-.send-message img {
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-}
 
 /* Stylizacja stopki */
 footer {
@@ -277,7 +195,6 @@ footer {
 .social-media a:hover i {
     color: #659F22; /* Zmiana koloru ikony po najechaniu */
 }
-
 
 /* Radio Stats */
 .radio-stats {
@@ -336,6 +253,7 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
 /* Style dla sekcji Aktualności */
 .news-section {
     background-color: #fff;
@@ -345,7 +263,6 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
     max-width: 800px; /* Dodanie maksymalnej szerokości dla lepszej czytelności */
 }
-
 
 .news-section h2 {
     font-size: 24px;
@@ -385,4 +302,3 @@ footer {
     font-size: 14px;
     display: block;
 }
-
