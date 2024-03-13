@@ -6,6 +6,24 @@
     <title>SZRejdio :: www.szrejdio.pl</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .listen-text {
+            font-family: "Verdana", sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #659F22;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -17,7 +35,7 @@
         <button class="action-button">Wsparcie</button>
     </div>
     <div class="listen-right">
-        <a href="javascript:player()"><img src="images/sluchaj_player.png" alt="Słuchaj na stronie"></a>
+        <span class="listen-text">Słuchaj na stronie</span>
     </div>
 </header>
 <nav>
