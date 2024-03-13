@@ -157,7 +157,7 @@ nav ul li a:hover {
 /* Dodatkowe reguły CSS dla orientacji poziomej */
 @media screen and (orientation: landscape) {
     .logo-centered img {
-        width: 120px; /* Zwiększenie rozmiaru logo na ekranach o orientacji poziomej */
+        width: 300px; /* Zwiększenie rozmiaru logo na ekranach o orientacji poziomej */
     }
 }
 
