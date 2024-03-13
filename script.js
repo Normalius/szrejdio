@@ -66,6 +66,7 @@ function saveComment(comment) {
 
     request.onupgradeneeded = function(event) {
         const db = event.target.result;
+        // Sprawdź, czy magazyn obiektów 'comments' jest poprawnie zdefiniowany
         if (!db.objectStoreNames.contains('comments')) {
             const objectStore = db.createObjectStore('comments', { keyPath: 'id', autoIncrement:true });
             objectStore.createIndex('text', 'text', { unique: false });
@@ -103,6 +104,11 @@ function loadComments() {
             });
         };
     };
+
+    request.onerror = function(event) {
+        console.error('IndexedDB error:', event.target.error);
+    };
+}
 
     request.onerror = function(event) {
         console.error('IndexedDB error:', event.target.error);
