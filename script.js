@@ -25,30 +25,51 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-// Skrypt JavaScript do aktualizacji statystyk radia
-
-// Funkcja do pobierania statystyk radia z serwera Shoutcast
+// Funkcja pobierająca statystyki radia z serwera Shoutcast
 function fetchRadioStats() {
-    // Tutaj będziemy pobierać dane z serwera Shoutcast i aktualizować elementy HTML
-    // Użyjemy odpowiednich metod do komunikacji z serwerem, na przykład fetch lub AJAX
-    // Poniżej znajdziesz przykładowy kod, którego możesz użyć
+    // Dane do uwierzytelnienia na serwerze Shoutcast
+    const authPassword = "XagDuJ7kSJGp"; // Hasło do nadawania
+    const serverAddress = "s3.slotex.pl"; // Adres serwera Shoutcast
+    const serverPort = 7466; // Port serwera Shoutcast
+    const streamID = 1; // ID strumienia
 
-    // Wartości przykładowe dla testowania
-    const radioStats = {
-        radioName: "SZRejdio",
-        host: "John Doe",
-        listeners: 50,
-        maxListeners: 100,
-        currentListeners: 45
+    // Tworzenie zapytania HTTP do pobrania statystyk radia
+    const request = new XMLHttpRequest();
+    const url = `http://${serverAddress}:${serverPort}/admin.cgi?pass=${authPassword}&mode=viewxml&sid=${streamID}`;
+    request.open("GET", url, true);
+
+    // Obsługa odpowiedzi z serwera Shoutcast
+    request.onload = function () {
+        if (request.status === 200) {
+            const xmlResponse = request.responseXML;
+            const stats = xmlResponse.getElementsByTagName("STREAM")[0];
+            
+            // Pobieranie danych statystycznych z XML
+            const radioName = stats.getElementsByTagName("SERVERTITLE")[0].textContent;
+            const host = stats.getElementsByTagName("SERVERGENRE")[0].textContent;
+            const listeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
+            const maxListeners = stats.getElementsByTagName("MAXLISTENERS")[0].textContent;
+            const currentListeners = stats.getElementsByTagName("CURRENTLISTENERS")[0].textContent;
+
+            // Aktualizacja elementów na stronie z pobranymi danymi
+            document.getElementById("radioName").innerText = radioName;
+            document.getElementById("host").innerText = host;
+            document.getElementById("listeners").innerText = listeners;
+            document.getElementById("maxListeners").innerText = maxListeners;
+            document.getElementById("currentListeners").innerText = currentListeners;
+        } else {
+            console.error("Błąd podczas pobierania danych statystycznych radia:", request.statusText);
+        }
     };
 
-    // Aktualizacja elementów HTML z pobranymi statystykami
-    document.getElementById("radioName").textContent = radioStats.radioName;
-    document.getElementById("host").textContent = radioStats.host;
-    document.getElementById("listeners").textContent = radioStats.listeners;
-    document.getElementById("maxListeners").textContent = radioStats.maxListeners;
-    document.getElementById("currentListeners").textContent = radioStats.currentListeners;
+    // Obsługa błędów
+    request.onerror = function () {
+        console.error("Błąd podczas komunikacji z serwerem Shoutcast.");
+    };
+
+    // Wysłanie zapytania HTTP
+    request.send();
 }
 
-// Wywołanie funkcji do pobierania statystyk radia po załadowaniu strony
-window.addEventListener("load", fetchRadioStats);
+// Wywołanie funkcji pobierającej statystyki radia po załadowaniu strony
+window.onload = fetchRadioStats;
