@@ -66,10 +66,12 @@ function saveComment(comment) {
 
     request.onupgradeneeded = function(event) {
         const db = event.target.result;
-        const objectStore = db.createObjectStore('comments', { keyPath: 'id', autoIncrement:true });
-        objectStore.createIndex('text', 'text', { unique: false });
-        objectStore.createIndex('author', 'author', { unique: false });
-        objectStore.createIndex('date', 'date', { unique: false });
+        if (!db.objectStoreNames.contains('comments')) {
+            const objectStore = db.createObjectStore('comments', { keyPath: 'id', autoIncrement:true });
+            objectStore.createIndex('text', 'text', { unique: false });
+            objectStore.createIndex('author', 'author', { unique: false });
+            objectStore.createIndex('date', 'date', { unique: false });
+        }
     };
 
     request.onsuccess = function(event) {
@@ -106,6 +108,7 @@ function loadComments() {
         console.error('IndexedDB error:', event.target.error);
     };
 }
+
 // Funkcja do dodawania komentarza do interfejsu użytkownika
 function appendComment(comment) {
     const commentList = document.querySelector('.comment-list');
