@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Dodatkowe style dla animacji */
         .listen-text {
             font-family: "Verdana", sans-serif;
             font-size: 24px;
@@ -51,37 +52,28 @@
         <li><a href="#"><i class="fas fa-question-circle"></i> Pomoc</a></li>
     </ul>
 </nav>
-<div id="greetingModal" class="modal">
-    <!-- Modal pozdrowienia -->
-</div>
-
-<div id="songModal" class="modal">
-    <!-- Modal piosenki -->
-</div>
-
-<div id="radioStats" class="radio-stats">
-    <h2>Statystyki Radia</h2>
-    <ul>
-        <li>Nazwa: <span id="radioName">...</span></li>
-        <li>Prowadzący: <span id="host">...</span></li>
-        <li>Słucha: <span id="listeners">...</span></li>
-        <li>Maxymalnie słuchało: <span id="maxListeners">...</span></li>
-        <li>Aktualnie: <span id="currentListeners">...</span></li>
-    </ul>
-</div>
 <main>
-    <!-- Główna zawartość strony -->
+    <div id="radioStats" class="radio-stats">
+        <h2>Statystyki Radia</h2>
+        <ul>
+            <li>Nazwa: <span id="radioName">SZRejdio</span></li>
+            <li>Prowadzący: <span id="host">John Doe</span></li>
+            <li>Słucha: <span id="listeners">150</span></li>
+            <li>Maxymalnie słuchało: <span id="maxListeners">200</span></li>
+            <li>Aktualnie: <span id="currentListeners">180</span></li>
+        </ul>
+    </div>
     <section class="news-section">
         <h2>Aktualności</h2>
         <ul class="news-list">
             <li>
-                <h3>SZRejdio świętuje jubileusz!</h3>
-                <p>SZRejdio obchodzi dzisiaj swoje 10-lecie! Pragniemy podziękować wszystkim naszym słuchaczom za wsparcie i zaangażowanie przez te wszystkie lata. Bądźcie z nami na kolejne dziesięć lat pełne wspaniałej muzyki, audycji i świetnej zabawy!</p>
-                <span>13.03.2024</span>
+                <h3>Tytuł aktualności</h3>
+                <p>Treść aktualności...</p>
+                <span>Data publikacji</span>
             </li>
         </ul>
     </section>
-    </main>
+</main>
 <footer>
     <div class="footer-links">
         <a href="#">Kontakt</a>
