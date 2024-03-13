@@ -133,6 +133,14 @@ echo $stats->get('dj'); // Wyświetla wartość pola "dj" (pole dostępne tylko 
 // UWAGA! Poniższe opcje są dostępne tylko do usług Auto DJ zakupionych w firmie Slotex.pl, jeżeli korzystasz z funkcjonalności "Live DJ".
 echo $stats->get('dj', 'icy-name'); // Wyświetla wartość pola "Name" wpisaną w programie do nadawania, czyli często uznawane jako "Nazwa audycji".
 echo $stats->get('dj', 'icy-genre'); // Wyświetla wartość pola "Genre" wpisaną w programie do nadawania, czyli często uznawane jako "Nazwa prezentera".
+
+    <?php
+        // Kod PHP do pobierania statystyk radia
+        $ip_serwera = 's3.slotex.pl';
+        $port_serwera = 7466;
+        $sid_streamu = 1;
+        $stats = new shoutcast2stats($ip_serwera, $port_serwera, $sid_streamu);
+    ?>
     
     <div id="radioStats" class="radio-stats">
         <h2>Statystyki Radia</h2>
