@@ -25,18 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Funkcja pobierająca statystyki radia z serwera Shoutcast
-    function fetchRadioStats() {
-        // Zmienne do przechowywania danych o statystykach radia
-        let currentListeners = 0;
-        let peakListeners = 0;
-        let maxListeners = 0;
-        let uniqueListeners = 0;
-        let songTitle = "N/A";
-        let djName = "N/A";
-
- document.addEventListener("DOMContentLoaded", function() {
     // Funkcja pobierająca statystyki radia z serwera Shoutcast
     function fetchRadioStats() {
         // Dane z serwera Shoutcast
