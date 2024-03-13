@@ -45,3 +45,32 @@ function updateRadioStats(data) {
     document.getElementById("maxListeners").textContent = data.maxListeners;
     document.getElementById("currentListeners").textContent = data.currentListeners;
 }
+// Pobieranie danych ze zdalnego serwera Shoutcast
+function fetchRadioStats() {
+    const url = 'http://145.239.26.150:7466/stats';
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            updateRadioStats(data);
+        })
+        .catch(error => {
+            console.error('Błąd pobierania danych z serwera Shoutcast:', error);
+        });
+}
+
+// Aktualizacja statystyk radia na stronie
+function updateRadioStats(data) {
+    document.getElementById('radioName').textContent = data.server_name;
+    document.getElementById('listeners').textContent = data.currentlisteners;
+    document.getElementById('maxListeners').textContent = data.maxlisteners;
+    document.getElementById('radioIP').textContent = '145.239.26.150';
+}
+
+// Pobieranie statystyk radia po załadowaniu strony
+window.addEventListener('load', () => {
+    fetchRadioStats();
+    // Odświeżanie co 60 sekund
+    setInterval(fetchRadioStats, 60000);
+});
+
