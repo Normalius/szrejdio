@@ -18,47 +18,6 @@ function updateRadioStats() {
     document.getElementById("currentSong").innerText = radioStats.currentSong;
 }
 
-// Funkcja do pobierania danych statystycznych radia z serwera
-function fetchRadioStats() {
-    // Dane statystyczne radia w postaci listy krotek
-    const data = [("icy-name","Testowa Audycja"), ("icy-genre","Autopilot")];
-
-    // Iteruj przez dane i zaktualizuj odpowiednie wartości w radioStats
-    data.forEach(([key, value]) => {
-        if (key === "icy-name") {
-            radioStats.serverTitle = value;
-        } else if (key === "icy-genre") {
-            radioStats.host = value;
-        }
-    });
-
-    // Aktualizacja danych na stronie
-    updateRadioStats();
-}
-
-// Wywołanie funkcji do pobrania danych statystycznych po załadowaniu strony
-fetchRadioStats();
-// Funkcja do pobierania danych statystycznych radia z serwera
-function fetchRadioStats() {
-    // Dane statystyczne radia w postaci listy krotek
-    const data = [("icy-name"), ("icy-genre",)];
-
-    // Iteruj przez dane i zaktualizuj odpowiednie wartości w radioStats
-    data.forEach(([key, value]) => {
-        if (key === "icy-name") {
-            radioStats.serverTitle = value;
-        } else if (key === "icy-genre") {
-            radioStats.host = value;
-        }
-    });
-
-    // Aktualizacja danych na stronie
-    updateRadioStats();
-}
-
-// Wywołanie funkcji do pobrania danych statystycznych po załadowaniu strony
-fetchRadioStats();
-
 // Funkcja do pobierania danych statystycznych radia z serwera za pomocą JSONP
 function fetchRadioStats() {
     // URL serwera Shoutcast
