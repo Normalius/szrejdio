@@ -17,7 +17,6 @@ function updateRadioStats() {
     document.getElementById("maxListeners").innerText = radioStats.maxListeners;
     document.getElementById("host").innerText = radioStats.host;
     document.getElementById("currentSong").innerText = radioStats.currentSong;
-    document.getElementById("genre").innerText = radioStats.genre; // Dodanie aktualnego gatunku
 }
 
 // Funkcja do pobierania danych statystycznych radia z serwera za pomocą JSONP
