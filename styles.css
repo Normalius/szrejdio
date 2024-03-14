@@ -346,6 +346,7 @@ nav ul li a:hover {
 #radio-stats li:nth-child(even) {
     background-color: #f2f2f2;
 }
+
 .live-show-section {
     background-color: #fff;
     border: 1px solid #ccc;
