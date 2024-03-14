@@ -182,17 +182,20 @@ nav ul li a:hover {
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Nowa linia: Zezwól na zawijanie elementów na małych ekranach */
+    justify-content: center; /* Nowa linia: Wyrównaj sekcje stopki do środka */
 }
 
 .footer-section {
     flex: 1;
+    margin: 0 10px; /* Nowa linia: Dodaj odstęp między sekcjami stopki */
 }
 
 .footer-section h3 {
     color: #fff;
     border-bottom: 1px solid #aaa;
     padding-bottom: 10px;
+    margin-bottom: 20px; /* Nowa linia: Zwiększ odstęp między nagłówkiem a listą */
 }
 
 .footer-section ul {
@@ -217,13 +220,14 @@ nav ul li a:hover {
 .social-icons-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Nowa linia: Wyrównaj ikony do prawej strony */
+    justify-content: center; /* Nowa linia: Wyrównaj ikony mediów społecznościowych do środka */
+    margin-top: 20px; /* Nowa linia: Dodaj odstęp między sekcją stopki a ikonami */
 }
 
 .social-icons-right .social-icon {
     text-decoration: none;
     font-size: 24px;
-    margin-left: 10px;
+    margin: 0 5px; /* Nowa linia: Dodaj odstęp między ikonami */
     color: #ffffff; /* Domyślny kolor biały */
     transition: color 0.3s ease;
 }
