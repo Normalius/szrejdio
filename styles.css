@@ -120,7 +120,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 nav ul li:last-child {
@@ -132,10 +132,9 @@ nav ul li a {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; /* Dodanie przejścia dla koloru tła i tekstu */
-    position: relative;
-    font-size: 16px; /* Ustawienie rozmiaru czcionki */
-    cursor: pointer; /* Zmiana kursora na pointer */
+    transition: background-color 0.3s, transform 0.2s; /* Dodanie transition do animacji */
+    font-size: 16px;
+    position: relative; /* Dodanie pozycji względnej */
 }
 
 nav ul li a::before {
@@ -154,14 +153,15 @@ nav ul li a::before {
 nav ul li a:hover::before {
     visibility: visible;
     transform: scaleX(1);
-    background-color: #fff; /* Zmiana koloru tła */
+    background-color: #fff;
 }
 
 nav ul li a:hover {
     background-color: #659F22;
-    color: #fff; /* Zmiana koloru tekstu */
+    transform: translateY(-2px); /* Dodanie efektu podniesienia po najechaniu */
 }
 
+/* Responsywność */
 @media screen and (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -173,13 +173,13 @@ nav ul li a:hover {
     }
 
     nav ul li a {
-        padding: 8px 12px; /* Dostosowanie odstępów dla mniejszych ekranów */
+        padding: 8px 12px;
     }
 }
 
 @media screen and (max-width: 480px) {
     nav ul li a {
-        font-size: 14px; /* Dostosowanie rozmiaru czcionki dla bardzo małych ekranów */
+        font-size: 14px;
     }
 }
 
