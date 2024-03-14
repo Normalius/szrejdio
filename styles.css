@@ -314,11 +314,10 @@ nav ul li a:hover {
 .news-section {
     max-width: 800px;
     margin: 20px auto 40px;
-    text-align: center;
-    border: 2px solid #ccc;
+    text-align: left; /* Zmiana na wyśrodkowanie tekstu do lewej strony */
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ukrycie elementów wychodzących poza obszar sekcji */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
 }
 
 .news-list {
@@ -328,6 +327,13 @@ nav ul li a:hover {
 
 .news-list li {
     margin-bottom: 20px;
+    padding: 20px; /* Dodanie wewnętrznego odstępu */
+    background-color: #f9f9f9; /* Kolor tła */
+    border-bottom: 1px solid #ddd; /* Linia oddzielająca */
+}
+
+.news-list li:last-child {
+    border-bottom: none; /* Usunięcie linii oddzielającej dla ostatniego elementu */
 }
 
 .news-list h3 {
@@ -338,7 +344,9 @@ nav ul li a:hover {
 .news-list p {
     font-size: 16px;
     color: #333;
+    line-height: 1.5; /* Dodanie odstępu między liniami */
 }
+
 
 
 /* Stylizacja sekcji statystyk radiowych */
