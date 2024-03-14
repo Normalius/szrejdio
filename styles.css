@@ -233,11 +233,12 @@ nav ul li a:hover {
     text-decoration: none;
     font-size: 24px;
     margin-left: 10px;
+    color: #ffffff; /* Domyślny kolor biały */
     transition: color 0.3s ease;
 }
 
 .social-icons-right .social-icon:hover {
-    color: #00aced; /* Domyślny kolor Twittera */
+    transition: color 0.3s ease;
 }
 
 .social-icons-right .facebook:hover {
@@ -255,6 +256,7 @@ nav ul li a:hover {
 .social-icons-right .twitter:hover {
     color: #1da1f2; /* Kolor Twittera po najechaniu */
 }
+
 .back-to-top {
     margin-top: 20px;
 }
