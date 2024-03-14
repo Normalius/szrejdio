@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-     <header>
-        <h1>Witaj na naszej stronie!</h1>
-    </header>
 <body>
 <header>
     <div class="logo-centered">
@@ -22,16 +19,6 @@
         <button class="action-button">Wsparcie</button>
     </div>
 </header>
-       <section class="cookie-section">
-        <button onclick="setCookie()">Ustaw Ciasteczko</button>
-    </section>
-
-    <div id="cookie-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>Dziękujemy za ustawienie ciasteczka! Korzystając z naszej strony, zgadzasz się na używanie ciasteczek zgodnie z naszą <a href="/polityka-ciasteczek">polityką prywatności</a>.</p>
-        </div>
-    </div>
 <nav>
     <ul>
         <li><a href="#"><i class="fas fa-home"></i> Index</a></li>
@@ -94,22 +81,5 @@
     </div>
 </footer>
 <script src="script.js"></script>
-     <script>
-        // Funkcja ustawiająca ciasteczko i pokazująca modal
-        function setCookie() {
-            document.cookie = "acceptCookies=true; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/;";
-            showModal();
-        }
-
-        // Funkcja pokazująca modal
-        function showModal() {
-            document.getElementById('cookie-modal').style.display = 'block';
-        }
-
-        // Funkcja zamykająca modal
-        function closeModal() {
-            document.getElementById('cookie-modal').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
