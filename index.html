@@ -31,27 +31,9 @@
         <li><a href="#"><i class="fas fa-question-circle"></i> Pomoc</a></li>
     </ul>
 </nav>
-<div id="greetingModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Wyślij pozdrowienie</h2>
-        <form id="greetingForm" action="send_greeting.php" method="post">
-            <label for="greetingName">Imię:</label>
-            <input type="text" id="greetingName" name="name" required>
-            <label for="greetingMessage">Pozdrowienie:</label>
-            <textarea id="greetingMessage" name="message" rows="4" required></textarea>
-            <button type="submit">Wyślij</button>
-        </form>
-    </div>
-</div>
-
-<div id="songModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Wyślij piosenkę</h2>
-        <!-- Formularz do wysyłania piosenki -->
     </div>
 </div>    
+    <div id="radio-stats">
         <h2>Statystyki Radia</h2>
         <ul>
             <li><strong>Nazwa Radia:</strong> <span id="serverTitle">...</span></li>
@@ -62,7 +44,7 @@
             <li><strong>Aktualna Piosenka:</strong> <span id="currentSong">...</span></li>
         </ul>
     </div>
-
+    </div>
 
 <main>
     <section class="news-section">
