@@ -102,7 +102,7 @@
         // Funkcja do pobierania aktualnej liczby słuchaczy z serwera Shoutcast
         function fetchCurrentListeners() {
             // Adres URL do pobrania danych statystycznych z serwera Shoutcast
-            const url = "http://s3.slotex.pl:7466/admin.cgi?mode=viewjson";
+            const url = "http://s3.slotex.pl:7466/statistics?json=1";
 
             // Wywołanie żądania HTTP GET do serwera
             fetch(url, {
