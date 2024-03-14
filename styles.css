@@ -137,30 +137,36 @@ nav ul li a:hover {
 
 /* Stylizacja stopki */
 footer {
-    background-color: #333; /* Kolor tła stopki */
-    color: #fff; /* Kolor tekstu w stopce */
-    padding: 20px 0; /* Wewnętrzny odstęp stopki */
-    text-align: center; /* Wyśrodkowanie tekstu w stopce */
+    background-color: #eee;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-links a {
-    color: #fff; /* Kolor hiperłączy w stopce */
-    text-decoration: none; /* Usunięcie podkreślenia z hiperłączy */
-    margin: 0 10px; /* Odstęp między hiperłączami */
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
 }
 
-.footer-links a:hover {
-    text-decoration: underline; /* Podkreślenie hiperłączy po najechaniu myszką */
+.footer-info p {
+    margin-right: 20px;
 }
 
 .social-media a {
-    color: #fff; /* Kolor ikon mediów społecznościowych */
-    text-decoration: none; /* Usunięcie podkreślenia z ikon */
-    margin: 0 10px; /* Odstęp między ikonami */
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
 }
 
-.social-media a:hover {
-    color: #ff0; /* Zmiana koloru ikony po najechaniu myszką */
+.social-media a i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover i {
+    color: #659F22;
 }
 
 /* Modal */
@@ -237,54 +243,27 @@ footer {
     background-color: #f2f2f2;
 }
 /* Dodaj te reguły CSS do istniejącego pliku styles.css */
+/* Reszta stylów CSS */
+
+/* Dodaj te reguły CSS do istniejącego pliku styles.css */
+/* Reszta stylów CSS */
 
 /* Sekcja Aktualności */
 .news-section {
     max-width: 800px; /* Dostosuj maksymalną szerokość do swoich potrzeb */
     margin: 0 auto; /* Ustawia sekcję na środku strony */
     text-align: center; /* Wyśrodkowanie tekstu w sekcji */
+    border: 2px solid #ccc; /* Dodaj ramkę wokół sekcji */
+    border-radius: 10px; /* Zaokrągl brzegi ramki */
     padding: 20px; /* Dodaj wewnętrzny odstęp do ramki */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodaj cień do ramki */
 }
 
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.news-list {
+    list-style: none; /* Usunięcie domyślnych punktów w liście */
+    padding: 0; /* Usunięcie wewnętrznego marginesu w liście */
 }
 
-.news-tile {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.news-tile img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.news-tile h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.news-tile p {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.read-more {
-    display: inline-block;
-    background-color: #659F22;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.read-more:hover {
-    background-color: #4F7F16;
+.news-list li {
+    margin-bottom: 20px; /* Dla oddzielenia poszczególnych aktualności */
 }
