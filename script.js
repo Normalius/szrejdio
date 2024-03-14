@@ -21,7 +21,7 @@ function updateRadioStats() {
 // Funkcja do pobierania danych statystycznych radia z serwera za pomocą JSONP
 function fetchRadioStats() {
     // URL serwera Shoutcast
-    const shoutcastUrl = 'https://s3.slotex.pl:7466/stats?sid=1&pass=XagDuJ7kSJGp&json=1&callback=func&callback=handleRadioStats';
+    const shoutcastUrl = 'http://s3.slotex.pl:7466/stats?sid=1&json=1&callback=func';
 
     // Tworzymy funkcję callback, która zostanie wywołana po otrzymaniu danych
     const callbackName = 'handleRadioStats';
