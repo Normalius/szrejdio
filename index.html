@@ -19,6 +19,16 @@
         <button class="action-button">Wsparcie</button>
     </div>
 </header>
+       <section class="cookie-section">
+        <button onclick="setCookie()">Ustaw Ciasteczko</button>
+    </section>
+
+    <div id="cookie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Dziękujemy za ustawienie ciasteczka! Korzystając z naszej strony, zgadzasz się na używanie ciasteczek zgodnie z naszą <a href="/polityka-ciasteczek">polityką prywatności</a>.</p>
+        </div>
+    </div>
 <nav>
     <ul>
         <li><a href="#"><i class="fas fa-home"></i> Index</a></li>
