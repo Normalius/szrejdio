@@ -98,11 +98,11 @@
         <p class="footer-text">Powered by: Nazwa Silnika v1.0</p>
     </div>
 </footer>
-   <script>
+    <script>
         // Funkcja do pobierania danych statystycznych radia
         function fetchRadioStats() {
             // Adres URL do pobrania danych statystycznych z serwera Shoutcast
-            const url = "http://s3.slotex.pl:7466/statistics?json=1";
+            const url = "http://s3.slotex.pl:7466/index.html?sid=1";
 
             // Wywołanie żądania HTTP GET do serwera
             fetch(url)
@@ -117,6 +117,7 @@
                 document.getElementById("serverTitle").innerText = data.streams[0].servertitle || "Brak danych";
                 document.getElementById("currentListeners").innerText = data.currentlisteners || 0;
                 document.getElementById("peakListeners").innerText = data.peaklisteners || 0;
+                document.getElementById("maxListeners").innerText = data.maxlisteners || 50;
                 document.getElementById("host").innerText = data.streams[0].dj || "Brak danych";
                 document.getElementById("currentSong").innerText = data.streams[0].songtitle || "Brak danych";
             })
