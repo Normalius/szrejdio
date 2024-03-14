@@ -18,36 +18,30 @@ function updateRadioStats() {
     document.getElementById("currentSong").innerText = radioStats.currentSong;
 }
 
-// Funkcja do pobierania danych statystycznych radia z serwera
+// Funkcja do pobierania danych statystycznych radia z serwera za pomocą JSONP
 function fetchRadioStats() {
-    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
-    const shoutcastUrl = 'http://s3.slotex.pl:7466/statistics?json=1'; // URL serwera Shoutcast
+    // URL serwera Shoutcast
+    const shoutcastUrl = 'http://s3.slotex.pl:7466/stats?sid=1&pass=XagDuJ7kSJGp&json=1&callback=func';
 
-    // Wywołanie żądania HTTP GET za pośrednictwem CORS Anywhere
-    fetch(corsAnywhereUrl + shoutcastUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        }) // Parsowanie odpowiedzi jako JSON
-        .then(data => {
-            // Aktualizacja danych statystycznych radia
-            radioStats.serverTitle = data.streams[0].servertitle || "Brak danych";
-            radioStats.currentListeners = data.currentlisteners || 0;
-            radioStats.peakListeners = data.peaklisteners || 0;
-            radioStats.maxListeners = data.maxlisteners || 50;
-            radioStats.host = data.streams[0].dj || "Brak danych";
-            radioStats.currentSong = data.streams[0].songtitle || "Brak danych";
-            
-            // Aktualizacja danych na stronie
-            updateRadioStats();
-        })
-        .catch(error => {
-            console.error("Błąd pobierania danych:", error);
-            // Jeśli wystąpił błąd, spróbuj ponownie za 1 minutę
-            setTimeout(fetchRadioStats, 60000);
-        });
+    // Tworzymy funkcję callback, która zostanie wywołana po otrzymaniu danych
+    const callbackName = 'handleRadioStats';
+    window[callbackName] = function(data) {
+        // Aktualizacja danych statystycznych radia
+        radioStats.serverTitle = data.streams[0].servertitle || "Brak danych";
+        radioStats.currentListeners = data.currentlisteners || 0;
+        radioStats.peakListeners = data.peaklisteners || 0;
+        radioStats.maxListeners = data.maxlisteners || 50;
+        radioStats.host = data.streams[0].dj || "Brak danych";
+        radioStats.currentSong = data.streams[0].songtitle || "Brak danych";
+        
+        // Aktualizacja danych na stronie
+        updateRadioStats();
+    };
+
+    // Tworzymy element skryptu i dodajemy go do dokumentu
+    const script = document.createElement('script');
+    script.src = shoutcastUrl + '&callback=' + callbackName;
+    document.body.appendChild(script);
 }
 
 // Wywołanie funkcji do pobrania danych statystycznych po załadowaniu strony
