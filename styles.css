@@ -230,7 +230,6 @@ nav ul li a:hover {
 }
 
 .social-icons-right .social-icon {
-    color: #fff;
     text-decoration: none;
     font-size: 24px;
     margin-left: 10px;
@@ -238,7 +237,18 @@ nav ul li a:hover {
 }
 
 .social-icons-right .social-icon:hover {
-    color: #00aced; /* Kolor Twittera */
+    color: #00aced; /* Domyślny kolor Twittera */
+}
+.social-icons-right .facebook:hover {
+    color: #3b5998; /* Kolor Facebooka po najechaniu */
+}
+
+.social-icons-right .instagram:hover {
+    color: #e4405f; /* Kolor Instagrama po najechaniu */
+}
+
+.social-icons-right .discord:hover {
+    color: #7289da; /* Kolor Discorda po najechaniu */
 }
 
 .back-to-top {
