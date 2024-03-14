@@ -229,8 +229,8 @@ nav ul li a:hover {
 }
 
 .footer-bar {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #0070cd; /* Blue Grotto */
+    color: #fff; /* Biały tekst na ciemnym tle */
     padding: 10px 0;
     border-top: 1px solid #ccc;
     border-radius: 10px;
@@ -262,6 +262,7 @@ nav ul li a:hover {
     width: 40px; /* Dostosuj rozmiar obrazu według potrzeb */
     height: auto;
 }
+
 
 
 /* Stylizacja sekcji aktualności */
