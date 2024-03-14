@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+     <header>
+        <h1>Witaj na naszej stronie!</h1>
+    </header>
 <body>
 <header>
     <div class="logo-centered">
@@ -91,5 +94,22 @@
     </div>
 </footer>
 <script src="script.js"></script>
+     <script>
+        // Funkcja ustawiająca ciasteczko i pokazująca modal
+        function setCookie() {
+            document.cookie = "acceptCookies=true; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/;";
+            showModal();
+        }
+
+        // Funkcja pokazująca modal
+        function showModal() {
+            document.getElementById('cookie-modal').style.display = 'block';
+        }
+
+        // Funkcja zamykająca modal
+        function closeModal() {
+            document.getElementById('cookie-modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
