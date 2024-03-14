@@ -311,10 +311,9 @@ nav ul li a:hover {
 }
 
 /* Dodaj te reguły CSS do istniejącego pliku styles.css */
-/* Sekcja Aktualności */
 .news-section {
     max-width: 800px;
-    margin: 20px auto 40px; /* Dodanie dodatkowego odstępu u góry i na dole */
+    margin: 20px auto 40px;
     text-align: center;
     border: 2px solid #ccc;
     border-radius: 10px;
@@ -323,13 +322,24 @@ nav ul li a:hover {
 }
 
 .news-list {
-    list-style: none; /* Usunięcie domyślnych punktów w liście */
-    padding: 0; /* Usunięcie wewnętrznego marginesu w liście */
+    list-style: none;
+    padding: 0;
 }
 
 .news-list li {
-    margin-bottom: 20px; /* Dla oddzielenia poszczególnych aktualności */
+    margin-bottom: 20px;
 }
+
+.news-list h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.news-list p {
+    font-size: 16px;
+    color: #333;
+}
+
 
 /* Stylizacja sekcji statystyk radiowych */
 #radio-stats {
