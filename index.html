@@ -98,18 +98,14 @@
         <p class="footer-text">Powered by: Nazwa Silnika v1.0</p>
     </div>
 </footer>
-        <script>
-        // Funkcja do pobierania aktualnej liczby słuchaczy z serwera Shoutcast
-        function fetchCurrentListeners() {
+   <script>
+        // Funkcja do pobierania danych statystycznych radia
+        function fetchRadioStats() {
             // Adres URL do pobrania danych statystycznych z serwera Shoutcast
             const url = "http://s3.slotex.pl:7466/statistics?json=1";
 
             // Wywołanie żądania HTTP GET do serwera
-            fetch(url, {
-                headers: {
-                    'Authorization': 'Basic ' + btoa('admin:Rhkde8TaBTBr')
-                }
-            })
+            fetch(url)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -117,17 +113,20 @@
                 return response.json();
             }) // Parsowanie odpowiedzi jako JSON
             .then(data => {
-                // Aktualizacja liczby słuchaczy na stronie
-                document.getElementById("currentListeners").innerText = data["Current Listeners"];
+                // Aktualizacja danych statystycznych na stronie
+                document.getElementById("serverTitle").innerText = data.servertitle || "Brak informacji";
+                document.getElementById("host").innerText = data.streams[0].dj || "Brak informacji";
+                document.getElementById("peakListeners").innerText = data.streams[0].peaklisteners || "Brak informacji";
+                document.getElementById("currentSong").innerText = data.streams[0].songtitle || "Brak informacji";
             })
             .catch(error => console.error("Błąd pobierania danych:", error));
         }
 
-        // Wywołanie funkcji do pobrania aktualnej liczby słuchaczy po załadowaniu strony
-        fetchCurrentListeners();
+        // Wywołanie funkcji do pobrania danych statystycznych po załadowaniu strony
+        fetchRadioStats();
 
         // Odświeżanie danych co 60 sekund
-        setInterval(fetchCurrentListeners, 60000);
+        setInterval(fetchRadioStats, 60000);
     </script>
     <script src="script.js"></script>
 </body>
