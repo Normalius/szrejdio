@@ -141,19 +141,16 @@ nav ul li a::before {
     content: "";
     position: absolute;
     width: 100%;
-    height: 3px;
-    bottom: -5px;
+    height: 100%;
+    top: 0;
     left: 0;
-    background-color: transparent;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
+    background-color: rgba(255, 255, 255, 0); /* Początkowy kolor przezroczysty */
+    transition: background-color 0.3s ease; /* Dodanie przejścia koloru tła */
+    z-index: -1; /* Umieszczenie pod tekstem */
 }
 
 nav ul li a:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2); /* Kolor tła po najechaniu */
 }
 
 nav ul li a:hover {
