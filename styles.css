@@ -11,27 +11,15 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto;
     max-width: 1200px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
 }
 
-h2 {
+h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
     color: #333333;
-}
-
-h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
     font-weight: bold;
-    color: #333333;
 }
 
 .container {
@@ -58,27 +46,8 @@ header {
     height: auto;
 }
 
-.listen-on-site h2,
-.listen-right h2 {
-    font-size: 24px;
-    color: #fff;
-    background-color: #659F22;
-    padding: 10px 20px;
-    border-radius: 5px;
-    animation: pulse 1s infinite alternate;
-}
-
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
-}
-
-.listen-right {
-    margin-left: auto;
+.actions {
+    display: flex;
 }
 
 /* Stylizacja przycisków akcji */
@@ -190,20 +159,17 @@ nav ul li a:hover {
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap; /* Nowa linia: Zezwól na zawijanie elementów na małych ekranach */
-    justify-content: center; /* Nowa linia: Wyrównaj sekcje stopki do środka */
+    justify-content: space-between;
 }
 
 .footer-section {
     flex: 1;
-    margin: 0 10px; /* Nowa linia: Dodaj odstęp między sekcjami stopki */
 }
 
 .footer-section h3 {
     color: #fff;
     border-bottom: 1px solid #aaa;
     padding-bottom: 10px;
-    margin-bottom: 20px; /* Nowa linia: Zwiększ odstęp między nagłówkiem a listą */
 }
 
 .footer-section ul {
@@ -228,36 +194,35 @@ nav ul li a:hover {
 .social-icons-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Nowa linia: Wyrównaj ikony mediów społecznościowych do prawej strony */
-    margin-top: 20px; /* Nowa linia: Dodaj odstęp między sekcją stopki a ikonami */
+    justify-content: flex-end;
 }
 
 .social-icons-right .social-icon {
     text-decoration: none;
     font-size: 24px;
-    margin: 0 5px; /* Nowa linia: Dodaj odstęp między ikonami */
-    color: #ffffff; /* Domyślny kolor biały */
+    margin-left: 10px;
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
 .social-icons-right .social-icon:hover {
-    transition: color 0.3s ease;
+    color: #ffcc00;
 }
 
 .social-icons-right .facebook:hover {
-    color: #3b5998; /* Kolor Facebooka po najechaniu */
+    color: #3b5998;
 }
 
 .social-icons-right .instagram:hover {
-    color: #e4405f; /* Kolor Instagrama po najechaniu */
+    color: #e4405f;
 }
 
 .social-icons-right .discord:hover {
-    color: #7289da; /* Kolor Discorda po najechaniu */
+    color: #7289da;
 }
 
 .social-icons-right .twitter:hover {
-    color: #1da1f2; /* Kolor Twittera po najechaniu */
+    color: #1da1f2;
 }
 
 .back-to-top {
@@ -285,7 +250,7 @@ nav ul li a:hover {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff; /* Tło sekcji */
+    background-color: #fff;
 }
 
 .news-section h2 {
@@ -318,7 +283,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-/* Stylizacja sekcji statystyk radiowych */
 #radio-stats {
     width: 80%;
     margin: 20px auto;
@@ -362,10 +326,5 @@ li span#currentListeners,
 li span#peakListeners,
 li span#maxListeners,
 li span#currentSong {
-    font-weight: normal;
-}
-
-
-#radio-stats li:nth-child(even) {
-    background-color: #f2f2f2;
+    color: #659F22;
 }
