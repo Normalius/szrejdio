@@ -62,32 +62,3 @@ fetchRadioStats();
 
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
-
-// Przykładowe dane audycji na żywo
-const liveShows = [
-    { title: "Poranek z Radiem", startTime: "2024-03-15T08:00:00" },
-    { title: "Popołudniowa fala", startTime: "2024-03-15T16:00:00" }
-];
-
-// Funkcja do wyświetlania nadchodzących audycji na żywo
-function displayLiveShows() {
-    const liveShowList = document.getElementById("live-show-list");
-    liveShowList.innerHTML = ""; // Wyczyść listę przed aktualizacją
-
-    liveShows.forEach(show => {
-        const listItem = document.createElement("li");
-        const titleSpan = document.createElement("span");
-        const timeElement = document.createElement("time");
-
-        titleSpan.textContent = show.title;
-        timeElement.textContent = new Date(show.startTime).toLocaleString();
-
-        listItem.appendChild(titleSpan);
-        listItem.appendChild(timeElement);
-
-        liveShowList.appendChild(listItem);
-    });
-}
-
-// Wywołanie funkcji do wyświetlania nadchodzących audycji po załadowaniu strony
-displayLiveShows();
