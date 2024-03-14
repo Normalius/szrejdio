@@ -144,18 +144,6 @@ nav ul li a:hover {
     }
 }
 
-
-/* Responsywność */
-@media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-}
-
 /* Stylizacja stopki */
 footer {
     background-color: #eee;
@@ -263,12 +251,8 @@ footer {
 .radio-stats li:nth-child(even) {
     background-color: #f2f2f2;
 }
-/* Dodaj te reguły CSS do istniejącego pliku styles.css */
-/* Reszta stylów CSS */
 
 /* Dodaj te reguły CSS do istniejącego pliku styles.css */
-/* Reszta stylów CSS */
-
 /* Sekcja Aktualności */
 .news-section {
     max-width: 800px; /* Dostosuj maksymalną szerokość do swoich potrzeb */
