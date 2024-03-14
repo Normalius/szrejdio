@@ -7,10 +7,17 @@ body, h1, h2, h3, p, ul, li {
 body {
     font-family: "Verdana", sans-serif;
     background-color: #f8f8f8;
-    margin: 0;
-    padding: 20px;
+    margin: 0; /* Usunięcie marginesu górnego */
+    padding: 0;
     font-size: 16px;
     line-height: 1.6;
+    margin-top: 20px; /* Dodanie marginesu górnego */
+    margin-bottom: 20px; /* Dodanie marginesu dolnego */
+    margin-left: auto; /* Dodanie marginesu lewego */
+    margin-right: auto; /* Dodanie marginesu prawego */
+    max-width: 1200px; /* Ustawienie maksymalnej szerokości strony */
+    padding-left: 20px; /* Dodanie wewnętrznego marginesu z lewej strony */
+    padding-right: 20px; /* Dodanie wewnętrznego marginesu z prawej strony */
 }
 
 .container {
