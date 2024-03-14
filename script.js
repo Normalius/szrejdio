@@ -1,6 +1,6 @@
 // Dane statystyczne radia
 const radioStats = {
-    serverTitle: "Audycja",
+    serverTitle: "Autopilot",
     currentListeners: 0,
     peakListeners: 0,
     maxListeners: 50,
