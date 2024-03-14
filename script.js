@@ -15,9 +15,11 @@ function updateRadioStats() {
     document.getElementById("currentListeners").innerText = radioStats.currentListeners;
     document.getElementById("peakListeners").innerText = radioStats.peakListeners;
     document.getElementById("maxListeners").innerText = radioStats.maxListeners;
-    document.getElementById("host").innerText = radioStats.host;
+    document.getElementById("host").innerText = radioStats.host || "Autopilot"; // Ustawienie domyślnego prowadzącego
     document.getElementById("currentSong").innerText = radioStats.currentSong;
+    document.getElementById("genre").innerText = radioStats.genre; // Dodanie aktualnego gatunku
 }
+
 
 // Funkcja do pobierania danych statystycznych radia z serwera za pomocą JSONP
 function fetchRadioStats() {
