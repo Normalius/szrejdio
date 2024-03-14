@@ -226,6 +226,7 @@ nav ul li a:hover {
 .social-icons-right {
     display: flex;
     align-items: center;
+    justify-content: flex-end; /* Nowa linia: Wyrównaj ikony do prawej strony */
 }
 
 .social-icons-right .social-icon {
