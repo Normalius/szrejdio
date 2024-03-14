@@ -103,10 +103,10 @@ header {
     }
 }
 
-/* Nawigacja */
+* Nawigacja */
 nav {
     background-color: #83a400;
-    padding: 10px 0;
+    padding: 8px 0; /* Zmniejszenie paddingu górnego i dolnego */
     overflow: auto;
 }
 
@@ -120,7 +120,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 15px; /* Zmniejszenie marginesu między pozycjami menu */
 }
 
 nav ul li:last-child {
@@ -130,11 +130,11 @@ nav ul li:last-child {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 12px; /* Zmniejszenie paddingu wewnątrz pozycji menu */
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s; /* Dodanie transition do animacji */
-    font-size: 16px;
-    position: relative; /* Dodanie pozycji względnej */
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 14px; /* Zmniejszenie wielkości czcionki */
+    position: relative;
 }
 
 nav ul li a::before {
