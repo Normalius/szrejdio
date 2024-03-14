@@ -100,6 +100,7 @@ header {
 nav {
     background-color: #83a400;
     padding: 10px 0;
+    overflow: auto; /* Dodaj overflow: auto, aby zapobiec rozjechaniu się na mniejszych ekranach */
 }
 
 nav ul {
@@ -107,10 +108,17 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0; /* Zresetuj margines */
+    padding: 0; /* Zresetuj wewnętrzny margines */
+    overflow: auto; /* Dodaj overflow: auto, aby zapobiec rozjechaniu się na mniejszych ekranach */
 }
 
 nav ul li {
     margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Usuń margines z ostatniego elementu */
 }
 
 nav ul li a {
@@ -123,6 +131,19 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #659F22;
 }
+
+/* Responsywność */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center; /* Wyśrodkuj tekst na mniejszych ekranach */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
