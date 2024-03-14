@@ -1,7 +1,26 @@
-// Funkcja pobierająca i aktualizująca statystyki radia
+// Dane statystyczne radia
+const radioStats = {
+    serverTitle: "Audycja",
+    currentListeners: 0,
+    peakListeners: 0,
+    maxListeners: 50,
+    host: "",
+    currentSong: ""
+};
+
+// Funkcja do aktualizacji danych statystycznych na stronie
 function updateRadioStats() {
-    // Adres URL do pobrania danych statystycznych z serwera Shoutcast2
-    const url = "http://s3.slotex.pl:7466;
+    document.getElementById("serverTitle").innerText = radioStats.serverTitle;
+    document.getElementById("currentListeners").innerText = radioStats.currentListeners;
+    document.getElementById("peakListeners").innerText = radioStats.peakListeners;
+    document.getElementById("maxListeners").innerText = radioStats.maxListeners;
+    document.getElementById("host").innerText = radioStats.host;
+    document.getElementById("currentSong").innerText = radioStats.currentSong;
+}
+
+// Funkcja do pobierania danych statystycznych radia z serwera
+function fetchRadioStats() {
+    const url = "http://s3.slotex.pl:7466/statistics?json=1";
 
     // Wywołanie żądania HTTP GET do serwera
     fetch(url)
@@ -12,12 +31,22 @@ function updateRadioStats() {
             return response.json();
         }) // Parsowanie odpowiedzi jako JSON
         .then(data => {
-            // Aktualizacja elementów na stronie z danymi statystycznymi
-            document.getElementById("radioName").innerText = data.icestats.source.server_name;
-            document.getElementById("host").innerText = data.icestats.source.listenurl;
-            document.getElementById("listeners").innerText = data.icestats.source.listeners;
-            document.getElementById("maxListeners").innerText = data.icestats.source.listener_peak;
-            document.getElementById("currentListeners").innerText = data.icestats.source.listeners;
+            // Aktualizacja danych statystycznych radia
+            radioStats.serverTitle = data.streams[0].servertitle || "Brak danych";
+            radioStats.currentListeners = data.currentlisteners || 0;
+            radioStats.peakListeners = data.peaklisteners || 0;
+            radioStats.maxListeners = data.maxlisteners || 50;
+            radioStats.host = data.streams[0].dj || "Brak danych";
+            radioStats.currentSong = data.streams[0].songtitle || "Brak danych";
+            
+            // Aktualizacja danych na stronie
+            updateRadioStats();
         })
         .catch(error => console.error("Błąd pobierania danych:", error));
 }
+
+// Wywołanie funkcji do pobrania danych statystycznych po załadowaniu strony
+fetchRadioStats();
+
+// Odświeżanie danych co 60 sekund
+setInterval(fetchRadioStats, 60000);
