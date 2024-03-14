@@ -135,6 +135,7 @@ nav ul li a {
     transition: background-color 0.3s, transform 0.2s;
     font-size: 14px; /* Zmniejszenie wielkości czcionki */
     position: relative;
+    overflow: hidden;
 }
 
 nav ul li a::before {
@@ -147,10 +148,13 @@ nav ul li a::before {
     background-color: rgba(255, 255, 255, 0); /* Początkowy kolor przezroczysty */
     transition: background-color 0.3s ease; /* Dodanie przejścia koloru tła */
     z-index: -1; /* Umieszczenie pod tekstem */
+    transform: scale(0); /* Początkowy stan: element jest niewidoczny */
+    transform-origin: center center;
 }
 
 nav ul li a:hover::before {
     background-color: rgba(255, 255, 255, 0.2); /* Kolor tła po najechaniu */
+    transform: scale(3); /* Powiększenie elementu */
 }
 
 nav ul li a:hover {
@@ -179,6 +183,7 @@ nav ul li a:hover {
         font-size: 12px; /* Zmniejszenie wielkości czcionki dla mniejszych ekranów */
     }
 }
+
 
 
 /* Stylizacja stopki */
