@@ -160,7 +160,12 @@ nav ul li a:hover {
     nav ul li {
         margin: 10px 0;
     }
+
+    nav ul li a {
+        padding: 10px;
+    }
 }
+
 /* Responsywność */
 @media screen and (max-width: 768px) {
     nav ul {
