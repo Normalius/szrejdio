@@ -134,6 +134,17 @@ nav ul li a:hover {
     background-color: #659F22;
 }
 
+nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
 @media screen and (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -155,20 +166,6 @@ nav ul li a:hover {
     }
 }
 
-@media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        padding: 10px;
-    }
-}
 
 
 /* Stylizacja stopki */
