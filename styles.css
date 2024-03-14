@@ -297,9 +297,9 @@ nav ul li a:hover {
 
 /* Klasa dla paska i stopki */
 .bar-and-footer {
-    background-color: #084B8A;
-    color: #FFFFFF;
-    padding: 10px 0;
+    background-color: Blue Grotto;
+    color: #fff;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -307,6 +307,12 @@ nav ul li a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
+}
+
+.host-info img {
+    width: 50px;
+    height: auto;
 }
 
 .bar-and-footer p {
