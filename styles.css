@@ -305,6 +305,7 @@ nav ul li a:hover {
     align-items: center;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -315,4 +316,20 @@ nav ul li a:hover {
 .bar-and-footer img {
     width: 100px;
     height: auto;
+}
+
+/* Pasek pod stopką */
+.bottom-bar {
+    background-color: #084B8A;
+    color: #FFFFFF;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-bar p {
+    margin: 0;
 }
