@@ -191,7 +191,7 @@ nav ul li a:hover {
 
 .footer-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .footer-section {
@@ -223,15 +223,21 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
-.social-icons {
-    margin-top: 20px;
+.social-icons-right {
+    display: flex;
+    align-items: center;
 }
 
-.social-icons .social-icon {
+.social-icons-right .social-icon {
     color: #fff;
     text-decoration: none;
     font-size: 24px;
-    margin-right: 10px;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons-right .social-icon:hover {
+    color: #00aced; /* Kolor Twittera */
 }
 
 .back-to-top {
