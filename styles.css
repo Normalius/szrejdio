@@ -20,8 +20,16 @@ body {
     padding-right: 20px;
 }
 
-h2, h3 {
+h2 {
     font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     font-weight: bold;
     color: #333333;
 }
