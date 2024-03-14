@@ -51,15 +51,15 @@
         <h2>Wyślij piosenkę</h2>
         <!-- Formularz do wysyłania piosenki -->
     </div>
-</div>
-    
-<ul>
-            <li><strong>Nazwa Radia:</strong> <span id="serverTitle"></span></li>
-            <li><strong>Liczba Słuchaczy:</strong> <span id="currentListeners"></span></li>
-            <li><strong>Liczba Słuchaczy na Raz:</strong> <span id="peakListeners"></span></li>
-            <li><strong>Maxymalna Liczba Słuchaczy:</strong> <span id="maxListeners"></span></li>
-            <li><strong>Prowadzący:</strong> <span id="host"></span></li>
-            <li><strong>Aktualna Piosenka:</strong> <span id="currentSong"></span></li>
+</div>    
+        <h2>Statystyki Radia</h2>
+        <ul>
+            <li><strong>Nazwa Radia:</strong> <span id="serverTitle">...</span></li>
+            <li><strong>Liczba Słuchaczy:</strong> <span id="currentListeners">...</span></li>
+            <li><strong>Liczba Słuchaczy na Raz:</strong> <span id="peakListeners">...</span></li>
+            <li><strong>Maxymalna Liczba Słuchaczy:</strong> <span id="maxListeners">...</span></li>
+            <li><strong>Prowadzący:</strong> <span id="host">...</span></li>
+            <li><strong>Aktualna Piosenka:</strong> <span id="currentSong">...</span></li>
         </ul>
     </div>
 
@@ -98,37 +98,6 @@
         <p class="footer-text">Powered by: Nazwa Silnika v1.0</p>
     </div>
 </footer>
-    <script>
-        // Funkcja do pobierania danych statystycznych radia
-        function fetchRadioStats() {
-            // Adres URL do pobrania danych statystycznych z serwera Shoutcast
-            const url = "http://s3.slotex.pl:7466/index.html?sid=1";
-
-            // Wywołanie żądania HTTP GET do serwera
-            fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            }) // Parsowanie odpowiedzi jako JSON
-            .then(data => {
-                // Aktualizacja danych statystycznych na stronie
-                document.getElementById("serverTitle").innerText = data.streams[0].servertitle || "Brak danych";
-                document.getElementById("currentListeners").innerText = data.currentlisteners || 0;
-                document.getElementById("peakListeners").innerText = data.peaklisteners || 0;
-                document.getElementById("maxListeners").innerText = data.maxlisteners || 50;
-                document.getElementById("host").innerText = data.streams[0].dj || "Brak danych";
-                document.getElementById("currentSong").innerText = data.streams[0].songtitle || "Brak danych";
-            })
-            .catch(error => console.error("Błąd pobierania danych:", error));
-        }
-
-        // Wywołanie funkcji do pobrania danych statystycznych po załadowaniu strony
-        fetchRadioStats();
-
-        // Odświeżanie danych co 60 sekund
-        setInterval(fetchRadioStats, 60000);
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
