@@ -7,25 +7,23 @@ body, h1, h2, h3, p, ul, li {
 body {
     font-family: "Verdana", sans-serif;
     background-color: #f8f8f8;
-    margin: 0; /* Usunięcie marginesu górnego */
+    margin: 0;
     padding: 0;
     font-size: 16px;
     line-height: 1.6;
-    margin-top: 20px; /* Dodanie marginesu górnego */
-    margin-bottom: 20px; /* Dodanie marginesu dolnego */
-    margin-left: auto; /* Dodanie marginesu lewego */
-    margin-right: auto; /* Dodanie marginesu prawego */
-    max-width: 1200px; /* Ustawienie maksymalnej szerokości strony */
-    padding-left: 20px; /* Dodanie wewnętrznego marginesu z lewej strony */
-    padding-right: 20px; /* Dodanie wewnętrznego marginesu z prawej strony */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* Reszta stylów CSS */
 
 /* Header */
 header {
@@ -96,17 +94,10 @@ header {
     background-color: #4F7F16;
 }
 
-/* Ukrycie przycisków akcji na mniejszych ekranach */
-@media screen and (max-width: 768px) {
-    .actions {
-        display: none;
-    }
-}
-
 /* Nawigacja */
 nav {
     background-color: #83a400;
-    padding: 8px 0; /* Zmniejszenie paddingu górnego i dolnego */
+    padding: 8px 0;
     overflow: auto;
 }
 
@@ -120,7 +111,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 15px; /* Zmniejszenie marginesu między pozycjami menu */
+    margin-right: 15px;
 }
 
 nav ul li:last-child {
@@ -130,10 +121,10 @@ nav ul li:last-child {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 8px 12px; /* Zmniejszenie paddingu wewnątrz pozycji menu */
+    padding: 8px 12px;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
-    font-size: 14px; /* Zmniejszenie wielkości czcionki */
+    font-size: 14px;
     position: relative;
 }
 
@@ -144,22 +135,26 @@ nav ul li a::before {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0); /* Początkowy kolor przezroczysty */
-    transition: background-color 0.3s ease; /* Dodanie przejścia koloru tła */
-    z-index: -1; /* Umieszczenie pod tekstem */
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease;
+    z-index: -1;
 }
 
 nav ul li a:hover::before {
-    background-color: rgba(255, 255, 255, 0.2); /* Kolor tła po najechaniu */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 nav ul li a:hover {
     background-color: #659F22;
-    transform: translateY(-2px); /* Podniesienie pozycji przy najechaniu kursorem */
+    transform: translateY(-2px);
 }
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
+    .actions {
+        display: none;
+    }
+
     nav ul {
         flex-direction: column;
         text-align: center;
@@ -176,18 +171,17 @@ nav ul li a:hover {
 
 @media screen and (max-width: 480px) {
     nav ul li a {
-        font-size: 12px; /* Zmniejszenie wielkości czcionki dla mniejszych ekranów */
+        font-size: 12px;
     }
 }
 
-
 .footer {
-    background-color: #f0f0f0; /* Kolor szary */
-    color: #333; /* Kolor tekstu */
+    background-color: #f0f0f0;
+    color: #333;
     padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #ccc; /* Dodajemy delikatną górną krawędź */
-    border-radius: 10px; /* Zaokrąglone krawędzie */
+    border-top: 1px solid #ccc;
+    border-radius: 10px;
 }
 
 .footer-container {
@@ -203,7 +197,7 @@ nav ul li a:hover {
 }
 
 .footer-links .footer-link {
-    color: #333; /* Kolor linków */
+    color: #333;
     text-decoration: none;
     margin-right: 20px;
     font-size: 14px;
@@ -211,11 +205,11 @@ nav ul li a:hover {
 }
 
 .footer-links .footer-link:hover {
-    color: #659F22; /* Kolor linków po najechaniu */
+    color: #659F22;
 }
 
 .footer-social .social-icon {
-    color: #333; /* Kolor ikon */
+    color: #333;
     text-decoration: none;
     margin-right: 10px;
     font-size: 18px;
@@ -223,7 +217,7 @@ nav ul li a:hover {
 }
 
 .footer-social .social-icon:hover {
-    color: #659F22; /* Kolor ikon po najechaniu */
+    color: #659F22;
 }
 
 .footer-info {
@@ -234,90 +228,15 @@ nav ul li a:hover {
     font-size: 12px;
 }
 
-
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    overflow: auto;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 5px;
-    max-width: 600px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* Usuń powtórzone style dla radio-stats */
-.radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-}
-
-.radio-stats h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.radio-stats ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.radio-stats li {
-    margin-bottom: 10px;
-}
-
-.radio-stats li span {
-    font-weight: bold;
-}
-
-.radio-stats li:nth-child(odd) {
-    background-color: #fff;
-}
-
-.radio-stats li:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Dodaj te reguły CSS do istniejącego pliku styles.css */
+/* Stylizacja sekcji aktualności */
 .news-section {
     max-width: 800px;
     margin: 20px auto 40px;
-    text-align: left; /* Zmiana na wyśrodkowanie tekstu do lewej strony */
+    text-align: center;
+    border: 2px solid #ccc;
     border-radius: 10px;
-    overflow: hidden; /* Ukrycie elementów wychodzących poza obszar sekcji */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .news-list {
@@ -327,13 +246,6 @@ nav ul li a:hover {
 
 .news-list li {
     margin-bottom: 20px;
-    padding: 20px; /* Dodanie wewnętrznego odstępu */
-    background-color: #f9f9f9; /* Kolor tła */
-    border-bottom: 1px solid #ddd; /* Linia oddzielająca */
-}
-
-.news-list li:last-child {
-    border-bottom: none; /* Usunięcie linii oddzielającej dla ostatniego elementu */
 }
 
 .news-list h3 {
@@ -344,46 +256,4 @@ nav ul li a:hover {
 .news-list p {
     font-size: 16px;
     color: #333;
-    line-height: 1.5; /* Dodanie odstępu między liniami */
-}
-
-
-
-/* Stylizacja sekcji statystyk radiowych */
-#radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-}
-
-#radio-stats h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-#radio-stats ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#radio-stats li {
-    margin-bottom: 10px;
-}
-
-#radio-stats li span {
-    font-weight: bold;
-}
-
-#radio-stats li:nth-child(odd) {
-    background-color: #fff;
-}
-
-#radio-stats li:nth-child(even) {
-    background-color: #f2f2f2;
 }
