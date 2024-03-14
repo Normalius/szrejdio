@@ -181,7 +181,8 @@ nav ul li a:hover {
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid #ccc;
-    border-radius: 0; /* Usunięcie zaokrąglenia narożników */
+    border-radius: 0;
+    width: 100%; /* Rozciągnij stopkę na całą szerokość strony */
 }
 
 .footer-container {
@@ -229,11 +230,12 @@ nav ul li a:hover {
 }
 
 .footer-bar {
-    background-color: #0070cd; /* Blue Grotto */
-    color: #fff; /* Biały tekst na ciemnym tle */
+    background-color: #0070cd;
+    color: #fff;
     padding: 10px 0;
     border-top: 1px solid #ccc;
-    border-radius: 0; /* Usunięcie zaokrąglenia narożników */
+    border-radius: 0;
+    width: 100%; /* Rozciągnij pasek na całą szerokość strony */
 }
 
 .footer-container {
@@ -242,6 +244,7 @@ nav ul li a:hover {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%; /* Rozciągnij kontener na całą szerokość strony */
 }
 
 .footer-copyright p {
