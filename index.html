@@ -99,12 +99,18 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
-        <script>
-        // Funkcja pobierająca statystyki radia z serwera Shoutcast 2
+    <script>
+        // Pobranie elementów HTML
+        const radioNameElement = document.getElementById("radioName");
+        const hostElement = document.getElementById("host");
+        const listenersElement = document.getElementById("listeners");
+        const maxListenersElement = document.getElementById("maxListeners");
+        const currentListenersElement = document.getElementById("currentListeners");
+
+        // Funkcja pobierająca dane statystyczne radia z serwera Slotex
         function fetchRadioStats() {
-            // Adres URL do pobrania danych statystycznych z serwera Shoutcast 2
-            const url = "http://s3.slotex.pl:7466/statistics?json=1";
+            // Adres URL do pobrania danych statystycznych z serwera Slotex
+            const url = "http://s3.slotex.pl:7466/statistics";
 
             // Wywołanie żądania HTTP GET do serwera
             fetch(url)
@@ -116,11 +122,11 @@
                 }) // Parsowanie odpowiedzi jako JSON
                 .then(data => {
                     // Aktualizacja elementów na stronie z danymi statystycznymi
-                    document.getElementById("radioName").innerText = data.icestats.source.server_name;
-                    document.getElementById("host").innerText = data.icestats.source.dj;
-                    document.getElementById("listeners").innerText = data.icestats.source.listeners;
-                    document.getElementById("maxListeners").innerText = data.icestats.source.max_listeners;
-                    document.getElementById("currentListeners").innerText = data.icestats.source.listeners;
+                    radioNameElement.innerText = data.icestats.source.server_name;
+                    hostElement.innerText = data.icestats.source.dj;
+                    listenersElement.innerText = data.icestats.source.listeners;
+                    maxListenersElement.innerText = data.icestats.source.max_listeners;
+                    currentListenersElement.innerText = data.icestats.source.listeners;
                 })
                 .catch(error => console.error("Błąd pobierania danych:", error));
         }
@@ -131,5 +137,6 @@
         // Odświeżanie danych co 60 sekund
         setInterval(fetchRadioStats, 60000);
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
