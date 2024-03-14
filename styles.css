@@ -7,8 +7,6 @@ body, h1, h2, h3, p, ul, li {
 body {
     font-family: "Verdana", sans-serif;
     background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
     font-size: 16px;
     line-height: 1.6;
     margin-top: 20px;
@@ -181,8 +179,7 @@ nav ul li a:hover {
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid #ccc;
-    border-radius: 0;
-    width: 100%; /* Rozciągnij stopkę na całą szerokość strony */
+    border-radius: 10px;
 }
 
 .footer-container {
@@ -229,66 +226,15 @@ nav ul li a:hover {
     font-size: 12px;
 }
 
-.footer-bar {
-    background-color: #0070cd;
-    color: #fff;
-    padding: 10px 0;
-    border-top: 1px solid #ccc;
-    border-radius: 0;
-    width: 100%; /* Rozciągnij pasek na całą szerokość strony */
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%; /* Rozciągnij kontener na całą szerokość strony */
-}
-
-.footer-copyright p {
-    font-size: 12px;
-    margin: 0; /* Usunięcie marginesów */
-}
-
-.footer-host {
-    display: flex;
-    align-items: center;
-    margin: 0; /* Usunięcie marginesów */
-}
-
-.footer-host p {
-    font-size: 12px;
-    margin-right: 10px;
-    margin: 0; /* Usunięcie marginesów */
-}
-
-.footer-host img {
-    width: 40px; /* Dostosuj rozmiar obrazu według potrzeb */
-    height: auto;
-    margin: 0; /* Usunięcie marginesów */
-}
-
-
-
 /* Stylizacja sekcji aktualności */
 .news-section {
     max-width: 800px;
     margin: 20px auto 40px;
-    text-align: left;
-    border: 1px solid #ddd;
+    text-align: center;
+    border: 2px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff; /* Tło sekcji */
-}
-
-.news-section h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .news-list {
@@ -302,16 +248,12 @@ nav ul li a:hover {
 
 .news-list h3 {
     font-size: 20px;
-    font-weight: bold;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .news-list p {
     font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    color: #333;
 }
 
 /* Stylizacja sekcji statystyk radiowych */
@@ -351,4 +293,26 @@ nav ul li a:hover {
 
 #radio-stats li:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+/* Klasa dla paska i stopki */
+.bar-and-footer {
+    background-color: #084B8A;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bar-and-footer p {
+    margin: 0;
+}
+
+.bar-and-footer img {
+    width: 100px;
+    height: auto;
 }
