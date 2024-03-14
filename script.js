@@ -20,7 +20,7 @@ function updateRadioStats() {
 
 // Funkcja do pobierania danych statystycznych radia z serwera
 function fetchRadioStats() {
-    const url = "http://s3.slotex.pl:7466/statistics?json=1";
+    const url = "https://s3.slotex.pl:7466/statistics?json=1";
 
     // Wywołanie żądania HTTP GET do serwera
     fetch(url)
