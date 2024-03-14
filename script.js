@@ -4,8 +4,9 @@ const radioStats = {
     currentListeners: 0,
     peakListeners: 0,
     maxListeners: 50,
-    host: "",
-    currentSong: ""
+    host: "", // Aktualni prowadzący
+    currentSong: "", // Aktualna piosenka
+    genre: "" // Gatunek audycji
 };
 
 // Funkcja do aktualizacji danych statystycznych na stronie
@@ -16,6 +17,7 @@ function updateRadioStats() {
     document.getElementById("maxListeners").innerText = radioStats.maxListeners;
     document.getElementById("host").innerText = radioStats.host;
     document.getElementById("currentSong").innerText = radioStats.currentSong;
+    document.getElementById("genre").innerText = radioStats.genre; // Dodanie aktualnego gatunku
 }
 
 // Funkcja do pobierania danych statystycznych radia z serwera za pomocą JSONP
@@ -31,8 +33,9 @@ function fetchRadioStats() {
         radioStats.currentListeners = data.currentlisteners || 0;
         radioStats.peakListeners = data.peaklisteners || 0;
         radioStats.maxListeners = data.maxlisteners || 50;
-        radioStats.host = data.streams[0].dj || "Brak danych";
+        radioStats.host = data.streams[0]['icy-name'] || "Brak danych"; // Pobranie aktualnego prowadzącego
         radioStats.currentSong = data.streams[0].songtitle || "Brak danych";
+        radioStats.genre = data.streams[0]['icy-genre'] || "Brak danych"; // Pobranie gatunku audycji
         
         // Aktualizacja danych na stronie
         updateRadioStats();
