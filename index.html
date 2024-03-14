@@ -98,45 +98,6 @@
         <p class="footer-text">Powered by: Nazwa Silnika v1.0</p>
     </div>
 </footer>
-
-    <script>
-        // Pobranie elementów HTML
-        const radioNameElement = document.getElementById("radioName");
-        const hostElement = document.getElementById("host");
-        const listenersElement = document.getElementById("listeners");
-        const maxListenersElement = document.getElementById("maxListeners");
-        const currentListenersElement = document.getElementById("currentListeners");
-
-        // Funkcja pobierająca dane statystyczne radia z serwera Slotex
-        function fetchRadioStats() {
-            // Adres URL do pobrania danych statystycznych z serwera Slotex
-            const url = "http://s3.slotex.pl:7466/statistics";
-
-            // Wywołanie żądania HTTP GET do serwera
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                }) // Parsowanie odpowiedzi jako JSON
-                .then(data => {
-                    // Aktualizacja elementów na stronie z danymi statystycznymi
-                    radioNameElement.innerText = data.icestats.source.server_name;
-                    hostElement.innerText = data.icestats.source.dj;
-                    listenersElement.innerText = data.icestats.source.listeners;
-                    maxListenersElement.innerText = data.icestats.source.max_listeners;
-                    currentListenersElement.innerText = data.icestats.source.listeners;
-                })
-                .catch(error => console.error("Błąd pobierania danych:", error));
-        }
-
-        // Wywołanie funkcji do pobrania statystyk po załadowaniu strony
-        fetchRadioStats();
-
-        // Odświeżanie danych co 60 sekund
-        setInterval(fetchRadioStats, 60000);
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
