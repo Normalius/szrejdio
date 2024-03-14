@@ -228,7 +228,7 @@ nav ul li a:hover {
 .social-icons-right {
     display: flex;
     align-items: center;
-    justify-content: center; /* Nowa linia: Wyrównaj ikony mediów społecznościowych do środka */
+    justify-content: flex-end; /* Nowa linia: Wyrównaj ikony mediów społecznościowych do prawej strony */
     margin-top: 20px; /* Nowa linia: Dodaj odstęp między sekcją stopki a ikonami */
 }
 
