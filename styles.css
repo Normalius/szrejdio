@@ -181,12 +181,13 @@ nav ul li a:hover {
 }
 
 
-/* Stylizacja stopki */
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #f0f0f0; /* Kolor szary */
+    color: #333; /* Kolor tekstu */
     padding: 20px 0;
     text-align: center;
+    border-top: 1px solid #ccc; /* Dodajemy delikatną górną krawędź */
+    border-radius: 10px; /* Zaokrąglone krawędzie */
 }
 
 .footer-container {
@@ -202,7 +203,7 @@ nav ul li a:hover {
 }
 
 .footer-links .footer-link {
-    color: #fff;
+    color: #333; /* Kolor linków */
     text-decoration: none;
     margin-right: 20px;
     font-size: 14px;
@@ -210,11 +211,11 @@ nav ul li a:hover {
 }
 
 .footer-links .footer-link:hover {
-    color: #659F22;
+    color: #659F22; /* Kolor linków po najechaniu */
 }
 
 .footer-social .social-icon {
-    color: #fff;
+    color: #333; /* Kolor ikon */
     text-decoration: none;
     margin-right: 10px;
     font-size: 18px;
@@ -222,7 +223,7 @@ nav ul li a:hover {
 }
 
 .footer-social .social-icon:hover {
-    color: #659F22;
+    color: #659F22; /* Kolor ikon po najechaniu */
 }
 
 .footer-info {
@@ -232,6 +233,7 @@ nav ul li a:hover {
 .footer-text {
     font-size: 12px;
 }
+
 
 
 /* Modal */
