@@ -181,7 +181,7 @@ nav ul li a:hover {
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 0; /* Usunięcie zaokrąglenia narożników */
 }
 
 .footer-container {
@@ -233,7 +233,7 @@ nav ul li a:hover {
     color: #fff; /* Biały tekst na ciemnym tle */
     padding: 10px 0;
     border-top: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 0; /* Usunięcie zaokrąglenia narożników */
 }
 
 .footer-container {
@@ -246,21 +246,25 @@ nav ul li a:hover {
 
 .footer-copyright p {
     font-size: 12px;
+    margin: 0; /* Usunięcie marginesów */
 }
 
 .footer-host {
     display: flex;
     align-items: center;
+    margin: 0; /* Usunięcie marginesów */
 }
 
 .footer-host p {
     font-size: 12px;
     margin-right: 10px;
+    margin: 0; /* Usunięcie marginesów */
 }
 
 .footer-host img {
     width: 40px; /* Dostosuj rozmiar obrazu według potrzeb */
     height: auto;
+    margin: 0; /* Usunięcie marginesów */
 }
 
 
