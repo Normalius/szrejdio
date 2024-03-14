@@ -137,36 +137,30 @@ nav ul li a:hover {
 
 /* Stylizacja stopki */
 footer {
-    background-color: #eee;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #333; /* Kolor tła stopki */
+    color: #fff; /* Kolor tekstu w stopce */
+    padding: 20px 0; /* Wewnętrzny odstęp stopki */
+    text-align: center; /* Wyśrodkowanie tekstu w stopce */
 }
 
 .footer-links a {
-    color: #333;
-    text-decoration: none;
-    margin-right: 20px;
+    color: #fff; /* Kolor hiperłączy w stopce */
+    text-decoration: none; /* Usunięcie podkreślenia z hiperłączy */
+    margin: 0 10px; /* Odstęp między hiperłączami */
 }
 
-.footer-info p {
-    margin-right: 20px;
+.footer-links a:hover {
+    text-decoration: underline; /* Podkreślenie hiperłączy po najechaniu myszką */
 }
 
 .social-media a {
-    color: #333;
-    text-decoration: none;
-    margin-right: 10px;
+    color: #fff; /* Kolor ikon mediów społecznościowych */
+    text-decoration: none; /* Usunięcie podkreślenia z ikon */
+    margin: 0 10px; /* Odstęp między ikonami */
 }
 
-.social-media a i {
-    font-size: 24px;
-    transition: color 0.3s ease;
-}
-
-.social-media a:hover i {
-    color: #659F22;
+.social-media a:hover {
+    color: #ff0; /* Zmiana koloru ikony po najechaniu myszką */
 }
 
 /* Modal */
