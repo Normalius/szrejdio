@@ -20,10 +20,11 @@ function updateRadioStats() {
 
 // Funkcja do pobierania danych statystycznych radia z serwera
 function fetchRadioStats() {
-    const url = "https://s3.slotex.pl:7466/index.html?sid=1";
+    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+    const shoutcastUrl = 'https://s3.slotex.pl:7466/index.html?sid=1'; // URL serwera Shoutcast
 
-    // Wywołanie żądania HTTP GET do serwera
-    fetch(url)
+    // Wywołanie żądania HTTP GET za pośrednictwem CORS Anywhere
+    fetch(corsAnywhereUrl + shoutcastUrl)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
