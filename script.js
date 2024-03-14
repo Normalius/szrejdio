@@ -43,7 +43,11 @@ function fetchRadioStats() {
             // Aktualizacja danych na stronie
             updateRadioStats();
         })
-        .catch(error => console.error("Błąd pobierania danych:", error));
+        .catch(error => {
+            console.error("Błąd pobierania danych:", error);
+            // Jeśli wystąpił błąd, spróbuj ponownie za 1 minutę
+            setTimeout(fetchRadioStats, 60000);
+        });
 }
 
 // Wywołanie funkcji do pobrania danych statystycznych po załadowaniu strony
