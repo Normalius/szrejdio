@@ -339,19 +339,19 @@ li span#currentSong {
 }
 
 /* Nowe style dla odtwarzacza audio */
-.audio-player {
+#radio-player {
     margin-top: 20px;
     text-align: center;
 }
 
-.audio-player audio {
+#radio-player audio {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
     display: block;
 }
 
-.audio-player button {
+#radio-player button {
     background-color: #659F22;
     color: #fff;
     border: none;
@@ -365,6 +365,6 @@ li span#currentSong {
     transition: background-color 0.3s ease;
 }
 
-.audio-player button:hover {
+#radio-player button:hover {
     background-color: #4F7F16;
 }
