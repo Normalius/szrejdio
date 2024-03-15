@@ -69,15 +69,6 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
-// Funkcja inicjalizująca odtwarzacz audio
-function initAudioPlayer() {
-    const audioPlayer = document.getElementById('audioPlayer');
-    audioPlayer.src = 'https://s3.slotex.pl/shoutcast/7466/stream?sid=1'; // Ustawiamy źródło strumienia audio
-}
-
-// Wywołujemy funkcję inicjalizującą odtwarzacz audio
-initAudioPlayer();
-
 // Pobierz pasek
 const topBar = document.getElementById('top-bar');
 
