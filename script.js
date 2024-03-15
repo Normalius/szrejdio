@@ -76,4 +76,18 @@ window.addEventListener('scroll', function() {
     } else {
         topBar.classList.remove('transparent'); // Usuń klasę transparent
     }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const radioPlayer = document.getElementById('radioPlayer');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', function() {
+        if (radioPlayer.paused) {
+            radioPlayer.play();
+            playButton.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        } else {
+            radioPlayer.pause();
+            playButton.innerHTML = '<i class="fas fa-play"></i> Play';
+        }
+    });
 });
