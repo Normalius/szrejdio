@@ -63,19 +63,20 @@ body {
     transition: background-color 0.3s ease;
     margin-right: 1010px;
     position: relative;
+    overflow: hidden; /* Dodaj overflow do ukrycia animacji */
 }
 
 #top-bar button#play::before {
     content: '';
     position: absolute;
-    border: 4px solid #fff; /* Zwiększenie grubości obramowania */
+    border: 2px solid #fff;
     border-radius: 50%;
-    width: 60px; /* Zwiększenie średnicy koła */
-    height: 60px; /* Zwiększenie średnicy koła */
+    width: 34px;
+    height: 34px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: spin 3s linear infinite, chase 6s linear infinite; /* Dodanie animacji spirali */
+    animation: spin 3s linear infinite, spiral 6s linear infinite; /* Dodaj animację spirali */
 }
 
 @keyframes spin {
@@ -87,14 +88,14 @@ body {
     }
 }
 
-@keyframes chase {
+@keyframes spiral {
     0% {
-        width: 60px;
-        height: 60px;
+        border-radius: 50%;
+        transform: rotate(0deg) translate(150px) rotate(0deg);
     }
     100% {
-        width: 80%; /* Ustawienie 80% średnicy koła na koniec animacji */
-        height: 80%; /* Ustawienie 80% średnicy koła na koniec animacji */
+        border-radius: 0%;
+        transform: rotate(360deg) translate(150px) rotate(-360deg);
     }
 }
 
