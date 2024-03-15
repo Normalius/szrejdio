@@ -69,15 +69,31 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
-// Funkcja do przełączania odtwarzania radia
-function togglePlay() {
-    var audio = document.getElementById('radioPlayer'); // Pobierz element audio
-    if (audio.paused) {
-        audio.play(); // Jeśli odtwarzanie jest zatrzymane, włącz odtwarzanie
-    } else {
-        audio.pause(); // W przeciwnym razie zatrzymaj odtwarzanie
+// Logika odtwarzania audio
+const audio = new Audio('https://s3.slotex.pl:7466/stream');
+let isPlaying = false;
+
+document.getElementById('play').addEventListener('click', function() {
+    if (!isPlaying) {
+        audio.play();
+        isPlaying = true;
     }
-}
+});
+
+document.getElementById('pause').addEventListener('click', function() {
+    if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+    }
+});
+
+document.getElementById('stop').addEventListener('click', function() {
+    if (isPlaying) {
+        audio.pause();
+        audio.currentTime = 0;
+        isPlaying = false;
+    }
+});
 
 window.addEventListener('scroll', function() {
     var topBar = document.getElementById('top-bar');
