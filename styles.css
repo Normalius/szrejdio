@@ -50,8 +50,7 @@ body {
 }
 
 /* Stylizacja przycisku odtwarzania */
-#top-bar button#play,
-#top-bar button#stop {
+#top-bar button#play {
     background-color: transparent; /* Usuń tło */
     color: #fff;
     border: none;
@@ -62,17 +61,8 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    position: relative;
-}
+    margin-right: 1010px;
 
-/* Animacja kółka wokół przycisku */
-@keyframes rotateCircle {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 /* Drugi header */
@@ -376,30 +366,4 @@ li span#peakListeners,
 li span#maxListeners,
 li span#currentSong {
     color: #659F22; /* Kolor dla wartości statystyk */
-}
-
-/* Animacja kółka wokół przycisków play i stop */
-#top-bar button#play::after,
-#top-bar button#stop::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    box-sizing: border-box;
-    animation: rotateCircle 2s linear infinite; /* Dodaj animację obrotu */
-}
-
-/* Keyframes dla animacji obrotu */
-@keyframes rotateCircle {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg); /* Początkowa pozycja */
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg); /* Pełny obrót */
-    }
 }
