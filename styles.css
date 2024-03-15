@@ -78,7 +78,7 @@ header {
 }
 
 .logo {
-    margin-left: auto; /* Przesunięcie loga na koniec lewego kierunku */
+    margin-right: auto; /* Dodanie automatycznego marginesu po prawej stronie logo */
 }
 
 .logo img {
@@ -87,10 +87,12 @@ header {
 }
 
 .actions {
-    margin-left: auto; /* Przesunięcie przycisków na koniec prawego kierunku */
+    display: flex;
+    align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
 }
 
 .actions button {
+    margin-left: 10px; /* Dodanie odstępu między przyciskami */
     background-color: #659F22;
     color: #fff;
     border: none;
@@ -106,6 +108,7 @@ header {
 .actions button:hover {
     background-color: #4F7F16;
 }
+
 
 /* Nawigacja */
 nav {
