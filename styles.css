@@ -48,25 +48,12 @@ body {
     margin-top: 40px; /* Dodajemy margines na górze strony, aby treść nie była zasłaniana przez pasek */
 }
 
-
-pewnij się, że plik script.js jest dołączony do Twojego pliku HTML w sekcji <script> przed zamknięciem tagu </body>. Tak będzie prawidłowo załączony i wykonywany w momencie, gdy zawartość strony zostanie całkowicie załadowana.
-User
-a styles.css ?
-ChatGPT
-
-Jeśli chcesz dodać style CSS dla playera radiowego, możesz również umieścić je w pliku styles.css. W tym pliku możesz zdefiniować odpowiednie style dla przycisku odtwarzania i innych elementów związanych z playerem radiowym. Oto przykładowy kod CSS dla stylizacji przycisku play:
-
-css
-
-/* styles.css */
-
 /* Stylizacja przycisku odtwarzania */
-#playButton {
+#top-bar button#play {
     background-color: #659F22;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin: 0 5px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -75,7 +62,7 @@ css
     transition: background-color 0.3s ease;
 }
 
-#playButton:hover {
+#top-bar button#play:hover {
     background-color: #4F7F16;
 }
 
