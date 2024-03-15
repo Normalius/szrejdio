@@ -66,6 +66,11 @@ body {
 #top-bar button#play:hover {
     background-color: #4F7F16;
 }
+/* Przyciski akcji w pasku */
+#top-bar .actions {
+    display: flex;
+    align-items: center;
+}
 
 /* Header */
 header {
@@ -77,22 +82,12 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-.logo {
-    margin-right: auto; /* Dodanie automatycznego marginesu po prawej stronie logo */
-}
-
-.logo img {
-    width: 150px; /* Zmniejszenie szerokości logo */
-    height: auto;
-}
-
-/* Przyciski akcji w nagłówku */
-.header-actions {
+.actions {
     display: flex;
-    align-items: center;
+    align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
 }
 
-.header-actions .header-action-button {
+.actions button {
     background-color: #659F22;
     color: #fff;
     border: none;
@@ -105,8 +100,18 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.header-actions .header-action-button:hover {
+.actions button:hover {
     background-color: #4F7F16;
+}
+
+.logo img {
+    width: 150px; /* Zmniejszenie szerokości logo */
+    height: auto;
+    order: 2; /* Zmiana kolejności elementów */
+}
+
+.actions {
+    order: 1; /* Zmiana kolejności elementów */
 }
 
 /* Nawigacja */
@@ -166,7 +171,7 @@ nav ul li a:hover {
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
-    .header-actions {
+    .actions {
         display: none;
     }
 
