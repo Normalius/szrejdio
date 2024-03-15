@@ -65,10 +65,6 @@ body {
 
 }
 
-#top-bar button#play:hover {
-    background-color: #4F7F16;
-}
-
 /* Drugi header */
 #sub-header {
     background-color: #fff;
