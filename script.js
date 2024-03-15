@@ -37,14 +37,20 @@ function fetchRadioStats() {
     // Tworzymy funkcję callback, która zostanie wywołana po otrzymaniu danych
     const callbackName = 'handleRadioStats';
     window[callbackName] = function(data) {
-        // Aktualizacja danych statystycznych radia
-        if (data && data.streams && data.streams.length > 0) {
-            radioStats.serverTitle = data.streams[0].servertitle || "Brak danych";
-            radioStats.currentListeners = data.currentlisteners || 0;
-            radioStats.peakListeners = data.peaklisteners || 0;
-            radioStats.maxListeners = data.maxlisteners || 50;
-            radioStats.host = data.streams[0].dj || "";
-            radioStats.currentSong = data.streams[0].songtitle || "Brak danych";
+        try {
+            // Aktualizacja danych statystycznych radia
+            if (data && data.streams && data.streams.length > 0) {
+                radioStats.serverTitle = data.streams[0].servertitle || "Brak danych";
+                radioStats.currentListeners = data.currentlisteners || 0;
+                radioStats.peakListeners = data.peaklisteners || 0;
+                radioStats.maxListeners = data.maxlisteners || 50;
+                radioStats.host = data.streams[0].dj || "";
+                radioStats.currentSong = data.streams[0].songtitle || "Brak danych";
+            } else {
+                throw new Error("Nieprawidłowe dane otrzymane z serwera.");
+            }
+        } catch (error) {
+            console.error("Wystąpił błąd podczas aktualizacji danych:", error.message);
         }
         
         // Aktualizacja danych na stronie
