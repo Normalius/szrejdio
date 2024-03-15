@@ -66,11 +66,6 @@ body {
 #top-bar button#play:hover {
     background-color: #4F7F16;
 }
-/* Przyciski akcji w pasku */
-#top-bar .actions {
-    display: flex;
-    align-items: center;
-}
 
 /* Header */
 header {
@@ -82,12 +77,18 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-.actions {
-    display: flex;
-    align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
+.logo img {
+    width: 150px; /* Zmniejszenie szerokości logo */
+    height: auto;
+    order: 1; /* Zmiana kolejności elementów */
 }
 
-.actions button {
+.support-contact {
+    order: 2; /* Zmiana kolejności elementów */
+    margin-right: 20px; /* Dodatkowy margines po prawej stronie */
+}
+
+.support-contact .action-button {
     background-color: #659F22;
     color: #fff;
     border: none;
@@ -98,20 +99,11 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
+    margin-left: 10px; /* Dodatkowy margines między przyciskami */
 }
 
-.actions button:hover {
+.support-contact .action-button:hover {
     background-color: #4F7F16;
-}
-
-.logo img {
-    width: 150px; /* Zmniejszenie szerokości logo */
-    height: auto;
-    order: 2; /* Zmiana kolejności elementów */
-}
-
-.actions {
-    order: 1; /* Zmiana kolejności elementów */
 }
 
 /* Nawigacja */
@@ -194,6 +186,7 @@ nav ul li a:hover {
         font-size: 12px;
     }
 }
+
 
 .footer {
     background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
