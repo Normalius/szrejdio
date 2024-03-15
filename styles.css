@@ -54,6 +54,12 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* Animacja obracającego się kółka */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
     background-color: transparent; /* Usuń tło */
@@ -69,6 +75,26 @@ body {
     margin-right: 1010px;
     animation: spin 2s linear infinite; /* Dodanie animacji */
 }
+
+#play,
+#stop {
+    position: relative; /* Ustawienie pozycji względnej, aby umieścić kółko */
+
+}
+
+#play::before,
+#stop::before {
+    content: "";
+    position: absolute;
+    border: 3px solid transparent;
+    border-top-color: #ffffff; /* Kolor obracającego się kółka */
+    border-radius: 50%; /* Ustawienie kształtu na koło */
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite; /* Dodanie animacji obracającego się kółka */
 
 }
 
