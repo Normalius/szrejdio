@@ -39,6 +39,7 @@ h2, h3 {
     width: 100%;
     z-index: 1000; /* Zapewnia, że pasek będzie na wierzchu */
     transition: top 0.3s ease; /* Dodatkowa animacja */
+    margin-bottom: 20px; /* Dodajemy większy odstęp dolny */
 }
 
 #top-bar.transparent {
