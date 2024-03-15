@@ -49,40 +49,48 @@ body {
     margin-top: 40px;
 }
 
-/* Dodaj animację dla przycisków play i stop */
-.button-with-icon {
-    position: relative;
-}
+/* Pozostała część stylów pozostaje bez zmian */
 
-/* Dodane style dla koła */
-.circle-wrapper {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 50px auto;
-}
-
+/* Nowe style dla animacji koła */
 .circle {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg); /* Początkowe przesunięcie o -90 stopni aby zacząć od góry */
-    width: 100px;
-    height: 100px;
-    border: 10px solid transparent; /* Grubość obramowania */
-    border-top-color: #ffcc00; /* Kolor obramowania */
-    border-radius: 50%; /* Koło */
-    animation: spin 2s linear infinite; /* Animacja obracania się koła */
+    width: 50px; /* Wielkość koła */
+    height: 50px; /* Wielkość koła */
+    background-color: transparent; /* Przezroczyste tło */
+    border: 4px solid #fff; /* Grubość obramowania */
+    border-radius: 50%; /* Okrągłe kształty */
+    animation: spin 2s linear infinite, chase 2s linear infinite; /* Animacja obrotu i "gonienia" */
 }
 
 @keyframes spin {
-    0% {
-        transform: translate(-50%, -50%) rotate(-90deg); /* Początkowe przesunięcie o -90 stopni aby zacząć od góry */
+    from {
+        transform: rotate(0deg); /* Początkowy obrót */
     }
-    100% {
-        transform: translate(-50%, -50%) rotate(270deg); /* Obrót koła o 270 stopni (pełne koło) */
+    to {
+        transform: rotate(360deg); /* Końcowy obrót */
     }
 }
+
+@keyframes chase {
+    0% {
+        border-left-color: #ff0000; /* Początkowy kolor "goniącej" części */
+    }
+    25% {
+        border-left-color: #00ff00; /* Kolor w połowie animacji */
+    }
+    50% {
+        border-left-color: #0000ff; /* Kolor w połowie animacji */
+    }
+    75% {
+        border-left-color: #ff00ff; /* Kolor w połowie animacji */
+    }
+    100% {
+        border-left-color: #ff0000; /* Powrót do początkowego koloru */
+    }
+}
+
+/* Pozostała część stylów pozostaje bez zmian */
+
 
 /* Dodane style dla przycisku Stop */
 #stop {
