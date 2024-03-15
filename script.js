@@ -1,15 +1,33 @@
-// Dane statystyczne radia
-const radioStats = {
-    serverTitle: "Autopilot",
-    currentListeners: 0,
-    peakListeners: 0,
-    maxListeners: 50,
-    host: "",
-    currentSong: ""
-};
+// Zmienna do przechowywania informacji o stanie przycisku
+let isPlaying = false;
+
+// Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
+function toggleRadio() {
+    const playButton = document.getElementById('play');
+    const radioPlayer = document.getElementById('radioPlayer');
+    if (isPlaying) {
+        // Zatrzymywanie odtwarzania radia
+        radioPlayer.pause();
+
+        // Zmiana ikony przycisku na "Play"
+        playButton.innerHTML = '<i class="fas fa-play"></i> Play';
+    } else {
+        // Rozpoczynanie odtwarzania radia
+        radioPlayer.play();
+
+        // Zmiana ikony przycisku na "Stop"
+        playButton.innerHTML = '<i class="fas fa-stop"></i> Stop';
+    }
+
+    // Odwrócenie stanu przycisku
+    isPlaying = !isPlaying;
+}
+
+// Nasłuchujemy kliknięcia na przycisku
+document.getElementById('play').addEventListener('click', toggleRadio);
 
 // Funkcja do aktualizacji danych statystycznych na stronie
-function updateRadioStats() {
+function updateRadioStats(radioStats) {
     const serverTitleElement = document.getElementById("serverTitle");
     if (serverTitleElement) serverTitleElement.innerText = radioStats.serverTitle;
 
@@ -40,21 +58,22 @@ function fetchRadioStats() {
         try {
             // Aktualizacja danych statystycznych radia
             if (data && data.streams && data.streams.length > 0) {
-                radioStats.serverTitle = data.streams[0].servertitle || "Brak danych";
-                radioStats.currentListeners = data.currentlisteners || 0;
-                radioStats.peakListeners = data.peaklisteners || 0;
-                radioStats.maxListeners = data.maxlisteners || 50;
-                radioStats.host = data.streams[0].dj || "";
-                radioStats.currentSong = data.streams[0].songtitle || "Brak danych";
+                const radioStats = {
+                    serverTitle: data.streams[0].servertitle || "Brak danych",
+                    currentListeners: data.currentlisteners || 0,
+                    peakListeners: data.peaklisteners || 0,
+                    maxListeners: data.maxlisteners || 50,
+                    host: data.streams[0].dj || "",
+                    currentSong: data.streams[0].songtitle || "Brak danych"
+                };
+                // Aktualizacja danych na stronie
+                updateRadioStats(radioStats);
             } else {
                 throw new Error("Nieprawidłowe dane otrzymane z serwera.");
             }
         } catch (error) {
             console.error("Wystąpił błąd podczas aktualizacji danych:", error.message);
         }
-        
-        // Aktualizacja danych na stronie
-        updateRadioStats();
     };
 
     // Tworzymy element skryptu i dodajemy go do dokumentu
@@ -69,39 +88,12 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
-// Zmienna do przechowywania informacji o stanie przycisku
-let isPlaying = false;
-
-// Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
-function toggleRadio() {
-    const playButton = document.getElementById('play');
-    const radioPlayer = document.getElementById('radioPlayer');
-    if (isPlaying) {
-        // Zatrzymywanie odtwarzania radia
-        radioPlayer.pause();
-
-        // Zmiana ikony przycisku na "Play"
-        playButton.innerHTML = '<i class="fas fa-play"></i> Play';
-    } else {
-        // Rozpoczynanie odtwarzania radia
-        radioPlayer.play();
-
-        // Zmiana ikony przycisku na "Stop"
-        playButton.innerHTML = '<i class="fas fa-stop"></i> Stop';
-    }
-
-    // Odwrócenie stanu przycisku
-    isPlaying = !isPlaying;
-}
-
-// Nasłuchujemy kliknięcia na przycisku
-playButton.addEventListener('click', toggleRadio);
-
+// Obsługa przezroczystego paska nawigacji po przewinięciu strony
 window.addEventListener('scroll', function() {
     var topBar = document.getElementById('top-bar');
-    if (window.scrollY > 100) { // Po przewinięciu o 100 pikseli
-        topBar.classList.add('transparent'); // Dodaj klasę transparent
+    if (window.scrollY > 100) {
+        topBar.classList.add('transparent');
     } else {
-        topBar.classList.remove('transparent'); // Usuń klasę transparent
+        topBar.classList.remove('transparent');
     }
 });
