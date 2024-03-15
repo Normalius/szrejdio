@@ -86,13 +86,13 @@ header {
     height: auto;
 }
 
-.actions {
+/* Przyciski akcji w nagłówku */
+.header-actions {
     display: flex;
-    align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
+    align-items: center;
 }
 
-.actions button {
-    margin-left: 10px; /* Dodanie odstępu między przyciskami */
+.header-actions .header-action-button {
     background-color: #659F22;
     color: #fff;
     border: none;
@@ -105,7 +105,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.actions button:hover {
+.header-actions .header-action-button:hover {
     background-color: #4F7F16;
 }
 
@@ -166,7 +166,7 @@ nav ul li a:hover {
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
-    .actions {
+    .header-actions {
         display: none;
     }
 
