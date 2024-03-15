@@ -67,27 +67,20 @@ body {
     background-color: #4F7F16;
 }
 
-/* Header */
-header {
+/* Drugi header */
+#sub-header {
     background-color: #fff;
-    padding: 10px 20px; /* Zwiększenie wewnętrznego odstępu */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 10px 20px;
     border-bottom: 1px solid #ddd;
 }
 
-.logo img {
-    width: 150px; /* Zmniejszenie szerokości logo */
-    height: auto;
-    order: 1; /* Zmiana kolejności elementów */
+#sub-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.support-contact {
-    order: 2; /* Zmiana kolejności elementów */
-    margin-right: 20px; /* Dodatkowy margines po prawej stronie */
-}
-
+/* Przyciski wsparcia i kontaktu */
 .support-contact .action-button {
     background-color: #659F22;
     color: #fff;
@@ -111,7 +104,6 @@ nav {
     background-color: #83a400;
     padding: 8px 0;
     overflow: auto;
-    margin-top: 40px; /* Dodajemy margines na górze nawigacji */
 }
 
 nav ul {
