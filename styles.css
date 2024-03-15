@@ -50,8 +50,7 @@ body {
 }
 
 /* Stylizacja przycisku odtwarzania */
-#top-bar button#play,
-#top-bar button#stop {
+#top-bar button#play {
     background-color: transparent; /* Usuń tło */
     color: #fff;
     border: none;
@@ -63,38 +62,7 @@ body {
     text-transform: uppercase;
     transition: background-color 0.3s ease;
     margin-right: 1010px;
-    position: relative; /* Ustawienie pozycji jako relatywnej */
-}
 
-#top-bar button#play::before,
-#top-bar button#stop::before {
-    content: ''; /* Dodanie pustego elementu */
-    position: absolute; /* Ustawienie pozycji jako absolutnej */
-    width: 40px; /* Szerokość koła */
-    height: 40px; /* Wysokość koła */
-    border: 2px solid #fff; /* Grubość obramowania */
-    border-radius: 50%; /* Ustawienie promienia dla kształtu koła */
-    animation: rotate 2s linear infinite; /* Dodanie animacji obracania się */
-}
-
-#top-bar button#play::before {
-    top: -10px; /* Przesunięcie koła do góry */
-    left: -10px; /* Przesunięcie koła w lewo */
-}
-
-#top-bar button#stop::before {
-    top: -10px; /* Przesunięcie koła do góry */
-    left: -10px; /* Przesunięcie koła w lewo */
-}
-
-/* Animacja obracania się */
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg); /* Początkowy obrót */
-    }
-    100% {
-        transform: rotate(360deg); /* Końcowy obrót */
-    }
 }
 
 /* Drugi header */
