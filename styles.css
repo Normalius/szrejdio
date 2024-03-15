@@ -337,11 +337,14 @@ nav ul li a:hover {
 }
 
 #radio-stats {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    max-width: 600px;
 }
 
 #radio-stats h2 {
