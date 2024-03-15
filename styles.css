@@ -27,6 +27,7 @@ h2, h3 {
     margin: 0 auto;
 }
 
+/* Górny pasek */
 #top-bar {
     background-color: orange;
     color: white;
@@ -65,24 +66,27 @@ body {
 #top-bar button#play:hover {
     background-color: #4F7F16;
 }
+/* Przyciski akcji w pasku */
+#top-bar .actions {
+    display: flex;
+    align-items: center;
+}
 
 /* Header */
 header {
     background-color: #fff;
-    padding: 10px 0;
+    padding: 10px 20px; /* Zwiększenie wewnętrznego odstępu */
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
 }
 
-.logo-centered {
-    text-align: center;
+.logo {
     margin-right: auto; /* Dodanie automatycznego marginesu po prawej stronie logo */
-    margin-left: auto; /* Dodanie automatycznego marginesu po lewej stronie logo */
 }
 
-.logo-centered img {
+.logo img {
     width: 150px; /* Zmniejszenie szerokości logo */
     height: auto;
 }
@@ -96,12 +100,12 @@ header {
     margin-left: 10px; /* Dodanie odstępu między przyciskami */
 }
 
-/* Stylizacja przycisków akcji */
-.action-button {
+/* Przyciski Kontakt i Wsparcie */
+.actions button {
     background-color: #659F22;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -110,7 +114,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.action-button:hover {
+.actions button:hover {
     background-color: #4F7F16;
 }
 /* Nawigacja */
