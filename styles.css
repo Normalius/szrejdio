@@ -332,14 +332,11 @@ nav ul li a:hover {
 }
 
 #radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    margin-top: 20px;
 }
 
 #radio-stats h2 {
@@ -365,6 +362,7 @@ nav ul li a:hover {
     background-color: #fff;
 }
 
+/* Stylizacja etykiet i wartości w sekcji statystyk radia */
 .label {
     font-weight: bold;
 }
@@ -374,5 +372,5 @@ li span#currentListeners,
 li span#peakListeners,
 li span#maxListeners,
 li span#currentSong {
-    color: #659F22;
+    color: #659F22; /* Kolor dla wartości statystyk */
 }
