@@ -83,11 +83,11 @@ body {
     text-transform: uppercase;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-right: 1010px;
-    animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite, glow 1s ease infinite; /* Dodanie animacji rozbłysku */
 }
 
 #top-bar button#play:hover {
-    animation: glow 1s ease infinite;
+    animation: none; /* Zatrzymanie animacji obrotu przy najechaniu */
 }
 
 /* Drugi header */
@@ -128,6 +128,7 @@ nav {
     background-color: #83a400;
     padding: 8px 0;
     overflow: auto;
+}
 
 nav ul {
     list-style-type: none;
