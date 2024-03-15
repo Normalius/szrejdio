@@ -63,28 +63,38 @@ body {
     transition: background-color 0.3s ease;
     margin-right: 1010px;
     position: relative;
+    overflow: hidden; /* Ukryj część animacji */
 }
 
 #top-bar button#play::before {
     content: '';
     position: absolute;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    width: 34px;
-    height: 32px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: conic-gradient(transparent 0deg, rgba(255, 255, 255, 0.3) 90deg, transparent 180deg); /* Gradient koła */
     animation: spin 3s linear infinite;
 }
 
 @keyframes spin {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }
+}
+
+/* Dodanie animacji rozbłysku po naciśnięciu */
+#top-bar button#play:active::before {
+    animation: none; /* Zatrzymaj animację obrotu */
+    width: 400%; /* Zwiększ rozmiar gradientu, aby uzyskać efekt rozbłysku */
+    height: 400%;
+    top: -150%;
+    left: -150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,204,0,0) 80%); /* Efekt rozbłysku */
+    animation: glow 0.5s ease-out;
 }
 
 /* Drugi header */
