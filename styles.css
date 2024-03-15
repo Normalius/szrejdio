@@ -165,17 +165,14 @@ nav ul li a:hover {
 .footer-section {
     flex: 1;
     margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
-    border-right: 1px solid #666; /* Dodanie poziomej linii oddzielającej sekcje (oprócz ostatniej sekcji) */
 }
 
 .footer-section:last-child {
     margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
-    border-right: none; /* Usunięcie poziomej linii po prawej stronie ostatniej sekcji */
 }
 
 .footer-section h3 {
     color: #fff;
-    border-bottom: 1px solid #aaa;
     padding-bottom: 10px;
 }
 
