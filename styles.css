@@ -160,6 +160,7 @@ nav ul li a:hover {
 .footer-container {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Dodanie wyśrodkowania ikon */
 }
 
 .footer-section {
@@ -199,12 +200,13 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 20px; /* Dodanie marginesu do oddzielenia od innych elementów stopki */
 }
 
 .social-icons-right .social-icon {
     text-decoration: none;
     font-size: 24px;
-    margin-left: 20px; /* Zwiększenie odstępu między ikonami */
+    margin-left: 20px;
     color: #ffffff;
     transition: color 0.3s ease;
 }
