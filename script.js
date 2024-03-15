@@ -73,27 +73,45 @@ setInterval(fetchRadioStats, 60000);
 const audio = new Audio('https://s3.slotex.pl:7466/stream');
 let isPlaying = false;
 
-document.getElementById('play').addEventListener('click', function() {
+const playButton = document.getElementById('play');
+const pauseButton = document.getElementById('pause');
+const stopButton = document.getElementById('stop');
+
+playButton.addEventListener('click', function() {
     if (!isPlaying) {
         audio.play();
         isPlaying = true;
+        updatePlayButton();
     }
 });
 
-document.getElementById('pause').addEventListener('click', function() {
+pauseButton.addEventListener('click', function() {
     if (isPlaying) {
         audio.pause();
         isPlaying = false;
+        updatePlayButton();
     }
 });
 
-document.getElementById('stop').addEventListener('click', function() {
+stopButton.addEventListener('click', function() {
     if (isPlaying) {
         audio.pause();
         audio.currentTime = 0;
         isPlaying = false;
+        updatePlayButton();
     }
 });
+
+function updatePlayButton() {
+    if (isPlaying) {
+        playButton.style.display = 'none';
+        pauseButton.style.display = 'inline-block';
+    } else {
+        playButton.style.display = 'inline-block';
+        pauseButton.style.display = 'none';
+    }
+}
+
 
 window.addEventListener('scroll', function() {
     var topBar = document.getElementById('top-bar');
