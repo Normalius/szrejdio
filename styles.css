@@ -337,3 +337,34 @@ li span#maxListeners,
 li span#currentSong {
     color: #659F22;
 }
+
+/* Nowe style dla odtwarzacza audio */
+.audio-player {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.audio-player audio {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.audio-player button {
+    background-color: #659F22;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.audio-player button:hover {
+    background-color: #4F7F16;
+}
