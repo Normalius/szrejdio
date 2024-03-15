@@ -78,7 +78,7 @@ header {
 }
 
 .logo {
-    margin-right: auto; /* Dodanie automatycznego marginesu po prawej stronie logo */
+    margin-left: auto; /* Przesunięcie loga na koniec lewego marginesu */
 }
 
 .logo img {
