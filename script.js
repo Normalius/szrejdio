@@ -74,6 +74,7 @@ let isPlaying = false;
 
 // Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
 function toggleRadio() {
+    const playButton = document.getElementById('play-button');
     if (isPlaying) {
         // Tutaj dodajemy kod do zatrzymania odtwarzania radia
         // np. radio.stop();
@@ -103,5 +104,3 @@ window.addEventListener('scroll', function() {
         topBar.classList.remove('transparent'); // Usuń klasę transparent
     }
 });
-
-
