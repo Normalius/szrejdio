@@ -51,11 +51,11 @@ body {
 
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
-    background-color: transparent; /* Usuń tło */
+    background-color: #659F22; /* Zmiana koloru tła */
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border: none; /* Usuń obramowanie */
+    border-radius: 50%; /* Zaokrąglenie przycisku */
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
@@ -63,27 +63,26 @@ body {
     transition: background-color 0.3s ease;
     margin-right: 1010px;
     position: relative;
+    overflow: hidden; /* Dodanie ukrycia dla spiralnej animacji */
 }
 
 #top-bar button#play::before {
-    content: '';
+    content: ''; /* Usunięcie poprzedniego elementu */
     position: absolute;
-    border: 2px solid #fff;
     border-radius: 50%;
-    width: 34px;
-    height: 32px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: spin 3s linear infinite;
+    width: 80%; /* Rozmiar koła */
+    height: 80%; /* Rozmiar koła */
+    top: 10%; /* Pozycja koła */
+    left: 10%; /* Pozycja koła */
+    animation: spiral 3s linear infinite; /* Dodanie animacji spirali */
 }
 
-@keyframes spin {
+@keyframes spiral {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg) translate(0, -50%);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg) translate(0, -50%);
     }
 }
 
@@ -407,4 +406,3 @@ li span#currentSong {
 #top-bar button#play:active {
     animation: glow 0.5s ease-out;
 }
-
