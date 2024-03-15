@@ -27,6 +27,20 @@ h2, h3 {
     margin: 0 auto;
 }
 
+#top-bar {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Zapewnia, że pasek będzie na wierzchu */
+    transition: top 0.3s ease; /* Dodatkowa animacja */
+}
+
+
 /* Header */
 header {
     background-color: #fff;
