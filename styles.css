@@ -49,31 +49,10 @@ body {
     margin-top: 40px; 
 }
 
-/* Animacja obracającego się kółka */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 /* Stylizacja przycisku odtwarzania */
-#top-bar button#play {
-    background-color: transparent; /* Usuń tło */
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border: none; /* Usuń obramowanie */
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    margin-right: 1010px;
-}
-
 #play,
 #stop {
-    position: relative; /* Ustawienie pozycji względnej, aby umieścić kółko */
-
+    position: relative; /* Ustawienie pozycji względnej, aby umieścić kółka */
 }
 
 #play::before,
@@ -83,28 +62,16 @@ body {
     border: 3px solid transparent;
     border-top-color: #ffffff; /* Kolor obracającego się kółka */
     border-radius: 50%; /* Ustawienie kształtu na koło */
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: spin 1s linear infinite; /* Dodanie animacji obracającego się kółka */
-
 }
 
-#top-bar button#stop {
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    margin-right: 1010px;
-
+#play {
+    margin-right: 1010px; /* Przesunięcie przycisku play, aby zachować odstęp od prawej krawędzi */
 }
 
 /* Drugi header */
@@ -410,4 +377,19 @@ li span#peakListeners,
 li span#maxListeners,
 li span#currentSong {
     color: #659F22; /* Kolor dla wartości statystyk */
+}
+
+/* Animacja obracającego się kółka */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Zmiana koloru dla wartości statystyk */
+li span#serverTitle,
+li span#currentListeners,
+li span#peakListeners,
+li span#maxListeners,
+li span#currentSong {
+    color: #659F22;
 }
