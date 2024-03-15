@@ -1,3 +1,4 @@
+
 // Zmienna do przechowywania informacji o stanie przycisku
 let isPlaying = false;
 
@@ -96,44 +97,4 @@ window.addEventListener('scroll', function() {
     } else {
         topBar.classList.remove('transparent');
     }
-
-// Skrypt JavaScript dla animacji spirali
-document.getElementById('play').addEventListener('click', function() {
-    // Pobierz element przycisku
-    var button = document.getElementById('play');
-    // Zmiana kierunku spirali
-    var direction = 1; // 1 dla spirali do przodu, -1 dla spirali do tyłu
-    // Pobierz początkową wartość transformacji
-    var transformValue = button.style.getPropertyValue('transform');
-    // Pobierz kąt początkowy z transformacji
-    var initialAngle = 0;
-    if (transformValue) {
-        // Jeśli transformacja istnieje, pobierz kąt z niej
-        var match = transformValue.match(/rotate\((\d+)deg\)/);
-        if (match && match.length > 1) {
-            initialAngle = parseInt(match[1]);
-        }
-    }
-    // Uruchom animację spirali
-    animateSpiral(button, initialAngle, direction);
-});
-
-function animateSpiral(element, initialAngle, direction) {
-    // Ustaw zmienne do obliczeń spirali
-    var radius = 50; // Promień spirali
-    var speed = 0.5; // Szybkość ruchu spirali
-    var angle = initialAngle; // Aktualny kąt spirali
-
-    // Rozpocznij animację
-    var animationId = setInterval(frame, 10);
-
-    function frame() {
-        // Oblicz nowe położenie spirali
-        angle += speed * direction;
-        var x = radius * Math.cos(angle * Math.PI / 180); // Współrzędna X
-        var y = radius * Math.sin(angle * Math.PI / 180); // Współrzędna Y
-        // Ustaw nową transformację dla elementu
-        element.style.transform = 'translate(' + x + 'px, ' + y + 'px) rotate(' + angle + 'deg)';
-    }
-}    
 });
