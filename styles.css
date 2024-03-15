@@ -27,6 +27,7 @@ h2, h3 {
     margin: 0 auto;
 }
 
+/* Górny pasek */
 #top-bar {
     background-color: orange;
     color: white;
@@ -85,11 +86,16 @@ header {
     height: auto;
 }
 
-/* Przyciski Kontakt i Wsparcie */
 .actions {
-    margin-left: auto; /* Dodanie automatycznego marginesu po lewej stronie przycisków */
+    display: flex;
+    align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
 }
 
+.actions button {
+    margin-left: 10px; /* Dodanie odstępu między przyciskami */
+}
+
+/* Przyciski Kontakt i Wsparcie */
 .actions button {
     background-color: #659F22;
     color: #fff;
