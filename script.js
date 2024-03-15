@@ -69,3 +69,11 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
+window.addEventListener('scroll', function() {
+    var topBar = document.getElementById('top-bar');
+    if (window.scrollY > 100) { // Po przewinięciu o 100 pikseli
+        topBar.classList.add('transparent'); // Dodaj klasę transparent
+    } else {
+        topBar.classList.remove('transparent'); // Usuń klasę transparent
+    }
+});
