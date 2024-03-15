@@ -69,6 +69,16 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
+// Funkcja do przełączania odtwarzania radia
+function togglePlay() {
+    var audio = document.getElementById('radioPlayer'); // Pobierz element audio
+    if (audio.paused) {
+        audio.play(); // Jeśli odtwarzanie jest zatrzymane, włącz odtwarzanie
+    } else {
+        audio.pause(); // W przeciwnym razie zatrzymaj odtwarzanie
+    }
+}
+
 window.addEventListener('scroll', function() {
     var topBar = document.getElementById('top-bar');
     if (window.scrollY > 100) { // Po przewinięciu o 100 pikseli
@@ -77,3 +87,5 @@ window.addEventListener('scroll', function() {
         topBar.classList.remove('transparent'); // Usuń klasę transparent
     }
 });
+
+
