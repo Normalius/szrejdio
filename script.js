@@ -10,7 +10,7 @@ function toggleRadio() {
         radioPlayer.pause();
 
         // Zmiana ikony przycisku na "Play"
-        playButton.innerHTML = '<i class="fas fa-play"></i> Play';
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
     } else {
         // Rozpoczynanie odtwarzania radia
         radioPlayer.play();
