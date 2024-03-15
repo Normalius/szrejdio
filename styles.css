@@ -32,12 +32,16 @@ h2, h3 {
     color: white;
     padding: 10px;
     text-align: center;
-    position: fixed;
+    position: fixed; /* Używamy pozycji ustalonej (fixed) */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000; /* Zapewnia, że pasek będzie na wierzchu */
     transition: top 0.3s ease; /* Dodatkowa animacja */
+}
+
+body {
+    margin-top: 40px; /* Dodajemy margines na górze strony, aby treść nie była zasłaniana przez pasek */
 }
 
 
