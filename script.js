@@ -68,3 +68,12 @@ fetchRadioStats();
 
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
+
+// Funkcja inicjalizująca odtwarzacz audio
+function initAudioPlayer() {
+    const audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.src = 'TUTAJ_WSTAW_ADRES_STRUMIENIA_SHOUTCAST'; // Ustawiamy źródło strumienia audio
+}
+
+// Wywołujemy funkcję inicjalizującą odtwarzacz audio
+initAudioPlayer();
