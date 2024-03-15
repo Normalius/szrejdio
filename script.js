@@ -74,25 +74,23 @@ let isPlaying = false;
 
 // Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
 function toggleRadio() {
-    const playButton = document.getElementById('play');
-    if (isPlaying) {
-        // Tutaj dodajemy kod do zatrzymania odtwarzania radia
-        // np. radio.stop();
+const playButton = document.getElementById('play');
+const radioPlayer = document.getElementById('radioPlayer');
 
-        // Zmiana ikony przycisku na "Play"
+let isPlaying = false;
+
+playButton.addEventListener('click', () => {
+    if (isPlaying) {
+        radioPlayer.pause();
         playButton.innerHTML = '<i class="fas fa-play"></i> Play';
     } else {
-        // Tutaj dodajemy kod do ponownego rozpoczęcia odtwarzania radia
-        // np. radio.play();
-
-        // Zmiana ikony przycisku na "Stop"
+        radioPlayer.play();
         playButton.innerHTML = '<i class="fas fa-stop"></i> Stop';
     }
-
-    // Odwrócenie stanu przycisku
+    
     isPlaying = !isPlaying;
-}
-
+});
+    
 // Nasłuchujemy kliknięcia na przycisku
 document.getElementById('play').addEventListener('click', toggleRadio);
 
