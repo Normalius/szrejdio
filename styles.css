@@ -81,12 +81,13 @@ header {
 }
 
 .logo-centered img {
-    width: 200px;
+    width: 150px; /* Zmniejszenie szerokości logo */
     height: auto;
 }
 
 .actions {
     display: flex;
+    align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
 }
 
 /* Stylizacja przycisków akcji */
