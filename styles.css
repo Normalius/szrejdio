@@ -51,11 +51,11 @@ body {
 
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
-    background-color: #659F22; /* Zmiana koloru tła */
+    background-color: transparent; /* Usuń tło */
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 50%; /* Zaokrąglenie przycisku */
+    border: none; /* Usuń obramowanie */
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
@@ -63,26 +63,38 @@ body {
     transition: background-color 0.3s ease;
     margin-right: 1010px;
     position: relative;
-    overflow: hidden; /* Dodanie ukrycia dla spiralnej animacji */
 }
 
 #top-bar button#play::before {
-    content: ''; /* Usunięcie poprzedniego elementu */
+    content: '';
     position: absolute;
+    border: 4px solid #fff; /* Zwiększenie grubości obramowania */
     border-radius: 50%;
-    width: 80%; /* Rozmiar koła */
-    height: 80%; /* Rozmiar koła */
-    top: 10%; /* Pozycja koła */
-    left: 10%; /* Pozycja koła */
-    animation: spiral 3s linear infinite; /* Dodanie animacji spirali */
+    width: 60px; /* Zwiększenie średnicy koła */
+    height: 60px; /* Zwiększenie średnicy koła */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 3s linear infinite, chase 6s linear infinite; /* Dodanie animacji spirali */
 }
 
-@keyframes spiral {
+@keyframes spin {
     0% {
-        transform: rotate(0deg) translate(0, -50%);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translate(0, -50%);
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes chase {
+    0% {
+        width: 60px;
+        height: 60px;
+    }
+    100% {
+        width: 80%; /* Ustawienie 80% średnicy koła na koniec animacji */
+        height: 80%; /* Ustawienie 80% średnicy koła na koniec animacji */
     }
 }
 
