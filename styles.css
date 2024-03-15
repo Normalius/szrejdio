@@ -51,17 +51,18 @@ body {
 
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
-    background-color: #659F22;
+    background-color: transparent; /* Usuń tło */
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border: none; /* Usuń obramowanie */
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
     margin-right: 1010px;
+
 }
 
 #top-bar button#play:hover {
