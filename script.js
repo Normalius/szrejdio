@@ -69,48 +69,26 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
-// Logika odtwarzania audio
-const audio = new Audio('https://s3.slotex.pl:7466/stream');
-let isPlaying = false;
-
-const playButton = document.getElementById('play');
-const pauseButton = document.getElementById('pause');
-const stopButton = document.getElementById('stop');
-
-playButton.addEventListener('click', function() {
-    if (!isPlaying) {
-        audio.play();
-        isPlaying = true;
-        updatePlayButton();
-    }
+// Zdarzenie nasłuchujące na kliknięcie przycisku "play"
+document.getElementById('play').addEventListener('click', function() {
+    // Ukryj przycisk "play"
+    this.style.display = 'none';
+    
+    // Dodaj przyciski "pause" i "stop" na pasku
+    const actionsContainer = document.querySelector('.actions');
+    
+    const pauseButton = document.createElement('button');
+    pauseButton.className = 'action-button';
+    pauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+    pauseButton.id = 'pause';
+    actionsContainer.appendChild(pauseButton);
+    
+    const stopButton = document.createElement('button');
+    stopButton.className = 'action-button';
+    stopButton.innerHTML = '<i class="fas fa-stop"></i>';
+    stopButton.id = 'stop';
+    actionsContainer.appendChild(stopButton);
 });
-
-pauseButton.addEventListener('click', function() {
-    if (isPlaying) {
-        audio.pause();
-        isPlaying = false;
-        updatePlayButton();
-    }
-});
-
-stopButton.addEventListener('click', function() {
-    if (isPlaying) {
-        audio.pause();
-        audio.currentTime = 0;
-        isPlaying = false;
-        updatePlayButton();
-    }
-});
-
-function updatePlayButton() {
-    if (isPlaying) {
-        playButton.style.display = 'none';
-        pauseButton.style.display = 'inline-block';
-    } else {
-        playButton.style.display = 'inline-block';
-        pauseButton.style.display = 'none';
-    }
-}
 
 
 window.addEventListener('scroll', function() {
