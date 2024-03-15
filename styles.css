@@ -49,54 +49,20 @@ body {
     margin-top: 40px; 
 }
 
-/* Stylizacja przycisku odtwarzania i zatrzymywania */
-#top-bar button#play,
-#top-bar button#stop {
+/* Stylizacja przycisku odtwarzania */
+#top-bar button#play {
     background-color: transparent; /* Usuń tło */
     color: #fff;
     border: none;
     padding: 10px 20px;
+    border: none; /* Usuń obramowanie */
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    position: relative; /* Dodaj pozycję względną */
-}
+    transition: background-color 0.3s ease;
+    margin-right: 1010px;
 
-/* Stylizacja niepełnego obracającego się koła */
-#top-bar button#play::after,
-#top-bar button#stop::after {
-    content: "";
-    position: absolute;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Kolor obramowania koła */
-    border-top: none;
-    border-right: none;
-    border-radius: 50%; /* Ustaw promień na 50%, aby uzyskać kształt koła */
-    width: 30px; /* Szerokość koła */
-    height: 30px; /* Wysokość koła */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Wycentruj koło */
-    animation: rotateCircle 2s linear infinite; /* Dodaj animację obrotu */
-}
-
-/* Keyframes dla animacji obrotu */
-@keyframes rotateCircle {
-    to {
-        transform: rotate(360deg); /* Pełny obrót */
-    }
-}
-
-/* Animacja po najechaniu myszką */
-#top-bar button#play:hover::after,
-#top-bar button#stop:hover::after {
-    border-color: rgba(255, 255, 255, 0.8); /* Zmiana koloru obramowania po najechaniu myszką */
-}
-
-/* Animacja kliknięcia */
-#top-bar button#play:active::after,
-#top-bar button#stop:active::after {
-    transform: scale(0.9); /* Zmniejszenie rozmiaru koła po kliknięciu */
 }
 
 /* Drugi header */
@@ -212,8 +178,6 @@ nav ul li a:hover {
         font-size: 12px;
     }
 }
-
-
 
 .footer {
     background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
