@@ -62,6 +62,8 @@ body {
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
     position: relative; /* Dodanie pozycji względnej dla przycisku */
+    float: right; /* Przesunięcie przycisku na prawą stronę */
+    font-family: 'Font Awesome', sans-serif; /* Dodanie czcionki Awesome */
 }
 
 /* Stylizacja koła */
