@@ -78,7 +78,7 @@ header {
 }
 
 .logo {
-    margin-left: auto; /* Przesunięcie loga na koniec lewego marginesu */
+    margin-left: auto; /* Przesunięcie loga na koniec lewego kierunku */
 }
 
 .logo img {
@@ -87,15 +87,9 @@ header {
 }
 
 .actions {
-    display: flex;
-    align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
+    margin-left: auto; /* Przesunięcie przycisków na koniec prawego kierunku */
 }
 
-.actions button {
-    margin-left: 10px; /* Dodanie odstępu między przyciskami */
-}
-
-/* Przyciski Kontakt i Wsparcie */
 .actions button {
     background-color: #659F22;
     color: #fff;
