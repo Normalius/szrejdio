@@ -60,8 +60,24 @@ body {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-right: 20px;
     position: relative; /* Dodaj pozycję względną */
+}
+
+/* Stylizacja niepełnego obracającego się koła */
+#top-bar button#play::after,
+#top-bar button#stop::after {
+    content: "";
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Kolor obramowania koła */
+    border-top: none;
+    border-right: none;
+    border-radius: 50%; /* Ustaw promień na 50%, aby uzyskać kształt koła */
+    width: 30px; /* Szerokość koła */
+    height: 30px; /* Wysokość koła */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Wycentruj koło */
+    animation: rotateCircle 2s linear infinite; /* Dodaj animację obrotu */
 }
 
 /* Keyframes dla animacji obrotu */
@@ -72,16 +88,15 @@ body {
 }
 
 /* Animacja po najechaniu myszką */
-#top-bar button#play:hover,
-#top-bar button#stop:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Kolor tła po najechaniu myszką */
-    transform: translateY(-2px); /* Przesunięcie w górę */
+#top-bar button#play:hover::after,
+#top-bar button#stop:hover::after {
+    border-color: rgba(255, 255, 255, 0.8); /* Zmiana koloru obramowania po najechaniu myszką */
 }
 
 /* Animacja kliknięcia */
-#top-bar button#play:active,
-#top-bar button#stop:active {
-    transform: scale(0.9); /* Zmniejszenie rozmiaru po kliknięciu */
+#top-bar button#play:active::after,
+#top-bar button#stop:active::after {
+    transform: scale(0.9); /* Zmniejszenie rozmiaru koła po kliknięciu */
 }
 
 /* Drugi header */
