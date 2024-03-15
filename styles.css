@@ -61,6 +61,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
+    margin-right: auto;
 }
 
 #top-bar button#play:hover {
