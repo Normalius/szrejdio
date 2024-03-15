@@ -69,30 +69,3 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
-// Pobierz pasek
-const topBar = document.getElementById('top-bar');
-
-// Zdefiniuj zmienną do przechowywania poprzedniego przewinięcia strony
-let prevScrollPos = window.pageYOffset;
-
-// Funkcja obsługująca przewijanie strony
-function handleScroll() {
-    // Aktualna pozycja przewinięcia strony
-    const currentScrollPos = window.pageYOffset;
-
-    // Sprawdź, czy przewinięto stronę w dół
-    if (prevScrollPos > currentScrollPos) {
-        // Pokaż pasek
-        topBar.style.top = '0';
-    } else {
-        // Ukryj pasek
-        topBar.style.top = `-${topBar.offsetHeight}px`;
-    }
-
-    // Zaktualizuj poprzednią pozycję przewinięcia strony
-    prevScrollPos = currentScrollPos;
-}
-
-// Nasłuchuj zdarzenie przewijania strony
-window.addEventListener('scroll', handleScroll);
-
