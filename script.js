@@ -71,11 +71,6 @@ setInterval(fetchRadioStats, 60000);
 
 // Zdarzenie nasłuchujące na kliknięcie przycisku "play"
 document.getElementById('play').addEventListener('click', function() {
-    // Ukryj przycisk "play"
-    this.style.display = 'none';
-    
-// Zdarzenie nasłuchujące na kliknięcie przycisku "play"
-document.getElementById('play').addEventListener('click', function() {
     var icon = this.querySelector('i'); // Pobierz ikonę z przycisku
 
     if (icon.classList.contains('fa-play')) { // Jeśli ikona to "play"
@@ -91,6 +86,7 @@ document.getElementById('play').addEventListener('click', function() {
         // Zmień tekst na przycisku na "Play"
         this.textContent = "Play";
     }
+
 
 window.addEventListener('scroll', function() {
     var topBar = document.getElementById('top-bar');
