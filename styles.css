@@ -151,7 +151,7 @@ nav ul li a:hover {
 }
 
 .footer {
-    background-color: #333;
+    background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
     color: #fff;
     padding: 30px 0;
     text-align: center;
@@ -160,15 +160,20 @@ nav ul li a:hover {
 .footer-container {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Dodanie wyśrodkowania ikon */
 }
 
 .footer-section {
     flex: 1;
+    margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
+}
+
+.footer-section:last-child {
+    margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
 }
 
 .footer-section h3 {
     color: #fff;
-    border-bottom: 1px solid #aaa;
     padding-bottom: 10px;
 }
 
@@ -195,15 +200,15 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 20px; /* Dodanie marginesu do oddzielenia od innych elementów stopki */
 }
 
 .social-icons-right .social-icon {
     text-decoration: none;
     font-size: 24px;
-    margin-left: 10px;
+    margin-left: 20px;
     color: #ffffff;
     transition: color 0.3s ease;
-    position: relative;
 }
 
 .social-icons-right .social-icon:hover {
@@ -215,7 +220,10 @@ nav ul li a:hover {
 }
 
 .social-icons-right .instagram:hover {
-    color: #e4405f;
+    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #E2ED8A, #A1D0E8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .social-icons-right .discord:hover {
@@ -226,32 +234,8 @@ nav ul li a:hover {
     color: #1da1f2;
 }
 
-.social-icons-right .instagram:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-    border-radius: 50%;
-    z-index: -1;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
-}
-
 .back-to-top {
-    margin-top: 20px;
+    margin-top: 40px; /* Zwiększenie marginesu na górę */
 }
 
 .back-to-top a {
@@ -352,28 +336,4 @@ li span#peakListeners,
 li span#maxListeners,
 li span#currentSong {
     color: #659F22;
-}
-
-.fa-brands.fa-x-twitter:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #1da1f2, #1da1f2, #1da1f2);
-    border-radius: 50%;
-    z-index: -1;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
 }
