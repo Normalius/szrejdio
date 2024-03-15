@@ -50,19 +50,44 @@ body {
 }
 
 /* Stylizacja przycisku odtwarzania */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+}
+
 #top-bar button#play {
-    background-color: transparent; /* Usuń tło */
+    background-color: transparent;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border: none; /* Usuń obramowanie */
+    border: none;
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     margin-right: 1010px;
+    animation: spin 3s linear infinite;
+}
 
+#top-bar button#play:hover {
+    animation: glow 1s ease infinite;
 }
 
 /* Drugi header */
@@ -103,7 +128,6 @@ nav {
     background-color: #83a400;
     padding: 8px 0;
     overflow: auto;
-}
 
 nav ul {
     list-style-type: none;
