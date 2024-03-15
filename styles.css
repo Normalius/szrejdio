@@ -9,9 +9,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     color: #000000;
-    margin: 0;
     line-height: 1.6;
-    margin: 20px auto;
+    margin: 20px auto; /* Usuń jeden z tych atrybutów margin */
     max-width: 1200px;
     padding: 0 20px;
 }
