@@ -111,6 +111,7 @@ nav {
     background-color: #83a400;
     padding: 8px 0;
     overflow: auto;
+    margin-top: 40px; /* Dodajemy margines na górze nawigacji */
 }
 
 nav ul {
