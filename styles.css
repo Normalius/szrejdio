@@ -49,33 +49,21 @@ body {
     margin-top: 40px;
 }
 
-/* Stylizacja przycisku odtwarzania */
-#top-bar button#play {
-    background-color: transparent; /* Usuń tło */
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border: none; /* Usuń obramowanie */
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    margin-right: 1010px;
+/* Dodaj animację dla przycisków play i stop */
+.button-with-icon {
     position: relative;
 }
 
-#top-bar button#play::before {
-    content: '';
+/* Dodaj animację dla koła */
+.circle {
     position: absolute;
-    border: 2px solid #fff;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    width: 34px;
-    height: 32px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #659F22; /* Kolor koła */
     animation: spin 3s linear infinite;
+    top: calc(50% - 25px); /* Wycentruj koło w pionie */
+    left: calc(50% - 25px); /* Wycentruj koło w poziomie */
 }
 
 @keyframes spin {
