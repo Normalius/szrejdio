@@ -49,6 +49,16 @@ body {
     margin-top: 40px;
 }
 
+/* Dodanie klasy dla animacji koła */
+@keyframes spin-circle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
     position: relative; /* Dodanie pozycji względnej dla przycisku */
@@ -67,18 +77,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: spin-circle 3s linear infinite; /* Dodanie animacji obrotu */
-}
-
-/* Koniec bloku @keyframes */
-}
-
-@keyframes spin-circle {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
 }
 
 /* Drugi header */
