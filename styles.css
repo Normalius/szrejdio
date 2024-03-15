@@ -54,26 +54,51 @@ body {
     position: relative;
 }
 
-/* Dodaj animację dla koła */
+/* Dodane style dla koła */
+.circle-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+}
+
 .circle {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #659F22; /* Kolor koła */
-    animation: spin 3s linear infinite;
-    top: calc(50% - 25px); /* Wycentruj koło w pionie */
-    left: calc(50% - 25px); /* Wycentruj koło w poziomie */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg); /* Początkowe przesunięcie o -90 stopni aby zacząć od góry */
+    width: 100px;
+    height: 100px;
+    border: 10px solid transparent; /* Grubość obramowania */
+    border-top-color: #ffcc00; /* Kolor obramowania */
+    border-radius: 50%; /* Koło */
+    animation: spin 2s linear infinite; /* Animacja obracania się koła */
 }
 
 @keyframes spin {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(-90deg); /* Początkowe przesunięcie o -90 stopni aby zacząć od góry */
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(270deg); /* Obrót koła o 270 stopni (pełne koło) */
     }
 }
+
+/* Dodane style dla przycisku Stop */
+#stop {
+    background-color: transparent; /* Usuń tło */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border: none; /* Usuń obramowanie */
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; /* Dodatkowy margines między przyciskami */
+}
+
 
 /* Drugi header */
 #sub-header {
