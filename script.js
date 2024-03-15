@@ -86,6 +86,7 @@ document.getElementById('play').addEventListener('click', function() {
         // Zmień tekst na przycisku na "Play"
         this.textContent = "Play";
     }
+});
 
 
 window.addEventListener('scroll', function() {
