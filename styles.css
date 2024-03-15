@@ -151,7 +151,7 @@ nav ul li a:hover {
 }
 
 .footer {
-    background-color: #333;
+    background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
     color: #fff;
     padding: 30px 0;
     text-align: center;
@@ -164,6 +164,13 @@ nav ul li a:hover {
 
 .footer-section {
     flex: 1;
+    margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
+    border-right: 1px solid #666; /* Dodanie poziomej linii oddzielającej sekcje (oprócz ostatniej sekcji) */
+}
+
+.footer-section:last-child {
+    margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
+    border-right: none; /* Usunięcie poziomej linii po prawej stronie ostatniej sekcji */
 }
 
 .footer-section h3 {
@@ -200,7 +207,7 @@ nav ul li a:hover {
 .social-icons-right .social-icon {
     text-decoration: none;
     font-size: 24px;
-    margin-left: 10px;
+    margin-left: 20px; /* Zwiększenie odstępu między ikonami */
     color: #ffffff;
     transition: color 0.3s ease;
 }
@@ -226,7 +233,7 @@ nav ul li a:hover {
 }
 
 .back-to-top {
-    margin-top: 20px;
+    margin-top: 40px; /* Zwiększenie marginesu na górę */
 }
 
 .back-to-top a {
