@@ -49,19 +49,23 @@ body {
     margin-top: 40px;
 }
 
-/* Nowa animacja dla 3/4 koła */
-@keyframes spiral {
-    0% {
-        transform: rotate(0deg) translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translate(-50%, -50%) rotate(-720deg);
-    }
+/* Stylizacja przycisku odtwarzania */
+#top-bar button#play {
+    background-color: transparent; /* Usuń tło */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border: none; /* Usuń obramowanie */
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-right: 1010px;
+    position: relative;
 }
 
-/* Zmiana stylu przycisku play */
-#top-bar button#play::before,
-#top-bar button#stop::before {
+#top-bar button#play::before {
     content: '';
     position: absolute;
     border: 2px solid #fff;
@@ -71,14 +75,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: spiral 3s linear infinite;
+    animation: spin 3s linear infinite;
 }
 
-/* Zmiana stylu przycisku stop */
-#top-bar button#stop::before {
-    border: 2px solid red;
-    animation-direction: reverse; /* Odwrócenie kierunku animacji */
-}
 @keyframes spin {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
