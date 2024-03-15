@@ -50,13 +50,22 @@ body {
 }
 
 /* Stylizacja przycisku odtwarzania */
-#play,
-#stop {
+.play-stop-btn {
     position: relative; /* Ustawienie pozycji względnej, aby umieścić kółka */
+    display: inline-block; /* Ustawienie na inline-block, aby dopasować wielkość do zawartości */
+    background-color: transparent; /* Usuń tło */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border: none; /* Usuń obramowanie */
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
 }
 
-#play::before,
-#stop::before {
+.play-stop-btn::before {
     content: "";
     position: absolute;
     border: 3px solid transparent;
@@ -68,10 +77,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: spin 1s linear infinite; /* Dodanie animacji obracającego się kółka */
-}
-
-#play {
-    margin-right: 1010px; /* Przesunięcie przycisku play, aby zachować odstęp od prawej krawędzi */
 }
 
 /* Drugi header */
