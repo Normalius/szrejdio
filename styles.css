@@ -49,6 +49,11 @@ body {
     margin-top: 40px; 
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
     background-color: transparent; /* Usuń tło */
@@ -62,7 +67,24 @@ body {
     text-transform: uppercase;
     transition: background-color 0.3s ease;
     margin-right: 1010px;
+    animation: spin 2s linear infinite; /* Dodanie animacji */
+}
 
+}
+
+#top-bar button#stop {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-right: 1010px;
+    animation: spin 2s linear infinite; /* Dodanie animacji */
 }
 
 /* Drugi header */
