@@ -230,8 +230,8 @@ nav ul li a:hover {
     color: #7289da;
 }
 
-.social-icons-right .twitter:hover {
-    color: #1da1f2; /* Aktualizacja koloru */
+.social-icons-right .fa-x-twitter:hover {
+    color: #1da1f2;
 }
 
 .back-to-top {
