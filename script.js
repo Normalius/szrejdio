@@ -74,22 +74,23 @@ document.getElementById('play').addEventListener('click', function() {
     // Ukryj przycisk "play"
     this.style.display = 'none';
     
-    // Dodaj przyciski "pause" i "stop" na pasku
-    const actionsContainer = document.querySelector('.actions');
-    
-    const pauseButton = document.createElement('button');
-    pauseButton.className = 'action-button';
-    pauseButton.innerHTML = '<i class="fas fa-pause"></i>';
-    pauseButton.id = 'pause';
-    actionsContainer.appendChild(pauseButton);
-    
-    const stopButton = document.createElement('button');
-    stopButton.className = 'action-button';
-    stopButton.innerHTML = '<i class="fas fa-stop"></i>';
-    stopButton.id = 'stop';
-    actionsContainer.appendChild(stopButton);
-});
+// Zdarzenie nasłuchujące na kliknięcie przycisku "play"
+document.getElementById('play').addEventListener('click', function() {
+    var icon = this.querySelector('i'); // Pobierz ikonę z przycisku
 
+    if (icon.classList.contains('fa-play')) { // Jeśli ikona to "play"
+        // Zmień ikonę na "stop"
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-stop');
+        // Zmień tekst na przycisku na "Stop"
+        this.textContent = "Stop";
+    } else { // Jeśli ikona to "stop"
+        // Zmień ikonę na "play"
+        icon.classList.remove('fa-stop');
+        icon.classList.add('fa-play');
+        // Zmień tekst na przycisku na "Play"
+        this.textContent = "Play";
+    }
 
 window.addEventListener('scroll', function() {
     var topBar = document.getElementById('top-bar');
