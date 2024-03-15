@@ -49,49 +49,39 @@ body {
     margin-top: 40px; 
 }
 
-/* Stylizacja przycisku odtwarzania */
-#top-bar button#play, 
+/* Stylizacja przycisku odtwarzania i zatrzymywania */
+#top-bar button#play,
 #top-bar button#stop {
     background-color: transparent; /* Usuń tło */
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border: none; /* Usuń obramowanie */
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    margin-right: 1010px;
+    margin-right: 20px;
     position: relative; /* Dodaj pozycję względną */
 }
 
-/* Animacja dla przycisków play i stop */
-#top-bar button#play::after,
-#top-bar button#stop::after {
-    content: '';
-    position: absolute;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Kolor obramowania */
-    border-top: 2px solid #fff; /* Kolor obramowania wierzchniego */
-    border-radius: 50%; /* Okrągłe kształty */
-    width: 32px; /* Szerokość */
-    height: 32px; /* Wysokość */
-    top: 50%; /* Pozycja pionowa */
-    left: 50%; /* Pozycja pozioma */
-    transform: translate(-50%, -50%) rotate(0deg); /* Przesunięcie do środka i rotacja */
-    transition: transform 0.3s ease; /* Animacja */
-}
-
-#top-bar button#play:hover::after,
-#top-bar button#stop:hover::after {
-    animation: rotateCircle 1s linear infinite; /* Dodaj animację obrotu */
-}
-
-/* Animacja obracającego się koła */
+/* Keyframes dla animacji obrotu */
 @keyframes rotateCircle {
     to {
-        transform: translate(-50%, -50%) rotate(360deg); /* Pełny obrót */
+        transform: rotate(360deg); /* Pełny obrót */
     }
+}
+
+/* Animacja po najechaniu myszką */
+#top-bar button#play:hover,
+#top-bar button#stop:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Kolor tła po najechaniu myszką */
+    transform: translateY(-2px); /* Przesunięcie w górę */
+}
+
+/* Animacja kliknięcia */
+#top-bar button#play:active,
+#top-bar button#stop:active {
+    transform: scale(0.9); /* Zmniejszenie rozmiaru po kliknięciu */
 }
 
 /* Drugi header */
