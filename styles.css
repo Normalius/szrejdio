@@ -40,6 +40,10 @@ h2, h3 {
     transition: top 0.3s ease; /* Dodatkowa animacja */
 }
 
+#top-bar.transparent {
+    background-color: rgba(255, 165, 0, 0.7); /* Przeźroczysty pomarańczowy kolor */
+}
+
 body {
     margin-top: 40px; /* Dodajemy margines na górze strony, aby treść nie była zasłaniana przez pasek */
 }
