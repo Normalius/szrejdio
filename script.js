@@ -16,7 +16,7 @@ function toggleRadio() {
         radioPlayer.play();
 
         // Zmiana ikony przycisku na "Stop"
-        playButton.innerHTML = '<i class="fas fa-stop"></i> Stop';
+        playButton.innerHTML = '<i class="fas fa-stop"></i>';
     }
 
     // Odwrócenie stanu przycisku
