@@ -78,6 +78,8 @@ header {
 
 .logo-centered {
     text-align: center;
+    margin-right: auto; /* Dodanie automatycznego marginesu po prawej stronie logo */
+    margin-left: auto; /* Dodanie automatycznego marginesu po lewej stronie logo */
 }
 
 .logo-centered img {
@@ -90,13 +92,16 @@ header {
     align-items: center; /* Wyśrodkowanie przycisków akcji w pionie */
 }
 
+.actions button {
+    margin-left: 10px; /* Dodanie odstępu między przyciskami */
+}
+
 /* Stylizacja przycisków akcji */
 .action-button {
     background-color: #659F22;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin: 0 5px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -108,7 +113,6 @@ header {
 .action-button:hover {
     background-color: #4F7F16;
 }
-
 /* Nawigacja */
 nav {
     background-color: #83a400;
