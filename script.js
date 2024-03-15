@@ -69,25 +69,31 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
-// Zdarzenie nasłuchujące na kliknięcie przycisku "play"
-document.getElementById('play').addEventListener('click', function() {
-    var icon = this.querySelector('i'); // Pobierz ikonę z przycisku
+// Zmienna do przechowywania informacji o stanie przycisku
+let isPlaying = false;
 
-    if (icon.classList.contains('fa-play')) { // Jeśli ikona to "play"
-        // Zmień ikonę na "stop"
-        icon.classList.remove('fa-play');
-        icon.classList.add('fa-stop');
-        // Zmień tekst na przycisku na "Stop"
-        this.textContent = "Stop";
-    } else { // Jeśli ikona to "stop"
-        // Zmień ikonę na "play"
-        icon.classList.remove('fa-stop');
-        icon.classList.add('fa-play');
-        // Zmień tekst na przycisku na "Play"
-        this.textContent = "Play";
+// Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
+function toggleRadio() {
+    if (isPlaying) {
+        // Tutaj dodajemy kod do zatrzymania odtwarzania radia
+        // np. radio.stop();
+
+        // Zmiana ikony przycisku na "Play"
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
+    } else {
+        // Tutaj dodajemy kod do ponownego rozpoczęcia odtwarzania radia
+        // np. radio.play();
+
+        // Zmiana ikony przycisku na "Stop"
+        playButton.innerHTML = '<i class="fas fa-stop"></i>';
     }
-});
 
+    // Odwrócenie stanu przycisku
+    isPlaying = !isPlaying;
+}
+
+// Nasłuchujemy kliknięcia na przycisku
+playButton.addEventListener('click', toggleRadio);
 
 window.addEventListener('scroll', function() {
     var topBar = document.getElementById('top-bar');
