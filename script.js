@@ -89,3 +89,12 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
 
+// Obsługa przezroczystego paska nawigacji po przewinięciu strony
+window.addEventListener('scroll', function() {
+    var topBar = document.getElementById('top-bar');
+    if (window.scrollY > 100) {
+        topBar.classList.add('transparent');
+    } else {
+        topBar.classList.remove('transparent');
+    }
+});
