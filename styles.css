@@ -136,10 +136,6 @@ nav {
     background-color: #83a400;
     padding: 8px 0;
     overflow: auto;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
 }
 
 nav ul {
@@ -192,6 +188,10 @@ nav ul li a:hover {
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
+    .actions {
+        display: none;
+    }
+
     nav ul {
         flex-direction: column;
         text-align: center;
