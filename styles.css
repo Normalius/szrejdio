@@ -70,7 +70,47 @@ h2, h3 {
             transform: translate(-50%, -50%);
             width: 150px;
         }
+.volume-control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
+.volume-label {
+  margin-left: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .volume-control {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .volume-label {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
         /* Stylizacja przycisków udostępniania */
         #share-buttons {
             position: absolute;
