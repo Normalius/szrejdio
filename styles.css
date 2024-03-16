@@ -31,7 +31,7 @@ h2, h3 {
         #top-bar {
             background-color: orange;
             color: white;
-            padding: 10px; /* Zmniejszenie paddingu */
+            padding: 1px; /* Zmniejszenie paddingu */
             text-align: center;
             position: fixed;
             top: 0;
