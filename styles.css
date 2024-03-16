@@ -133,7 +133,8 @@ body {
 
 /* Nawigacja */
 nav {
-    background-color: #83a400;
+    background: linear-gradient(to bottom, #5ca600, #669900); /* Gradient tła nawigacji */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień pod menu */
     padding: 8px 0;
     overflow: auto;
 }
@@ -163,6 +164,7 @@ nav ul li a {
     transition: background-color 0.3s, transform 0.2s;
     font-size: 14px;
     position: relative;
+    background-color: transparent; /* Przejrzyste przyciski */
 }
 
 nav ul li a::before {
@@ -182,7 +184,7 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #659F22;
+    background-color: #568e00; /* Przejrzyste przyciski */
     transform: translateY(-2px);
 }
 
