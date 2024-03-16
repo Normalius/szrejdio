@@ -64,15 +64,18 @@ body {
     position: relative; /* Dodanie pozycji względnej dla przycisku */
     float: left; /* Przesunięcie przycisku na lewą stronę */
     font-size: 32px; /* Zwiększenie rozmiaru czcionki */
-    padding: 20px; /* Zwiększenie paddingu */
+    padding: 30px; /* Zwiększenie paddingu */
     background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
     border: none; /* Usunięcie obramowania */
     cursor: pointer; /* Ustawienie kursora na wskaźnik */
+    width: 100px; /* Zwiększenie szerokości przycisku */
+    height: 100px; /* Zwiększenie wysokości przycisku */
 }
 
 /* Stylizacja ikony na przycisku odtwarzania */
 #top-bar button#play i {
     color: white; /* Ustawienie koloru ikony na biały */
+    font-size: 48px; /* Zwiększenie rozmiaru ikony */
 }
 
 /* Stylizacja koła */
