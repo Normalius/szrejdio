@@ -27,75 +27,75 @@ h2, h3 {
     margin: 0 auto;
 }
 
-/* Górny pasek */
-#top-bar {
-    background-color: orange;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: top 0.3s ease;
-}
+        /* Górny pasek */
+        #top-bar {
+            background-color: orange;
+            color: white;
+            padding: 1px; /* Zmniejszenie paddingu */
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
 
-#top-bar.transparent {
-    background-color: rgba(255, 165, 0, 0.7);
-}
+        #top-bar.transparent {
+            background-color: rgba(255, 165, 0, 0.7);
+        }
 
-body {
-    margin-top: 60px;
-}
+        body {
+            margin-top: 60px; /* Zwiększenie marginesu górnego */
+        }
 
-/* Stylizacja przycisku odtwarzania */
-#top-bar button#play {
-    position: relative;
-    float: left;
-    font-size: 32px;
-    padding: 30px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-}
+        /* Stylizacja przycisku odtwarzania */
+        #top-bar button#play {
+            position: relative; /* Dodanie pozycji względnej dla przycisku */
+            float: left; /* Przesunięcie przycisku na lewą stronę */
+            font-size: 32px; /* Zwiększenie rozmiaru czcionki */
+            padding: 30px; /* Zwiększenie paddingu */
+            background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
+            border: none; /* Usunięcie obramowania */
+            cursor: pointer; /* Ustawienie kursora na wskaźnik */
+            width: 100px; /* Zwiększenie szerokości przycisku */
+            height: 100px; /* Zwiększenie wysokości przycisku */
+        }
 
-/* Suwak regulacji głośności */
-#volume-control {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-}
+        /* Suwak regulacji głośności */
+        #volume-control {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+        }
 
-/* Stylizacja przycisków udostępniania */
-#share-buttons {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
+        /* Stylizacja przycisków udostępniania */
+        #share-buttons {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
 
-.share-button {
-    display: inline-block;
-    font-size: 24px;
-    color: white;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
+        .share-button {
+            display: inline-block;
+            font-size: 24px;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
 
-.share-button:hover {
-    color: #ffcc00;
-}
+        .share-button:hover {
+            color: #ffcc00;
+        }
 
 /* Stylizacja ikony na przycisku odtwarzania */
 #top-bar button#play i {
-    color: white;
-    font-size: 48px;
+    color: white; /* Ustawienie koloru ikony na biały */
+    font-size: 48px; /* Zwiększenie rozmiaru ikony */
 }
 
 @keyframes spin-circle {
@@ -119,8 +119,9 @@ body {
     border: 2px solid #fff;
     border-top: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
+    /* Zaktualizowane wartości szerokości i wysokości koła */
+    width: calc(100% - 30px); /* Szerokość przycisku minus podwójna wartość paddingu */
+    height: calc(100% - 30px); /* Wysokość przycisku minus podwójna wartość paddingu */
     top: 53%;
     left: 47%;
     transform: translate(-50%, -50%);
@@ -132,7 +133,7 @@ body {
     background-color: #fff;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
-    margin-top: 115px;
+    margin-top: 115px; /* Zwiększenie marginesu górnego */
 }
 
 #sub-header .container {
@@ -143,7 +144,7 @@ body {
 
 /* Przyciski wsparcia i kontaktu */
 .support-contact .action-button {
-    background-color: #659F22;
+    background-color: #659F22; /* Zachowanie koloru przycisków */
     color: #fff;
     border: none;
     padding: 8px 20px;
@@ -153,17 +154,16 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    margin-left: 5px;
+    margin-left: 5px; /* Zmniejszenie marginesu na lewej stronie przycisków */
 }
 
 .support-contact .action-button:hover {
     background-color: #4F7F16;
 }
-
 /* Nawigacja */
 nav {
-    background-color: #83a400;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #83a400; /* Jednolity kolor tła nawigacji */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dostosowany kolor i intensywność cienia pod menu */
     padding: 8px 0;
     overflow: auto;
 }
@@ -178,7 +178,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 10px;
+    margin-right: 10px; /* Zmniejszenie marginesu między pozycjami w nawigacji */
 }
 
 nav ul li:last-child {
@@ -193,7 +193,7 @@ nav ul li a {
     transition: background-color 0.3s, transform 0.2s;
     font-size: 14px;
     position: relative;
-    background-color: transparent;
+    background-color: transparent; /* Przejrzyste przyciski */
 }
 
 nav ul li a::before {
@@ -213,18 +213,18 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #97b914;
+    background-color: #97b914; /* Zmiana koloru po najechaniu na opcję menu */
     transform: translateY(-2px);
-    text-decoration: underline;
+    text-decoration: underline; /* Efekt podkreślenia przy najechaniu */
 }
 
 /* Animacje dla ikon */
 nav ul li a i {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Dodanie animacji */
 }
 
 nav ul li a:hover i {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Powiększenie ikony przy najechaniu myszką */
 }
 
 /* Responsywność */
@@ -253,8 +253,9 @@ nav ul li a:hover i {
     }
 }
 
+
 .footer {
-    background-color: #222;
+    background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
     color: #fff;
     padding: 30px 0;
     text-align: center;
@@ -263,17 +264,17 @@ nav ul li a:hover i {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-right: 15px;
+    align-items: center; /* Dodanie wyśrodkowania ikon */
+    margin-right: 15px; /* Powrót do pierwotnej wartości marginesu */
 }
 
 .footer-section {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
 }
 
 .footer-section:last-child {
-    margin-right: 0;
+    margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
 }
 
 .footer-section h3 {
@@ -287,7 +288,7 @@ nav ul li a:hover i {
 }
 
 .footer-section ul li {
-    margin-bottom: 15px;
+   margin-bottom: 15px; /* Zwiększenie marginesu między pozycjami w stopce */
 }
 
 .footer-section ul li a {
@@ -304,7 +305,7 @@ nav ul li a:hover i {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 20px;
+    margin-right: 20px; /* Dodanie marginesu do oddzielenia od innych elementów stopki */
 }
 
 .social-icons-right .social-icon {
@@ -339,7 +340,7 @@ nav ul li a:hover i {
 }
 
 .back-to-top {
-    margin-top: 40px;
+    margin-top: 40px; /* Zwiększenie marginesu na górę */
 }
 
 .back-to-top a {
@@ -405,11 +406,11 @@ nav ul li a:hover i {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    background-image: url('dynamic-background.jpg');
+    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
     background-size: cover;
     background-position: center;
-    animation: fadeIn 1s ease;
-    transition: all 0.3s ease;
+    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
+    transition: all 0.3s ease; /* Płynne przejścia */
 }
 
 @keyframes fadeIn {
@@ -426,7 +427,45 @@ nav ul li a:hover i {
     margin-bottom: 15px;
     color: #333;
     font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Płynne przejścia kolorów */
+}
+
+#radio-stats ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#radio-stats {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
+    transition: all 0.3s ease; /* Płynne przejścia */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#radio-stats h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease; /* Płynne przejścia kolorów */
 }
 
 #radio-stats ul {
@@ -441,7 +480,7 @@ nav ul li a:hover i {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Płynne przejścia */
 }
 
 #radio-stats li:last-child {
@@ -450,21 +489,21 @@ nav ul li a:hover i {
 
 /* Zwiększenie kontrastu kolorów */
 #radio-stats {
-    color: #000;
-    background-color: #fff;
+    color: #000; /* Czarny tekst dla większego kontrastu */
+    background-color: #fff; /* Białe tło dla większego kontrastu */
 }
 
 #radio-stats h2 {
-    color: #333;
+    color: #333; /* Kolor tytułu */
 }
 
 #radio-stats li {
-    color: #555;
+    color: #555; /* Kolor treści */
 }
 
 /* Dopasowanie czcionek */
 #radio-stats h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Wybrana czcionka dla tytułu */
 }
 
 /* Przemyślane ułożenie elementów */
@@ -481,16 +520,16 @@ nav ul li a:hover i {
 
 /* Dodanie efektów cieniowania i głębi */
 #radio-stats {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Delikatne cieniowanie */
 }
 
 #radio-stats li {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; /* Dodanie podziału między poszczególnymi statystykami */
 }
 
 /* Dodanie efektów hover */
 #radio-stats li:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
 /* Responsywność */
