@@ -31,7 +31,7 @@ h2, h3 {
 #top-bar {
     background-color: orange;
     color: white;
-    padding: 20px; /* Zwiększenie wypełnienia */
+    padding: 20px; /* Zwiększenie paddingu */
     text-align: center;
     position: fixed;
     top: 0;
@@ -46,39 +46,26 @@ h2, h3 {
 }
 
 body {
-    margin-top: 60px; /* Zwiększenie marginesu na górze */
+    margin-top: 60px; /* Zwiększenie marginesu górnego */
 }
 
 /* Dodanie klasy dla animacji koła */
 @keyframes spin-circle {
     0% {
-        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) scale(1) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
     position: relative; /* Dodanie pozycji względnej dla przycisku */
+    float: left; /* Przesunięcie przycisku na lewą stronę */
     font-family: 'Font Awesome', sans-serif; /* Dodanie czcionki Awesome */
-    border: none;
-    background: none;
-    font-size: 48px; /* Zwiększenie rozmiaru ikony */
-    height: 100px; /* Zwiększenie wysokości przycisku */
-    width: 100px; /* Zwiększenie szerokości przycisku */
-}
-
-#top-bar button#play i {
-    font-size: 48px; /* Zwiększenie rozmiaru ikony */
-    color: #ffffff; /* Kolor ikony */
-}
-
-/* Przesunięcie przycisku na lewą stronę */
-.actions {
-    display: flex;
-    justify-content: flex-start;
+    font-size: 32px; /* Zwiększenie rozmiaru czcionki */
+    padding: 20px; /* Zwiększenie paddingu */
 }
 
 /* Stylizacja koła */
@@ -88,8 +75,8 @@ body {
     border: 2px solid #fff;
     border-top: 2px solid rgba(255, 255, 255, 0.5); /* Ustawienie jednej części koła na półprzezroczystą */
     border-radius: 50%;
-    width: 68px; /* Zwiększenie szerokości koła */
-    height: 68px; /* Zwiększenie wysokości koła */
+    width: 80px; /* Zwiększenie rozmiaru koła */
+    height: 80px; /* Zwiększenie rozmiaru koła */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -99,9 +86,9 @@ body {
 /* Drugi header */
 #sub-header {
     background-color: #fff;
-    padding: 20px; /* Zwiększenie wypełnienia */
+    padding: 10px 20px;
     border-bottom: 1px solid #ddd;
-    margin-top: 80px; /* Zwiększenie marginesu na górze */
+    margin-top: 90px; /* Zwiększenie marginesu górnego */
 }
 
 #sub-header .container {
@@ -132,7 +119,7 @@ body {
 /* Nawigacja */
 nav {
     background-color: #83a400;
-    padding: 20px 0; /* Zwiększenie wypełnienia */
+    padding: 8px 0;
     overflow: auto;
 }
 
@@ -415,4 +402,19 @@ li span#currentSong {
 /* Dodanie animacji rozbłysku po naciśnięciu */
 #top-bar button#play:active {
     animation: glow 0.5s ease-out;
+}
+
+/* Poprawienie animacji obrotu */
+#top-bar button#play::before {
+    content: '';
+    position: absolute;
+    border: 2px solid #fff;
+    border-top: 2px solid rgba(255, 255, 255, 0.5); /* Ustawienie jednej części koła na półprzezroczystą */
+    border-radius: 50%;
+    width: 120px; /* Zwiększenie rozmiaru koła */
+    height: 120px; /* Zwiększenie rozmiaru koła */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin-circle 3s linear infinite; /* Dodanie animacji obrotu */
 }
