@@ -364,14 +364,26 @@ nav ul li a:hover {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    background-image: linear-gradient(to right, #ffffff, #f8f8f8); /* Dodanie gradientu tła */
+    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #radio-stats h2 {
-    font-size: 28px; /* Zwiększenie rozmiaru tytułu */
+    font-size: 28px;
     margin-bottom: 15px;
     color: #333;
-    font-family: 'Montserrat', sans-serif; /* Zmiana czcionki tytułu */
+    font-family: 'Montserrat', sans-serif;
 }
 
 #radio-stats ul {
@@ -380,16 +392,34 @@ nav ul li a:hover {
 }
 
 #radio-stats li {
-    margin-bottom: 20px; /* Zwiększenie odstępu między pozycjami */
+    margin-bottom: 20px;
     font-size: 18px;
     color: #555;
-    display: flex; /* Ustawienie pozycji elementów */
-    align-items: center; /* Wyśrodkowanie elementów w pionie */
-    justify-content: center; /* Wyśrodkowanie elementów w poziomie */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #radio-stats li:last-child {
     margin-bottom: 0;
+}
+
+/* Dodanie ikony mikrofonu */
+#radio-stats .icon-microphone {
+    background-image: url('microphone-icon.png');
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+/* Dodanie ikony anteny radiowej */
+#radio-stats .icon-antenna {
+    background-image: url('antenna-icon.png');
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin-right: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -400,6 +430,6 @@ nav ul li a:hover {
 
 @media screen and (max-width: 480px) {
     #radio-stats {
-        padding: 15px; /* Zwiększenie wewnętrznego odstępu */
+        padding: 15px;
     }
 }
