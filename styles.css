@@ -130,10 +130,9 @@ body {
 .support-contact .action-button:hover {
     background-color: #4F7F16;
 }
-
 /* Nawigacja */
 nav {
-    background: linear-gradient(to bottom, #336633, #669900); /* Dostosowany gradient tła nawigacji */
+    background-color: #83a400; /* Jednolity kolor tła nawigacji */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dostosowany kolor i intensywność cienia pod menu */
     padding: 8px 0;
     overflow: auto;
@@ -223,16 +222,7 @@ nav ul li a:hover i {
         font-size: 12px;
     }
 }
-@media screen and (max-width: 480px) {
-    nav ul li a {
-        font-size: 12px;
-    }
-}
-@media screen and (max-width: 480px) {
-    nav ul li a {
-        font-size: 12px;
-    }
-}
+
 
 .footer {
     background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
