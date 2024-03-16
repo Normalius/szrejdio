@@ -398,3 +398,51 @@ nav ul li a:hover {
         padding: 10px;
     }
 }
+
+/* Poprawki */
+/* 1. Zmniejszenie powtarzających się reguł */
+#top-bar,
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. Ograniczenie powtarzających się selektorów */
+body,
+nav ul li a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. Ulepszenie nazewnictwa klas */
+.social-icons-right .social-icon {
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 20px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.social-icons-right .social-icon:hover {
+    color: #ffcc00;
+}
+
+.social-icons-right .facebook:hover {
+    color: #3b5998;
+}
+
+.social-icons-right .instagram:hover {
+    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #E2ED8A, #A1D0E8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icons-right .discord:hover {
+    color: #7289da;
+}
+
+.social-icons-right .twitter:hover {
+    color: #000000;
+}
