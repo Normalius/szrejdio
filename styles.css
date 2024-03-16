@@ -85,8 +85,8 @@ body {
     border: 2px solid #fff;
     border-top: 2px solid rgba(255, 255, 255, 0.5); /* Ustawienie jednej części koła na półprzezroczystą */
     border-radius: 50%;
-    width: 80px; /* Zwiększenie rozmiaru koła */
-    height: 80px; /* Zwiększenie rozmiaru koła */
+    width: 60px; /* Zmniejszenie szerokości koła */
+    height: 60px; /* Zmniejszenie wysokości koła */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
