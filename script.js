@@ -97,4 +97,32 @@ window.addEventListener('scroll', function() {
     } else {
         topBar.classList.remove('transparent');
     }
+const playButton = document.getElementById('play');
+const radioPlayer = document.getElementById('radioPlayer');
+
+playButton.addEventListener('click', function() {
+    if (radioPlayer.paused) {
+        radioPlayer.play();
+        playButton.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+        radioPlayer.pause();
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
+    }
+});
+
+// Pobieranie danych o stanie serwera radia
+const serverTitle = document.getElementById('serverTitle');
+const currentListeners = document.getElementById('currentListeners');
+const peakListeners = document.getElementById('peakListeners');
+const maxListeners = document.getElementById('maxListeners');
+const currentSong = document.getElementById('currentSong');
+
+// Tutaj można zaimplementować logikę pobierania danych z serwera radia
+// Na potrzeby tego przykładu używam sztucznych danych
+serverTitle.textContent = "SZRejdio";
+currentListeners.textContent = "35";
+peakListeners.textContent = "50";
+maxListeners.textContent = "100";
+currentSong.textContent = "Artysta - Tytuł piosenki";
+    
 });
