@@ -14,7 +14,22 @@
     <div class="container">
         <div class="actions">
             <button id="play" class="btn-play"><i class="fas fa-play"></i></button>
-            <input type="range" id="volume-control" min="0" max="100" value="50">
+            <div class="volume-control">
+  <input type="range" min="0" max="100" value="50" class="slider" id="volume-slider">
+</div>
+        <div class="volume-control">
+  <input type="range" min="0" max="100" value="50" class="slider" id="volume-slider">
+  <i class="fas fa-volume-up"></i>
+</div>
+            <div class="volume-control">
+  <input type="range" min="0" max="100" value="50" class="slider" id="volume-slider">
+  <span class="volume-level">50%</span>
+</div>
+            <div class="volume-control">
+  <input type="range" min="0" max="100" value="50" class="slider" id="volume-slider">
+  <span class="volume-label">Medium</span>
+</div>
+
             <div id="share-buttons">
                 <a href="#" class="share-button"><i class="fas fa-share-alt"></i></a>
                 <a href="#" class="share-button"><i class="fas fa-envelope"></i></a>
