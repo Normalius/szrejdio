@@ -27,40 +27,70 @@ h2, h3 {
     margin: 0 auto;
 }
 
-/* Górny pasek */
-#top-bar {
-    background-color: orange;
-    color: white;
-    padding: 1px; /* Zmniejszenie paddingu */
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: top 0.3s ease;
-}
+        /* Górny pasek */
+        #top-bar {
+            background-color: orange;
+            color: white;
+            padding: 1px; /* Zmniejszenie paddingu */
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
 
-#top-bar.transparent {
-    background-color: rgba(255, 165, 0, 0.7);
-}
+        #top-bar.transparent {
+            background-color: rgba(255, 165, 0, 0.7);
+        }
 
-body {
-    margin-top: 60px; /* Zwiększenie marginesu górnego */
-}
+        body {
+            margin-top: 60px; /* Zwiększenie marginesu górnego */
+        }
 
-/* Stylizacja przycisku odtwarzania */
-#top-bar button#play {
-    position: relative; /* Dodanie pozycji względnej dla przycisku */
-    float: left; /* Przesunięcie przycisku na lewą stronę */
-    font-size: 32px; /* Zwiększenie rozmiaru czcionki */
-    padding: 30px; /* Zwiększenie paddingu */
-    background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
-    border: none; /* Usunięcie obramowania */
-    cursor: pointer; /* Ustawienie kursora na wskaźnik */
-    width: 100px; /* Zwiększenie szerokości przycisku */
-    height: 100px; /* Zwiększenie wysokości przycisku */
-}
+        /* Stylizacja przycisku odtwarzania */
+        #top-bar button#play {
+            position: relative; /* Dodanie pozycji względnej dla przycisku */
+            float: left; /* Przesunięcie przycisku na lewą stronę */
+            font-size: 32px; /* Zwiększenie rozmiaru czcionki */
+            padding: 30px; /* Zwiększenie paddingu */
+            background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
+            border: none; /* Usunięcie obramowania */
+            cursor: pointer; /* Ustawienie kursora na wskaźnik */
+            width: 100px; /* Zwiększenie szerokości przycisku */
+            height: 100px; /* Zwiększenie wysokości przycisku */
+        }
+
+        /* Suwak regulacji głośności */
+        #volume-control {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+        }
+
+        /* Stylizacja przycisków udostępniania */
+        #share-buttons {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        .share-button {
+            display: inline-block;
+            font-size: 24px;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .share-button:hover {
+            color: #ffcc00;
+        }
 
 /* Stylizacja ikony na przycisku odtwarzania */
 #top-bar button#play i {
