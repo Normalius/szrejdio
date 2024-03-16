@@ -49,16 +49,6 @@ body {
     margin-top: 60px; /* Zwiększenie marginesu górnego */
 }
 
-/* Dodanie klasy dla animacji koła */
-@keyframes spin-circle {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
     position: relative; /* Dodanie pozycji względnej dla przycisku */
