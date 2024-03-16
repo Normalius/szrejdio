@@ -1,4 +1,5 @@
-/* Reset CSS */
+/* Wspólne style dla wszystkich ekranów */
+/* Resetowanie domyślnych styli */
 * {
     margin: 0;
     padding: 0;
@@ -7,156 +8,276 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #000000;
     line-height: 1.6;
-    background-color: #f2f2f2;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    font-weight: bold;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Header */
+/* Górny pasek */
 #top-bar {
-    background-color: #333;
-    padding: 1rem 0;
+    background-color: orange;
+    color: white;
+    padding: 1px; /* Zmniejszenie paddingu */
     text-align: center;
-    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
 }
 
-.btn-play {
-    background-color: #1db954;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
+#top-bar.transparent {
+    background-color: rgba(255, 165, 0, 0.7);
 }
 
+body {
+    margin-top: 60px; /* Zwiększenie marginesu górnego */
+}
+
+/* Stylizacja przycisku odtwarzania */
+#top-bar button#play {
+    position: relative; /* Dodanie pozycji względnej dla przycisku */
+    float: left; /* Przesunięcie przycisku na lewą stronę */
+    font-size: 32px; /* Zwiększenie rozmiaru czcionki */
+    padding: 30px; /* Zwiększenie paddingu */
+    background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
+    border: none; /* Usunięcie obramowania */
+    cursor: pointer; /* Ustawienie kursora na wskaźnik */
+    width: 100px; /* Zwiększenie szerokości przycisku */
+    height: 100px; /* Zwiększenie wysokości przycisku */
+}
+
+/* Stylizacja ikony na przycisku odtwarzania */
+#top-bar button#play i {
+    color: white; /* Ustawienie koloru ikony na biały */
+    font-size: 48px; /* Zwiększenie rozmiaru ikony */
+}
+
+
+@keyframes spin-circle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Drugi header */
 #sub-header {
-    background-color: #333;
-    padding: 1rem 0;
-    color: #fff;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 90px; /* Zwiększenie marginesu górnego */
 }
 
-.logo img {
-    max-width: 100%;
-    height: auto;
+#sub-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.support-contact {
-    float: right;
-}
-
-.action-button {
-    background-color: #1db954;
+/* Przyciski wsparcia i kontaktu */
+.support-contact .action-button {
+    background-color: #659F22;
     color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
-    margin-left: 10px;
-    font-size: 1rem;
+    padding: 8px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
 }
 
-/* Navigation */
+.support-contact .action-button:hover {
+    background-color: #4F7F16;
+}
+
+/* Nawigacja */
+nav {
+    background-color: #83a400;
+    padding: 8px 0;
+    overflow: auto;
+}
+
 nav ul {
-    list-style: none;
-    background-color: #333;
-    text-align: center;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
 }
 
 nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: #fff;
-    padding: 1rem;
-    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 14px;
+    position: relative;
 }
 
-/* Main Content */
-main {
-    padding: 2rem 0;
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease;
+    z-index: -1;
 }
 
-/* Radio Stats Section */
-#radio-stats {
-    background-color: #fff;
-    padding: 2rem;
-    margin-bottom: 2rem;
+nav ul li a:hover::before {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-#radio-stats ul {
-    list-style-type: none;
-    padding: 0;
+nav ul li a:hover {
+    background-color: #659F22;
+    transform: translateY(-2px);
 }
 
-#radio-stats ul li {
-    margin-bottom: 1rem;
+/* Responsywność */
+@media screen and (max-width: 768px) {
+    .actions {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 8px 12px;
+    }
 }
 
-.label {
-    font-weight: bold;
+@media screen and (max-width: 480px) {
+    nav ul li a {
+        font-size: 12px;
+    }
 }
 
-/* News Section */
-.news-section {
-    background-color: #fff;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-.news-section h2 {
-    margin-bottom: 1rem;
-}
-
-/* Footer */
 .footer {
-    background-color: #333;
+    background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
     color: #fff;
-    padding: 2rem 0;
+    padding: 30px 0;
+    text-align: center;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Dodanie wyśrodkowania ikon */
 }
 
 .footer-section {
     flex: 1;
-    margin-right: 2rem;
+    margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
+}
+
+.footer-section:last-child {
+    margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
 }
 
 .footer-section h3 {
-    margin-bottom: 1rem;
+    color: #fff;
+    padding-bottom: 10px;
 }
 
 .footer-section ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffcc00;
 }
 
 .social-icons-right {
-    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px; /* Dodanie marginesu do oddzielenia od innych elementów stopki */
 }
 
-.social-icon {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
+.social-icons-right .social-icon {
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 20px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.social-icons-right .social-icon:hover {
+    color: #ffcc00;
+}
+
+.social-icons-right .facebook:hover {
+    color: #3b5998;
+}
+
+.social-icons-right .instagram:hover {
+    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #E2ED8A, #A1D0E8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icons-right .discord:hover {
+    color: #7289da;
+}
+
+.social-icons-right .twitter:hover {
+    color: #000000;
 }
 
 .back-to-top {
-    text-align: right;
-    margin-top: 1rem;
+    margin-top: 40px; /* Zwiększenie marginesu na górę */
 }
 
 .back-to-top a {
