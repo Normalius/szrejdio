@@ -184,6 +184,18 @@ nav ul li a:hover {
     nav ul li a {
         padding: 8px 12px;
     }
+
+    /* Pasek */
+    #top-bar {
+        position: static;
+        margin-top: 20px;
+    }
+
+    /* Player */
+    #radioPlayer {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -208,7 +220,6 @@ nav ul li a:hover {
         margin-top: 20px;
     }
 }
-
 .footer {
     background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
     color: #fff;
