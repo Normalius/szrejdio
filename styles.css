@@ -132,7 +132,7 @@ body {
 }
 /* Nawigacja */
 nav {
-    background-color: orange; /* Domyślny kolor tła nawigacji */
+    background-color: #83a400; /* Jednolity kolor tła nawigacji */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dostosowany kolor i intensywność cienia pod menu */
     padding: 8px 0;
     overflow: auto;
@@ -156,7 +156,7 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-    color: #ffffff; /* Zmiana koloru tekstu na biały */
+    color: #fff;
     text-decoration: none;
     padding: 8px 12px;
     border-radius: 5px;
@@ -183,7 +183,7 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #336633; /* Zmiana koloru tła po najechaniu na opcję menu */
+    background-color: #6b9e35; /* Zmiana koloru po najechaniu na opcję menu */
     transform: translateY(-2px);
     text-decoration: underline; /* Efekt podkreślenia przy najechaniu */
 }
@@ -222,6 +222,7 @@ nav ul li a:hover i {
         font-size: 12px;
     }
 }
+
 
 .footer {
     background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
