@@ -92,6 +92,51 @@ h2, h3 {
             color: #ffcc00;
         }
 
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volume-control input[type=range] {
+  -webkit-appearance: none;
+  width: 200px;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #ddd, #ddd);
+  outline: none;
+  margin: 0 10px;
+}
+
+.volume-control input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.volume-control input[type=range]:hover::-webkit-slider-thumb {
+  background: #ccc;
+}
+
+.volume-level {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #333;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .volume-control input[type=range] {
+    width: 150px;
+  }
+}
+
 /* Stylizacja ikony na przycisku odtwarzania */
 #top-bar button#play i {
     color: white; /* Ustawienie koloru ikony na biały */
