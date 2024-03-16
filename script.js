@@ -97,19 +97,4 @@ window.addEventListener('scroll', function() {
     } else {
         topBar.classList.remove('transparent');
     }
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Radio player
-    const audio = document.getElementById("radioPlayer");
-    const playButton = document.getElementById("play");
-
-    playButton.addEventListener("click", function () {
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    });
-});
-
 });
