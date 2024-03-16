@@ -61,31 +61,21 @@ body {
 
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
-    position: relative;
-    float: right;
-    font-family: 'Font Awesome', sans-serif; /* Zmieniono na 'Font Awesome' */
+    position: relative; /* Dodanie pozycji względnej dla przycisku */
+    font-family: 'Font Awesome', sans-serif; /* Dodanie czcionki Awesome */
     border: none;
     background: none;
 }
 
 #top-bar button#play i {
-    font-size: 24px; /* Dodano rozmiar ikony */
+    font-size: 24px; /* Dodanie rozmiaru ikony */
     color: #ffffff; /* Kolor ikony */
 }
 
-/* Animacja obrotu */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Dodanie animacji obrotu */
-#top-bar button#play.active i {
-    animation: spin 1s linear infinite;
+/* Przesunięcie przycisku na lewą stronę */
+.actions {
+    display: flex;
+    justify-content: flex-start;
 }
 
 /* Stylizacja koła */
@@ -213,7 +203,7 @@ nav ul li a:hover {
 
 @media screen and (max-width: 480px) {
     nav ul li a {
-        font-size: 12px;
+        padding: 6px 10px;
     }
 }
 
