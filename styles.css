@@ -186,6 +186,16 @@ nav ul li a:hover::before {
 nav ul li a:hover {
     background-color: #568e00; /* Przejrzyste przyciski */
     transform: translateY(-2px);
+    text-decoration: underline; /* Efekt podkreślenia przy najechaniu */
+}
+
+/* Animacje dla ikon */
+nav ul li a i {
+    transition: transform 0.3s ease; /* Dodanie animacji */
+}
+
+nav ul li a:hover i {
+    transform: scale(1.1); /* Powiększenie ikony przy najechaniu myszką */
 }
 
 /* Responsywność */
@@ -208,6 +218,11 @@ nav ul li a:hover {
     }
 }
 
+@media screen and (max-width: 480px) {
+    nav ul li a {
+        font-size: 12px;
+    }
+}
 @media screen and (max-width: 480px) {
     nav ul li a {
         font-size: 12px;
