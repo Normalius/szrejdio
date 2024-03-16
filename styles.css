@@ -85,12 +85,21 @@ body {
     border: 2px solid #fff;
     border-top: 2px solid rgba(255, 255, 255, 0.5); /* Ustawienie jednej części koła na półprzezroczystą */
     border-radius: 50%;
-    width: 30px; /* Zmniejszenie szerokości koła */
-    height: 30px; /* Zmniejszenie wysokości koła */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 60px; /* Zmniejszenie szerokości koła */
+    height: 60px; /* Zmniejszenie wysokości koła */
+    top: calc(50% - 30px); /* Poprawienie pozycji koła na przycisku */
+    left: calc(50% - 30px); /* Poprawienie pozycji koła na przycisku */
     animation: spin-circle 3s linear infinite; /* Dodanie animacji obrotu */
+}
+
+/* Poprawiona animacja obrotu */
+@keyframes spin-circle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* Drugi header */
