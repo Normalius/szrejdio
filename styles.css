@@ -183,7 +183,7 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #568e00; /* Przejrzyste przyciski */
+    background-color: #6da636; /* Zmieniony kolor po najechaniu */
     transform: translateY(-2px);
     text-decoration: underline; /* Efekt podkreślenia przy najechaniu */
 }
