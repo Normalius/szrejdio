@@ -31,7 +31,7 @@ h2, h3 {
 #top-bar {
     background-color: orange;
     color: white;
-    padding: 10px;
+    padding: 20px; /* Zwiększenie wypełnienia */
     text-align: center;
     position: fixed;
     top: 0;
@@ -46,7 +46,7 @@ h2, h3 {
 }
 
 body {
-    margin-top: 40px;
+    margin-top: 60px; /* Zwiększenie marginesu na górze */
 }
 
 /* Dodanie klasy dla animacji koła */
@@ -65,10 +65,13 @@ body {
     font-family: 'Font Awesome', sans-serif; /* Dodanie czcionki Awesome */
     border: none;
     background: none;
+    font-size: 36px; /* Zwiększenie rozmiaru ikony */
+    height: 60px; /* Zwiększenie wysokości przycisku */
+    width: 60px; /* Zwiększenie szerokości przycisku */
 }
 
 #top-bar button#play i {
-    font-size: 24px; /* Dodanie rozmiaru ikony */
+    font-size: 36px; /* Zwiększenie rozmiaru ikony */
     color: #ffffff; /* Kolor ikony */
 }
 
@@ -96,9 +99,9 @@ body {
 /* Drugi header */
 #sub-header {
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 20px; /* Zwiększenie wypełnienia */
     border-bottom: 1px solid #ddd;
-    margin-top: 70px;
+    margin-top: 80px; /* Zwiększenie marginesu na górze */
 }
 
 #sub-header .container {
@@ -129,7 +132,7 @@ body {
 /* Nawigacja */
 nav {
     background-color: #83a400;
-    padding: 8px 0;
+    padding: 20px 0; /* Zwiększenie wypełnienia */
     overflow: auto;
 }
 
