@@ -133,8 +133,8 @@ body {
 
 /* Nawigacja */
 nav {
-    background: linear-gradient(to bottom, #5ca600, #669900); /* Gradient tła nawigacji */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień pod menu */
+    background: linear-gradient(to bottom, #336633, #669900); /* Dostosowany gradient tła nawigacji */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dostosowany kolor i intensywność cienia pod menu */
     padding: 8px 0;
     overflow: auto;
 }
