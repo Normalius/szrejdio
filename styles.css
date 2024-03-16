@@ -52,10 +52,10 @@ body {
 /* Dodanie klasy dla animacji koła */
 @keyframes spin-circle {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) scale(1) rotate(360deg);
     }
 }
 
@@ -65,13 +65,13 @@ body {
     font-family: 'Font Awesome', sans-serif; /* Dodanie czcionki Awesome */
     border: none;
     background: none;
-    font-size: 36px; /* Zwiększenie rozmiaru ikony */
-    height: 60px; /* Zwiększenie wysokości przycisku */
-    width: 60px; /* Zwiększenie szerokości przycisku */
+    font-size: 48px; /* Zwiększenie rozmiaru ikony */
+    height: 100px; /* Zwiększenie wysokości przycisku */
+    width: 100px; /* Zwiększenie szerokości przycisku */
 }
 
 #top-bar button#play i {
-    font-size: 36px; /* Zwiększenie rozmiaru ikony */
+    font-size: 48px; /* Zwiększenie rozmiaru ikony */
     color: #ffffff; /* Kolor ikony */
 }
 
@@ -88,8 +88,8 @@ body {
     border: 2px solid #fff;
     border-top: 2px solid rgba(255, 255, 255, 0.5); /* Ustawienie jednej części koła na półprzezroczystą */
     border-radius: 50%;
-    width: 34px;
-    height: 34px;
+    width: 68px; /* Zwiększenie szerokości koła */
+    height: 68px; /* Zwiększenie wysokości koła */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -206,7 +206,7 @@ nav ul li a:hover {
 
 @media screen and (max-width: 480px) {
     nav ul li a {
-        padding: 6px 10px;
+        font-size: 12px;
     }
 }
 
