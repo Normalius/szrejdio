@@ -419,8 +419,3 @@ li span#currentSong {
     animation: spin-circle 3s linear infinite; /* Dodanie animacji obrotu */
 }
 
-.btn-play::before {
-    content: "\f04b"; /* Kod Unicode ikony "play" z Font Awesome */
-    font-family: "Font Awesome 6 Free"; /* Ustawienie czcionki Font Awesome */
-    font-weight: 900; /* Ustawienie wagi czcionki */
-}
