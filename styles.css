@@ -190,6 +190,23 @@ nav ul li a:hover {
     nav ul li a {
         font-size: 12px;
     }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .social-icons-right {
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .back-to-top {
+        margin-top: 20px;
+    }
 }
 
 .footer {
