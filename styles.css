@@ -1,5 +1,4 @@
-/* Wspólne style dla wszystkich ekranów */
-/* Resetowanie domyślnych styli */
+/* Resetowanie domyślnych stylów dla wszystkich elementów */
 * {
     margin: 0;
     padding: 0;
@@ -110,21 +109,25 @@ body {
 .support-contact .action-button:hover {
     background-color: #4F7F16;
 }
-
-/* Nawigacja */
+/* Nowe style dla nawigacji */
 nav {
-    background-color: #83a400;
+    background-color: #333;
+    color: #fff;
     padding: 8px 0;
     overflow: auto;
 }
 
 nav ul {
     list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
 }
 
 nav ul li {
@@ -184,42 +187,14 @@ nav ul li a:hover {
     nav ul li a {
         padding: 8px 12px;
     }
-
-    /* Pasek */
-    #top-bar {
-        position: static;
-        margin-top: 20px;
-    }
-
-    /* Player */
-    #radioPlayer {
-        max-width: 100%;
-        width: 100%;
-    }
 }
 
 @media screen and (max-width: 480px) {
     nav ul li a {
         font-size: 12px;
     }
-
-    .footer-container {
-        flex-direction: column;
-    }
-
-    .footer-section {
-        margin-bottom: 20px;
-    }
-
-    .social-icons-right {
-        justify-content: center;
-        margin-right: 0;
-    }
-
-    .back-to-top {
-        margin-top: 20px;
-    }
 }
+
 .footer {
     background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
     color: #fff;
@@ -321,79 +296,38 @@ nav ul li a:hover {
     background-color: #ffcc00;
 }
 
+/* Nowy wygląd sekcji aktualności */
 .news-section {
-    max-width: 800px;
-    margin: 20px auto 40px;
-    text-align: left;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .news-section h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 1rem;
 }
 
-.news-list {
-    list-style: none;
-    padding: 0;
+.news-section p {
+    margin-bottom: 1rem;
 }
 
-.news-list li {
-    margin-bottom: 20px;
-}
-
-.news-list h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.news-list p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
+/* Zmiana stylu dla sekcji statystyk radia */
 #radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-}
-
-#radio-stats h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
+    background-color: #f4f4f4;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 #radio-stats ul {
     list-style-type: none;
-    padding: 0;
 }
 
 #radio-stats li {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
-#radio-stats li span {
+#radio-stats .label {
     font-weight: bold;
-}
-
-#radio-stats li:nth-child(odd) {
-    background-color: #fff;
 }
 
 /* Stylizacja etykiet i wartości w sekcji statystyk radia */
