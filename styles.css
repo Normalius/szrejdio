@@ -232,7 +232,9 @@ nav ul li a:hover i {
 /* Responsywność */
 @media screen and (max-width: 768px) {
     .actions {
-        display: none;
+        display: block; /* Wyświetlanie akcji jako bloków */
+        text-align: center; /* Wyśrodkowanie tekstu */
+        margin-top: 10px; /* Dostosowanie marginesu */
     }
 
     nav ul {
