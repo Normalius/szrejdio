@@ -31,7 +31,7 @@ h2, h3 {
 #top-bar {
     background-color: orange;
     color: white;
-    padding: 1px; /* Zmniejszenie paddingu */
+    padding: 1px;
     text-align: center;
     position: fixed;
     top: 0;
@@ -39,8 +39,26 @@ h2, h3 {
     width: 100%;
     z-index: 1000;
     transition: top 0.3s ease;
+    overflow: hidden; /* Dodanie ukrycia dla wskaźnika postępu */
 }
 
+#progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px; /* Wysokość wskaźnika postępu */
+    background-color: #fff; /* Kolor wskaźnika postępu */
+    animation: progressAnimation 60s linear infinite; /* Animacja postępu */
+}
+
+@keyframes progressAnimation {
+    0% {
+        width: 0; /* Początkowa szerokość wskaźnika postępu */
+    }
+    100% {
+        width: 100%; /* Szerokość wskaźnika postępu na końcu animacji */
+    }
+}
 #top-bar.transparent {
     background-color: rgba(255, 165, 0, 0.7);
 }
