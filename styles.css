@@ -39,6 +39,20 @@ h2, h3 {
     width: 100%;
     z-index: 1000;
     transition: top 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+#play {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#volume-control {
+    margin-left: 10px;
+    width: 100px;
 }
 
 #top-bar.transparent {
@@ -60,6 +74,7 @@ body {
     cursor: pointer; /* Ustawienie kursora na wskaźnik */
     width: 100px; /* Zwiększenie szerokości przycisku */
     height: 100px; /* Zwiększenie wysokości przycisku */
+    
 }
 
 /* Stylizacja ikony na przycisku odtwarzania */
