@@ -61,9 +61,31 @@ body {
 
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
-    position: relative; /* Dodanie pozycji względnej dla przycisku */
-    float: right; /* Przesunięcie przycisku na prawą stronę */
-    font-family: 'Font Awesome', sans-serif; /* Dodanie czcionki Awesome */
+    position: relative;
+    float: right;
+    font-family: 'Font Awesome', sans-serif; /* Zmieniono na 'Font Awesome' */
+    border: none;
+    background: none;
+}
+
+#top-bar button#play i {
+    font-size: 24px; /* Dodano rozmiar ikony */
+    color: #ffffff; /* Kolor ikony */
+}
+
+/* Animacja obrotu */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dodanie animacji obrotu */
+#top-bar button#play.active i {
+    animation: spin 1s linear infinite;
 }
 
 /* Stylizacja koła */
