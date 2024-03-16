@@ -6,6 +6,8 @@ let isPlaying = false;
 function toggleRadio() {
     const playButton = document.getElementById('play');
     const radioPlayer = document.getElementById('radioPlayer');
+    const volumeControl = document.getElementById('volume-control'); // Dodajemy kontrolę głośności
+
     if (isPlaying) {
         // Zatrzymywanie odtwarzania radia
         radioPlayer.pause();
@@ -20,12 +22,18 @@ function toggleRadio() {
         playButton.innerHTML = '<i class="fas fa-stop"></i>';
     }
 
-    // Odwrócenie stanu przycisku
+   // Odwrócenie stanu przycisku
     isPlaying = !isPlaying;
 }
 
 // Nasłuchujemy kliknięcia na przycisku
 document.getElementById('play').addEventListener('click', toggleRadio);
+
+// Dodajemy obsługę zmiany głośności
+document.getElementById('volume-control').addEventListener('input', function() {
+    const radioPlayer = document.getElementById('radioPlayer');
+    radioPlayer.volume = this.value / 100; // Ustawienie głośności na podstawie wartości z pola input
+});
 
 // Funkcja do aktualizacji danych statystycznych na stronie
 function updateRadioStats(radioStats) {
