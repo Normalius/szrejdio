@@ -391,6 +391,42 @@ nav ul li a:hover {
     padding: 0;
 }
 
+#radio-stats {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#radio-stats h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#radio-stats ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 #radio-stats li {
     margin-bottom: 20px;
     font-size: 18px;
@@ -404,21 +440,15 @@ nav ul li a:hover {
     margin-bottom: 0;
 }
 
-/* Dodanie ikony mikrofonu */
+/* Dodanie ikony mikrofonu z Font Awesome */
 #radio-stats .icon-microphone {
-    background-image: url('microphone-icon.png');
-    width: 50px;
-    height: 50px;
-    background-size: cover;
+    font-size: 30px;
     margin-right: 10px;
 }
 
-/* Dodanie ikony anteny radiowej */
+/* Dodanie ikony anteny radiowej z Font Awesome */
 #radio-stats .icon-antenna {
-    background-image: url('antenna-icon.png');
-    width: 50px;
-    height: 50px;
-    background-size: cover;
+    font-size: 30px;
     margin-right: 10px;
 }
 
