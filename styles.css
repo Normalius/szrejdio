@@ -213,6 +213,11 @@ nav ul li a:hover {
         font-size: 12px;
     }
 }
+@media screen and (max-width: 480px) {
+    nav ul li a {
+        font-size: 12px;
+    }
+}
 
 .footer {
     background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
