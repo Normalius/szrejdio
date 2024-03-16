@@ -27,75 +27,75 @@ h2, h3 {
     margin: 0 auto;
 }
 
-        /* Górny pasek */
-        #top-bar {
-            background-color: orange;
-            color: white;
-            padding: 1px; /* Zmniejszenie paddingu */
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: top 0.3s ease;
-        }
+/* Górny pasek */
+#top-bar {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
 
-        #top-bar.transparent {
-            background-color: rgba(255, 165, 0, 0.7);
-        }
+#top-bar.transparent {
+    background-color: rgba(255, 165, 0, 0.7);
+}
 
-        body {
-            margin-top: 60px; /* Zwiększenie marginesu górnego */
-        }
+body {
+    margin-top: 60px;
+}
 
-        /* Stylizacja przycisku odtwarzania */
-        #top-bar button#play {
-            position: relative; /* Dodanie pozycji względnej dla przycisku */
-            float: left; /* Przesunięcie przycisku na lewą stronę */
-            font-size: 32px; /* Zwiększenie rozmiaru czcionki */
-            padding: 30px; /* Zwiększenie paddingu */
-            background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
-            border: none; /* Usunięcie obramowania */
-            cursor: pointer; /* Ustawienie kursora na wskaźnik */
-            width: 100px; /* Zwiększenie szerokości przycisku */
-            height: 100px; /* Zwiększenie wysokości przycisku */
-        }
+/* Stylizacja przycisku odtwarzania */
+#top-bar button#play {
+    position: relative;
+    float: left;
+    font-size: 32px;
+    padding: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
 
-        /* Suwak regulacji głośności */
-        #volume-control {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-        }
+/* Suwak regulacji głośności */
+#volume-control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+}
 
-        /* Stylizacja przycisków udostępniania */
-        #share-buttons {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-        }
+/* Stylizacja przycisków udostępniania */
+#share-buttons {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
 
-        .share-button {
-            display: inline-block;
-            font-size: 24px;
-            color: white;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
+.share-button {
+    display: inline-block;
+    font-size: 24px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 
-        .share-button:hover {
-            color: #ffcc00;
-        }
+.share-button:hover {
+    color: #ffcc00;
+}
 
 /* Stylizacja ikony na przycisku odtwarzania */
 #top-bar button#play i {
-    color: white; /* Ustawienie koloru ikony na biały */
-    font-size: 48px; /* Zwiększenie rozmiaru ikony */
+    color: white;
+    font-size: 48px;
 }
 
 @keyframes spin-circle {
@@ -119,9 +119,8 @@ h2, h3 {
     border: 2px solid #fff;
     border-top: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
-    /* Zaktualizowane wartości szerokości i wysokości koła */
-    width: calc(100% - 30px); /* Szerokość przycisku minus podwójna wartość paddingu */
-    height: calc(100% - 30px); /* Wysokość przycisku minus podwójna wartość paddingu */
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
     top: 53%;
     left: 47%;
     transform: translate(-50%, -50%);
@@ -133,7 +132,7 @@ h2, h3 {
     background-color: #fff;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
-    margin-top: 115px; /* Zwiększenie marginesu górnego */
+    margin-top: 115px;
 }
 
 #sub-header .container {
@@ -144,7 +143,7 @@ h2, h3 {
 
 /* Przyciski wsparcia i kontaktu */
 .support-contact .action-button {
-    background-color: #659F22; /* Zachowanie koloru przycisków */
+    background-color: #659F22;
     color: #fff;
     border: none;
     padding: 8px 20px;
@@ -154,16 +153,17 @@ h2, h3 {
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    margin-left: 5px; /* Zmniejszenie marginesu na lewej stronie przycisków */
+    margin-left: 5px;
 }
 
 .support-contact .action-button:hover {
     background-color: #4F7F16;
 }
+
 /* Nawigacja */
 nav {
-    background-color: #83a400; /* Jednolity kolor tła nawigacji */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dostosowany kolor i intensywność cienia pod menu */
+    background-color: #83a400;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 8px 0;
     overflow: auto;
 }
@@ -178,7 +178,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 10px; /* Zmniejszenie marginesu między pozycjami w nawigacji */
+    margin-right: 10px;
 }
 
 nav ul li:last-child {
@@ -193,7 +193,7 @@ nav ul li a {
     transition: background-color 0.3s, transform 0.2s;
     font-size: 14px;
     position: relative;
-    background-color: transparent; /* Przejrzyste przyciski */
+    background-color: transparent;
 }
 
 nav ul li a::before {
@@ -213,18 +213,18 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #97b914; /* Zmiana koloru po najechaniu na opcję menu */
+    background-color: #97b914;
     transform: translateY(-2px);
-    text-decoration: underline; /* Efekt podkreślenia przy najechaniu */
+    text-decoration: underline;
 }
 
 /* Animacje dla ikon */
 nav ul li a i {
-    transition: transform 0.3s ease; /* Dodanie animacji */
+    transition: transform 0.3s ease;
 }
 
 nav ul li a:hover i {
-    transform: scale(1.1); /* Powiększenie ikony przy najechaniu myszką */
+    transform: scale(1.1);
 }
 
 /* Responsywność */
@@ -253,9 +253,8 @@ nav ul li a:hover i {
     }
 }
 
-
 .footer {
-    background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
+    background-color: #222;
     color: #fff;
     padding: 30px 0;
     text-align: center;
@@ -264,17 +263,17 @@ nav ul li a:hover i {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Dodanie wyśrodkowania ikon */
-    margin-right: 15px; /* Powrót do pierwotnej wartości marginesu */
+    align-items: center;
+    margin-right: 15px;
 }
 
 .footer-section {
     flex: 1;
-    margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
+    margin-right: 20px;
 }
 
 .footer-section:last-child {
-    margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
+    margin-right: 0;
 }
 
 .footer-section h3 {
@@ -288,7 +287,7 @@ nav ul li a:hover i {
 }
 
 .footer-section ul li {
-   margin-bottom: 15px; /* Zwiększenie marginesu między pozycjami w stopce */
+    margin-bottom: 15px;
 }
 
 .footer-section ul li a {
@@ -305,7 +304,7 @@ nav ul li a:hover i {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 20px; /* Dodanie marginesu do oddzielenia od innych elementów stopki */
+    margin-right: 20px;
 }
 
 .social-icons-right .social-icon {
@@ -340,7 +339,7 @@ nav ul li a:hover i {
 }
 
 .back-to-top {
-    margin-top: 40px; /* Zwiększenie marginesu na górę */
+    margin-top: 40px;
 }
 
 .back-to-top a {
@@ -406,11 +405,11 @@ nav ul li a:hover i {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
+    background-image: url('dynamic-background.jpg');
     background-size: cover;
     background-position: center;
-    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
-    transition: all 0.3s ease; /* Płynne przejścia */
+    animation: fadeIn 1s ease;
+    transition: all 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -427,45 +426,7 @@ nav ul li a:hover i {
     margin-bottom: 15px;
     color: #333;
     font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease; /* Płynne przejścia kolorów */
-}
-
-#radio-stats ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
-    background-size: cover;
-    background-position: center;
-    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
-    transition: all 0.3s ease; /* Płynne przejścia */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#radio-stats h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease; /* Płynne przejścia kolorów */
+    transition: color 0.3s ease;
 }
 
 #radio-stats ul {
@@ -480,7 +441,7 @@ nav ul li a:hover i {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease; /* Płynne przejścia */
+    transition: all 0.3s ease;
 }
 
 #radio-stats li:last-child {
@@ -489,21 +450,21 @@ nav ul li a:hover i {
 
 /* Zwiększenie kontrastu kolorów */
 #radio-stats {
-    color: #000; /* Czarny tekst dla większego kontrastu */
-    background-color: #fff; /* Białe tło dla większego kontrastu */
+    color: #000;
+    background-color: #fff;
 }
 
 #radio-stats h2 {
-    color: #333; /* Kolor tytułu */
+    color: #333;
 }
 
 #radio-stats li {
-    color: #555; /* Kolor treści */
+    color: #555;
 }
 
 /* Dopasowanie czcionek */
 #radio-stats h2 {
-    font-family: 'Montserrat', sans-serif; /* Wybrana czcionka dla tytułu */
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Przemyślane ułożenie elementów */
@@ -520,16 +481,16 @@ nav ul li a:hover i {
 
 /* Dodanie efektów cieniowania i głębi */
 #radio-stats {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Delikatne cieniowanie */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #radio-stats li {
-    border-bottom: 1px solid #ddd; /* Dodanie podziału między poszczególnymi statystykami */
+    border-bottom: 1px solid #ddd;
 }
 
 /* Dodanie efektów hover */
 #radio-stats li:hover {
-    transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
+    transform: translateY(-3px);
 }
 
 /* Responsywność */
