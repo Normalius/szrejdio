@@ -1,4 +1,3 @@
-/* Wspólne style dla wszystkich ekranów */
 /* Resetowanie domyślnych styli */
 * {
     margin: 0;
@@ -6,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Wspólne style dla wszystkich ekranów */
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -68,321 +68,6 @@ body {
     font-size: 48px; /* Zwiększenie rozmiaru ikony */
 }
 
-
-@keyframes spin-circle {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Drugi header */
-#sub-header {
-    background-color: #fff;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-    margin-top: 90px; /* Zwiększenie marginesu górnego */
-}
-
-#sub-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Przyciski wsparcia i kontaktu */
-.support-contact .action-button {
-    background-color: #659F22; /* Zachowanie koloru przycisków */
-    color: #fff;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    margin-left: 5px; /* Zmniejszenie marginesu na lewej stronie przycisków */
-
-}
-
-.support-contact .action-button:hover {
-    background-color: #4F7F16;
-}
-
-/* Nawigacja */
-nav {
-    background-color: #83a400;
-    padding: 8px 0;
-    overflow: auto;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-margin-right: 10px; /* Zmniejszenie marginesu między pozycjami w nawigacji */
-}
-
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-    font-size: 14px;
-    position: relative;
-}
-
-nav ul li a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0);
-    transition: background-color 0.3s ease;
-    z-index: -1;
-}
-
-nav ul li a:hover::before {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-nav ul li a:hover {
-    background-color: #659F22;
-    transform: translateY(-2px);
-}
-
-/* Responsywność */
-@media screen and (max-width: 768px) {
-    .actions {
-        display: none;
-    }
-
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        padding: 8px 12px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    nav ul li a {
-        font-size: 12px;
-    }
-}
-
-.footer {
-    background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Dodanie wyśrodkowania ikon */
-    margin-right: 15px; /* Powrót do pierwotnej wartości marginesu */
-}
-
-.footer-section {
-    flex: 1;
-    margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
-}
-
-.footer-section:last-child {
-    margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
-}
-
-.footer-section h3 {
-    color: #fff;
-    padding-bottom: 10px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-   margin-bottom: 15px; /* Zwiększenie marginesu między pozycjami w stopce */
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #ffcc00;
-}
-
-.social-icons-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-right: 20px; /* Dodanie marginesu do oddzielenia od innych elementów stopki */
-}
-
-.social-icons-right .social-icon {
-    text-decoration: none;
-    font-size: 24px;
-    margin-left: 20px;
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.social-icons-right .social-icon:hover {
-    color: #ffcc00;
-}
-
-.social-icons-right .facebook:hover {
-    color: #3b5998;
-}
-
-.social-icons-right .instagram:hover {
-    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #E2ED8A, #A1D0E8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.social-icons-right .discord:hover {
-    color: #7289da;
-}
-
-.social-icons-right .twitter:hover {
-    color: #000000;
-}
-
-.back-to-top {
-    margin-top: 40px; /* Zwiększenie marginesu na górę */
-}
-
-.back-to-top a {
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.back-to-top a:hover {
-    background-color: #ffcc00;
-}
-
-.news-section {
-    max-width: 800px;
-    margin: 20px auto 40px;
-    text-align: left;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-}
-
-.news-section h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.news-list {
-    list-style: none;
-    padding: 0;
-}
-
-.news-list li {
-    margin-bottom: 20px;
-}
-
-.news-list h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.news-list p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-#radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-}
-
-#radio-stats h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-#radio-stats ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#radio-stats li {
-    margin-bottom: 10px;
-}
-
-#radio-stats li span {
-    font-weight: bold;
-}
-
-#radio-stats li:nth-child(odd) {
-    background-color: #fff;
-}
-
-/* Stylizacja etykiet i wartości w sekcji statystyk radia */
-.label {
-    font-weight: bold;
-}
-
-li span#serverTitle,
-li span#currentListeners,
-li span#peakListeners,
-li span#maxListeners,
-li span#currentSong {
-    color: #659F22; /* Kolor dla wartości statystyk */
-}
-
 /* Animacja rozbłysku */
 @keyframes glow {
     0% {
@@ -415,4 +100,37 @@ li span#currentSong {
     left: 47%;
     transform: translate(-50%, -50%);
     animation: spin-circle 3s linear infinite;
+}
+
+/* Drugi header */
+#sub-header {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 90px; /* Zwiększenie marginesu górnego */
+}
+
+#sub-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Przyciski wsparcia i kontaktu */
+.support-contact .action-button {
+    background-color: #659F22; /* Zachowanie koloru przycisków */
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-left: 5px; /* Zmniejszenie marginesu na lewej stronie przycisków */
+}
+
+.support-contact .action-button:hover {
+    background-color: #4F7F16;
 }
