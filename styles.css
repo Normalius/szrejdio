@@ -183,7 +183,7 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #6b9e35; /* Zmiana koloru po najechaniu na opcję menu */
+    background-color: #97b914; /* Zmiana koloru po najechaniu na opcję menu */
     transform: translateY(-2px);
     text-decoration: underline; /* Efekt podkreślenia przy najechaniu */
 }
