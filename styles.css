@@ -368,6 +368,7 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
+    transition: all 0.3s ease; /* Płynne przejścia */
 }
 
 @keyframes fadeIn {
@@ -384,6 +385,7 @@ nav ul li a:hover {
     margin-bottom: 15px;
     color: #333;
     font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease; /* Płynne przejścia kolorów */
 }
 
 #radio-stats ul {
@@ -398,10 +400,56 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease; /* Płynne przejścia */
 }
 
 #radio-stats li:last-child {
     margin-bottom: 0;
+}
+
+/* Zwiększenie kontrastu kolorów */
+#radio-stats {
+    color: #000; /* Czarny tekst dla większego kontrastu */
+    background-color: #fff; /* Białe tło dla większego kontrastu */
+}
+
+#radio-stats h2 {
+    color: #333; /* Kolor tytułu */
+}
+
+#radio-stats li {
+    color: #555; /* Kolor treści */
+}
+
+/* Dopasowanie czcionek */
+#radio-stats h2 {
+    font-family: 'Montserrat', sans-serif; /* Wybrana czcionka dla tytułu */
+}
+
+/* Przemyślane ułożenie elementów */
+#radio-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#radio-stats li {
+    width: 100%;
+    text-align: left;
+}
+
+/* Dodanie efektów cieniowania i głębi */
+#radio-stats {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Delikatne cieniowanie */
+}
+
+#radio-stats li {
+    border-bottom: 1px solid #ddd; /* Dodanie podziału między poszczególnymi statystykami */
+}
+
+/* Dodanie efektów hover */
+#radio-stats li:hover {
+    transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
 @media screen and (max-width: 768px) {
