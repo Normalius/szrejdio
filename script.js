@@ -97,14 +97,4 @@ window.addEventListener('scroll', function() {
     } else {
         topBar.classList.remove('transparent');
     }
-    const playButton = document.getElementById('play');
-const volumeControl = document.getElementById('volume-control');
-
-playButton.addEventListener('click', () => {
-    // Tu dodaj logikę odtwarzania dźwięku
-});
-
-volumeControl.addEventListener('input', () => {
-    const volume = volumeControl.value;
-    // Tu dostosuj głośność odtwarzania dźwięku na podstawie wartości volume
 });
