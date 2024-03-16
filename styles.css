@@ -94,7 +94,7 @@ body {
 
 /* Przyciski wsparcia i kontaktu */
 .support-contact .action-button {
-    background-color: #659F22;
+    background-color: #659F22; /* Zachowanie koloru przycisków */
     color: #fff;
     border: none;
     padding: 8px 20px;
@@ -104,7 +104,8 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    margin-left: 10px;
+    margin-left: 5px; /* Zmniejszenie marginesu na lewej stronie przycisków */
+
 }
 
 .support-contact .action-button:hover {
@@ -128,7 +129,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 15px;
+margin-right: 10px; /* Zmniejszenie marginesu między pozycjami w nawigacji */
 }
 
 nav ul li:last-child {
@@ -203,6 +204,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center; /* Dodanie wyśrodkowania ikon */
+    margin-right: 15px; /* Powrót do pierwotnej wartości marginesu */
 }
 
 .footer-section {
@@ -225,7 +227,7 @@ nav ul li a:hover {
 }
 
 .footer-section ul li {
-    margin-bottom: 10px;
+   margin-bottom: 15px; /* Zwiększenie marginesu między pozycjami w stopce */
 }
 
 .footer-section ul li a {
