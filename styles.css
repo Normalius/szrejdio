@@ -503,7 +503,8 @@ nav ul li a:hover i {
 }
 
 .volume-slider {
-  width: 300px; /* Szerokość paska */
+  position: relative;
+  width: 300px;
   margin: 20px auto;
 }
 
@@ -516,6 +517,7 @@ nav ul li a:hover i {
   outline: none;
   opacity: 0.7;
   transition: opacity 0.2s;
+  margin-bottom: 20px; /* Dodaj odstęp od ikon */
 }
 
 .volume-slider .slider:hover {
@@ -542,6 +544,29 @@ nav ul li a:hover i {
   border-radius: 50%;
   border: 2px solid #fff; /* Dodajemy obramowanie */
   transition: background 0.3s; /* Płynna zmiana koloru kciuka */
+}
+
+.icon-left,
+.icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-left {
+  left: 0;
+  padding-left: 10px; /* Dodaj odstęp od lewej strony */
+}
+
+.icon-right {
+  right: 0;
+  padding-right: 10px; /* Dodaj odstęp od prawej strony */
+}
+
+.fa-volume-down,
+.fa-volume-up {
+  color: #007bff; /* Kolor ikon */
+  font-size: 20px; /* Rozmiar ikon */
 }
 
 /* Responsywność */
