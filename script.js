@@ -1,3 +1,15 @@
+// Funkcja do obsługi zmiany głośności muzyki
+function changeVolume() {
+    const volumeSlider = document.getElementById('volume-slider');
+    const radioPlayer = document.getElementById('radioPlayer');
+
+    // Ustawienie głośności na wartość z suwaka
+    radioPlayer.volume = volumeSlider.value / 100;
+}
+
+// Nasłuchujemy zmiany wartości na suwaku
+document.getElementById('volume-slider').addEventListener('input', changeVolume);
+
 // Zmienna do przechowywania informacji o stanie przycisku
 let isPlaying = false;
 
