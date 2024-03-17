@@ -97,3 +97,15 @@ window.addEventListener('scroll', function() {
         topBar.classList.remove('transparent');
     }
 });
+
+// Funkcja do obsługi zmiany głośności muzyki
+function changeVolume() {
+    const volumeSlider = document.getElementById('volume-slider');
+    const radioPlayer = document.getElementById('radioPlayer');
+
+    // Ustawienie głośności na wartość z suwaka
+    radioPlayer.volume = volumeSlider.value / 100;
+}
+
+// Nasłuchujemy zmiany wartości na suwaku
+document.getElementById('volume-slider').addEventListener('input', changeVolume);
