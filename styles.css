@@ -546,18 +546,17 @@ nav ul li a:hover i {
   transition: background 0.3s; /* Płynna zmiana koloru kciuka */
 }
 
-.icon-left,
-.icon-right {
+.icon-left {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.icon-left {
   left: 20px; /* Dodaj odstęp od lewej strony */
 }
 
 .icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   right: 20px; /* Dodaj odstęp od prawej strony */
 }
 
