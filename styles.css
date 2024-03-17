@@ -502,6 +502,14 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
+        #volume-slider {
+            width: 100px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
