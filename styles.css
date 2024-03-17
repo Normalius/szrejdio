@@ -502,14 +502,12 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
-/* Ikony regulacji głośności */
 .volume-icon,
 .mute-icon {
     font-size: 24px;
     color: #555;
 }
 
-/* Pasek regulacji głośności */
 .volume-slider {
     flex: 1;
     position: relative;
@@ -518,7 +516,6 @@ nav ul li a:hover i {
     cursor: pointer;
 }
 
-/* Ślad paska */
 .slider-track {
     position: absolute;
     top: 50%;
@@ -531,12 +528,10 @@ nav ul li a:hover i {
     transition: width 0.3s ease-in-out;
 }
 
-/* Dodanie efektu podświetlenia śladu po najechaniu */
 .volume-slider:hover ~ .slider-track {
     width: 100%;
 }
 
-/* Kciuk przeciągania */
 .slider-thumb {
     position: absolute;
     top: 50%;
@@ -551,12 +546,10 @@ nav ul li a:hover i {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Zmiana koloru kciuka po najechaniu */
 .slider-thumb:hover {
     background-color: #333;
 }
 
-/* Animacja dla ikon regulacji głośności po najechaniu */
 #volumeSlider:hover #volumeUpIcon,
 #volumeSlider:hover #volumeMuteIcon {
     animation: pulse 1s alternate infinite; /* Poprawiona wartość animacji */
