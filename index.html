@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -15,17 +17,16 @@
     <div class="container">
         <div class="actions">
             <button id="play" class="btn-play"><i class="fas fa-play"></i></button>
-            <div class="volume-bar" id="volumeBar">
-                <i class="fas fa-volume-mute mute-icon" id="volumeMuteIcon"></i>
-                <div class="volume-slider" id="volumeSlider" title="Click and drag to adjust volume">
-                    <div class="slider-track" id="sliderTrack"></div>
-                    <div class="slider-thumb" id="sliderThumb"></div>
-                </div>
-                <i class="fas fa-volume-up volume-icon" id="volumeUpIcon"></i>
-                <i class="fas fa-volume-down volume-icon" id="volumeDownIcon"></i>
-            </div>
+<div class="volume-bar" id="volumeBar">
+  <i class="fas fa-volume-mute mute-icon" id="volumeMuteIcon"></i>
+  <div class="volume-slider" id="volumeSlider" title="Click and drag to adjust volume">
+    <div class="slider-track" id="sliderTrack"></div>
+    <div class="slider-thumb" id="sliderThumb"></div>
+  </div>
+  <i class="fas fa-volume-up volume-icon" id="volumeUpIcon"></i>
+  <i class="" id="volumeDownIcon"></i>
         </div>
-    </div>
+</div>
 </header>
 
 <header id="sub-header">
@@ -54,8 +55,7 @@
 </nav>
 <main>
     <section id="radio-stats">
-        <h2>Statystyki Radia</h2>
-        <ul>
+        <h2>Statystyki Radia</h2>           
             <li><span class="label">Prowadzący:</span> <span id="serverTitle">...</span></li>
             <li><span class="label">Liczba Słuchaczy:</span> <span id="currentListeners">...</span></li>
             <li><span class="label">Rekord ilości słuchaczy:</span> <span id="peakListeners">...</span></li>
@@ -67,27 +67,47 @@
         <h2>Aktualności</h2>
         <ul class="news-list">
             <li>
-                <h3>Nowy program: "Poranek z energią"</h3>
-                <p>Nie przegap nowego programu rannego, który dostarczy Ci mnóstwo energii na cały dzień!</p>
-            </li>
-            <li>
-                <h3>Koncert na żywo: Zespół Flowery</h3>
-                <p>W najbliższą sobotę o godzinie 20:00 zespół Flowery wystąpi na żywo w naszym studio. Bądźcie z nami!</p>
+                <h3>Nowy program na antenie - "Szalona Niedziela"</h3>
+                <p>Mamy przyjemność ogłosić premierę naszego najnowszego programu radiowego - "Szalona Niedziela"! To niezwykłe wydarzenie, które ma na celu zapewnić Ci rozrywkę i radość w każdą niedzielę wieczorem.</p>
+                <p>W programie "Szalona Niedziela" możesz spodziewać się dynamicznej muzyki, fascynujących rozmów z gośćmi specjalnymi oraz konkursów z atrakcyjnymi nagrodami. Przygotuj się na niezapomniane doświadczenie, które sprawi, że każda niedziela stanie się wyjątkowa!</p>
+                <p>Dołącz do nas już w najbliższą niedzielę o godzinie 20:00 i weź udział w szalonym show, które rozświetli Twój wieczór!</p>
+                <p>Nie przegap premiery programu "Szalona Niedziela" tylko na SZRejdio!</p>
             </li>
         </ul>
     </section>
+    <!-- Radio player -->
+    <audio id="radioPlayer" src="https://s3.slotex.pl:7466/;" type="audio/mpeg"></audio>
 </main>
-<footer>
-    <div class="container">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>O Nas</h3>
+            <p>Jesteśmy firmą zajmującą się...</p>
+            <p>Nasze biuro znajdziesz pod adresem:</p>
+            <p>ul. Przykładowa 123, 00-000 Warszawa</p>
         </div>
-        <div class="copyright">
-            &copy; 2024 SZRejdio - Wszelkie prawa zastrzeżone.
+        <div class="footer-section">
+            <h3>Linki Szybkiego Dostępu</h3>
+            <ul>
+                <li><a href="#">Warunki Korzystania</a></li>
+                <li><a href="#">Polityka Prywatności</a></li>
+                <li><a href="#">Regulaminy</a></li>
+            </ul>
         </div>
+        <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p>Telefon: 123-456-789</p>
+            <p>Email: kontakt@example.com</p>
+        </div>
+    </div>
+    <div class="social-icons-right">
+        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon discord"><i class="fab fa-discord"></i></a>
+        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="back-to-top">
+        <a href="#top">Do Góry</a>
     </div>
 </footer>
 <script src="script.js"></script>
