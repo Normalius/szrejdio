@@ -524,7 +524,8 @@ nav ul li a:hover i {
   opacity: 1;
 }
 
-.volume-slider .slider::-webkit-slider-thumb {
+.volume-slider .slider::-webkit-slider-thumb,
+.volume-slider .slider::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -536,24 +537,15 @@ nav ul li a:hover i {
   transition: background 0.3s; /* Płynna zmiana koloru kciuka */
 }
 
-.volume-slider .slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: #007bff; /* Kolor kciuka */
-  cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid #fff; /* Dodajemy obramowanie */
-  transition: background 0.3s; /* Płynna zmiana koloru kciuka */
-}
-
-.icon-left {
+/* Pozycjonowanie ikon */
+.volume-slider .icon-left {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 20px; /* Dodaj odstęp od lewej strony */
 }
 
-.icon-right {
+.volume-slider .icon-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
