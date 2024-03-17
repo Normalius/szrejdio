@@ -502,13 +502,13 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
-#volume-slider {
+.volume-slider {
   width: 200px;
   margin: 0 auto;
   position: relative;
 }
 
-#volume-slider .slider {
+.volume-slider .slider {
   -webkit-appearance: none;
   width: 100%;
   height: 10px;
@@ -520,11 +520,11 @@ nav ul li a:hover i {
   border-radius: 5px;
 }
 
-#volume-slider .slider:hover {
+.volume-slider .slider:hover {
   opacity: 1;
 }
 
-#volume-slider .slider::-webkit-slider-thumb {
+.volume-slider .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -534,7 +534,7 @@ nav ul li a:hover i {
   border-radius: 50%;
 }
 
-#volume-slider .slider::-moz-range-thumb {
+.volume-slider .slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
   background: #4CAF50;
