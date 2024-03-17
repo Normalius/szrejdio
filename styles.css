@@ -62,35 +62,58 @@ h2, h3 {
             height: 100px; /* Zwiększenie wysokości przycisku */
         }
 
-        /* Suwak regulacji głośności */
-        #volume-control {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-        }
+/* Suwak regulacji głośności */
+#volume-control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    appearance: none; /* Usunięcie domyślnego wyglądu kontrolki */
+    background-color: transparent; /* Przezroczyste tło */
+}
 
-        /* Stylizacja przycisków udostępniania */
-        #share-buttons {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-        }
+#volume-control::-webkit-slider-thumb {
+    appearance: none; /* Usunięcie domyślnego wyglądu kciuka suwaka dla przeglądarek WebKit */
+    width: 20px;
+    height: 20px;
+    background-color: orange; /* Kolor kciuka suwaka */
+    border-radius: 50%; /* Okrągły kciuk suwaka */
+    cursor: pointer; /* Kursor wskaźnika po najechaniu */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Cień kciuka suwaka */
+}
 
-        .share-button {
-            display: inline-block;
-            font-size: 24px;
-            color: white;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
+#volume-control::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: orange; /* Kolor kciuka suwaka */
+    border-radius: 50%; /* Okrągły kciuk suwaka */
+    cursor: pointer; /* Kursor wskaźnika po najechaniu */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Cień kciuka suwaka */
+}
 
-        .share-button:hover {
-            color: #ffcc00;
-        }
+#volume-control:focus {
+    outline: none; /* Usunięcie obramowania po uzyskaniu fokusu */
+}
+
+#volume-control::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px; /* Wysokość ścieżki suwaka */
+    background-color: #ccc; /* Kolor ścieżki suwaka */
+    border-radius: 1px; /* Zaokrąglenie krawędzi ścieżki */
+}
+
+#volume-control::-moz-range-track {
+    width: 100%;
+    height: 2px; /* Wysokość ścieżki suwaka */
+    background-color: #ccc; /* Kolor ścieżki suwaka */
+    border-radius: 1px; /* Zaokrąglenie krawędzi ścieżki */
+}
+
+#volume-control::-webkit-slider-thumb:hover,
+#volume-control::-moz-range-thumb:hover {
+    background-color: #ffcc00; /* Zmiana koloru kciuka suwaka po najechaniu */
+}
 
 /* Stylizacja ikony na przycisku odtwarzania */
 #top-bar button#play i {
