@@ -109,3 +109,11 @@ function changeVolume() {
 
 // Nasłuchujemy zmiany wartości na suwaku
 document.getElementById('volume-slider').addEventListener('input', changeVolume);
+
+var slider = document.getElementById("myRange");
+slider.oninput = function() {
+  var volume = this.value;
+  // Ustaw głośność na wartość suwaka
+  console.log("Aktualna głośność: " + volume);
+  // Tutaj możesz wstawić kod do ustawiania głośności w twojej aplikacji muzycznej
+};
