@@ -98,22 +98,11 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Funkcja do obsługi zmiany głośności muzyki
-function changeVolume() {
-    const volumeSlider = document.getElementById('volume-slider');
-    const radioPlayer = document.getElementById('radioPlayer');
-
-    // Ustawienie głośności na wartość z suwaka
-    radioPlayer.volume = volumeSlider.value / 100;
-}
-
-// Nasłuchujemy zmiany wartości na suwaku
-document.getElementById('volume-slider').addEventListener('input', changeVolume);
-
-var slider = document.getElementById("myRange");
-slider.oninput = function() {
-  var volume = this.value;
-  // Ustaw głośność na wartość suwaka
-  console.log("Aktualna głośność: " + volume);
-  // Tutaj możesz wstawić kod do ustawiania głośności w twojej aplikacji muzycznej
-};
+document.addEventListener("DOMContentLoaded", function() {
+  var slider = document.getElementById("myRange");
+  slider.oninput = function() {
+    var volume = this.value;
+    console.log("Aktualna głośność: " + volume);
+    // Tutaj możesz wstawić kod do ustawiania głośności w twojej aplikacji muzycznej
+  };
+});
