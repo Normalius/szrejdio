@@ -62,47 +62,29 @@ h2, h3 {
             height: 100px; /* Zwiększenie wysokości przycisku */
         }
 
-#volume-control {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* styles.css */
+.radio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.volume-control {
     width: 200px;
-    height: 10px;
-    background: linear-gradient(to right, #2196F3, #FFEB3B); /* Gradient kolorów */
-    border-radius: 5px; /* Zaokrąglenie krawędzi */
-    overflow: hidden; /* Ukrycie części kciuka suwaka poza obszarem */
+    margin-bottom: 20px;
 }
 
-#volume-control::-webkit-slider-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background-color: #FFFFFF; /* Kolor kciuka suwaka */
-    border-radius: 50%; /* Okrągły kciuk suwaka */
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24); /* Cień rzucany przez kciuk */
-}
-
-#volume-control::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
-}
-
-/* Stylizacja kontrolki głośności */
 .volume-slider {
-    width: 100%;
     -webkit-appearance: none;
     appearance: none;
+    width: 100%;
+    height: 10px;
     background: linear-gradient(to right, #2196F3, #FFEB3B);
     border-radius: 5px;
-    height: 5px;
     outline: none;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -110,30 +92,35 @@ h2, h3 {
     appearance: none;
     width: 20px;
     height: 20px;
-    background: #ffffff;
+    background: #FFFFFF;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
 }
 
-.volume-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
-}
-
-/* Stylizacja ikony głośności */
 .volume-icon-container {
     text-align: center;
-    margin-top: 10px;
 }
 
 .volume-icon-container i {
     font-size: 20px;
     color: #000000;
+}
+
+.play-pause-btn {
+    background-color: #2196F3;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-pause-btn:hover {
+    background-color: #1976D2;
 }
 
         /* Stylizacja przycisków udostępniania */
