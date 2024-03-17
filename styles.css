@@ -1,3 +1,4 @@
+
 /* Resetowanie domyślnych styli */
 * {
     margin: 0;
@@ -524,8 +525,7 @@ nav ul li a:hover i {
   opacity: 1;
 }
 
-.volume-slider .slider::-webkit-slider-thumb,
-.volume-slider .slider::-moz-range-thumb {
+.volume-slider .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -537,15 +537,24 @@ nav ul li a:hover i {
   transition: background 0.3s; /* Płynna zmiana koloru kciuka */
 }
 
-/* Pozycjonowanie ikon */
-.volume-slider .icon-left {
+.volume-slider .slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #007bff; /* Kolor kciuka */
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #fff; /* Dodajemy obramowanie */
+  transition: background 0.3s; /* Płynna zmiana koloru kciuka */
+}
+
+.icon-left {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 20px; /* Dodaj odstęp od lewej strony */
 }
 
-.volume-slider .icon-right {
+.icon-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
