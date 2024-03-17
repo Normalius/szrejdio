@@ -1,36 +1,55 @@
+// script.js
+const radioPlayer = document.getElementById('radioPlayer');
+const volumeControl = document.getElementById('volume-control');
+const volumeIcon = document.querySelector('.volume-icon-container i');
+const playPauseBtn = document.getElementById('play');
+
 // Zmienna do przechowywania informacji o stanie przycisku
 let isPlaying = false;
 
 // Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
 function toggleRadio() {
-    const playButton = document.getElementById('play');
-    const radioPlayer = document.getElementById('radioPlayer');
-    const volumeControl = document.getElementById('volume-control'); // Dodajemy kontrolę głośności
-
     if (isPlaying) {
         // Zatrzymywanie odtwarzania radia
         radioPlayer.pause();
 
         // Zmiana ikony przycisku na "Play"
-        playButton.innerHTML = '<i class="fas fa-play"></i>';
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     } else {
         // Rozpoczynanie odtwarzania radia
         radioPlayer.play();
 
         // Zmiana ikony przycisku na "Stop"
-        playButton.innerHTML = '<i class="fas fa-stop"></i>';
+        playPauseBtn.innerHTML = '<i class="fas fa-stop"></i>';
     }
 
-   // Odwrócenie stanu przycisku
+    // Odwrócenie stanu przycisku
     isPlaying = !isPlaying;
 }
 
-// Nasłuchujemy kliknięcia na przycisku
-document.getElementById('play').addEventListener('click', toggleRadio);
+// Funkcja obsługująca zmianę głośności
+function handleVolumeChange() {
+    // Ustawienie głośności odtwarzacza na wartość z pola input
+    radioPlayer.volume = volumeControl.value / 100;
+
+    // Zmiana ikony głośności w zależności od wartości głośności
+    if (radioPlayer.volume === 0) {
+        volumeIcon.className = 'fas fa-volume-mute';
+    } else if (radioPlayer.volume < 0.5) {
+        volumeIcon.className = 'fas fa-volume-down';
+    } else {
+        volumeIcon.className = 'fas fa-volume-up';
+    }
+}
+
+// Nasłuchiwanie zmiany wartości głośności
+volumeControl.addEventListener('input', handleVolumeChange);
+
+// Nasłuchiwanie kliknięcia na przycisku
+playPauseBtn.addEventListener('click', toggleRadio);
 
 // Dodajemy obsługę zmiany głośności
 document.getElementById('volume-control').addEventListener('input', function() {
-    const radioPlayer = document.getElementById('radioPlayer');
     radioPlayer.volume = this.value / 100; // Ustawienie głośności na podstawie wartości z pola input
 });
 
