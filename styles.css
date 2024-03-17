@@ -62,7 +62,6 @@ h2, h3 {
             height: 100px; /* Zwiększenie wysokości przycisku */
         }
 
-/* Suwak regulacji głośności */
 #volume-control {
     position: absolute;
     top: 50%;
@@ -70,7 +69,7 @@ h2, h3 {
     transform: translate(-50%, -50%);
     width: 200px; /* Szerokość suwaka */
     height: 8px; /* Wysokość suwaka */
-    background-color: rgba(0, 0, 0, 0.12); /* Kolor tła suwaka */
+    background-color: #ffffff; /* Kolor tła suwaka */
     border-radius: 4px; /* Zaokrąglenie krawędzi suwaka */
     overflow: hidden; /* Ukrycie części kciuka suwaka poza obszarem */
 }
