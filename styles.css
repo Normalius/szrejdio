@@ -556,11 +556,13 @@ nav ul li a:hover i {
 .icon-left {
   left: 0;
   padding-left: 10px; /* Dodaj odstęp od lewej strony */
+  left: 10px; /* Dodaj odstęp od lewej strony */
 }
 
 .icon-right {
   right: 0;
   padding-right: 10px; /* Dodaj odstęp od prawej strony */
+  right: 10px
 }
 
 .fa-volume-down,
