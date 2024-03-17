@@ -100,15 +100,15 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   var slider = document.getElementById("volumeRange");
-  var audioPlayer = document.getElementById("audioPlayer");
+  var radioPlayer = document.getElementById("radioPlayer");
 
   slider.oninput = function() {
     var volume = this.value;
     console.log("Aktualna głośność: " + volume);
     
-    // Ustawianie głośności odtwarzania dźwięku
-    if (audioPlayer) {
-      audioPlayer.volume = volume / 100;
+    // Ustawianie głośności odtwarzania radia
+    if (radioPlayer) {
+      radioPlayer.volume = volume / 100;
     }
   };
 });
