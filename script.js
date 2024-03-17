@@ -111,4 +111,11 @@ document.addEventListener("DOMContentLoaded", function() {
       radioPlayer.volume = volume / 100; // Dzielimy przez 100, ponieważ głośność oczekuje wartości od 0.0 do 1.0
     }
   };
+
+  const volumeIndicator = document.getElementById("volumeIndicator");
+
+  slider.addEventListener("input", function() {
+    const value = this.value;
+    volumeIndicator.innerText = value;
+  });
 });
