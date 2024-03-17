@@ -96,4 +96,133 @@ window.addEventListener('scroll', function() {
     } else {
         topBar.classList.remove('transparent');
     }
+const sliderThumb = document.getElementById('sliderThumb');
+const sliderTrack = document.getElementById('sliderTrack');
+const volumeUpIcon = document.getElementById('volumeUpIcon');
+const volumeDownIcon = document.getElementById('volumeDownIcon');
+const volumeMuteIcon = document.getElementById('volumeMuteIcon');
+const volumeBar = document.getElementById('volumeBar');
+
+let previousVolume = 50;
+
+// Wyciszanie dźwięku
+volumeMuteIcon.addEventListener('click', toggleMute);
+
+function toggleMute() {
+  if (volumeMuteIcon.classList.contains('muted')) {
+    volumeMuteIcon.classList.remove('muted');
+    setVolume(previousVolume);
+  } else {
+    volumeMuteIcon.classList.add('muted');
+    previousVolume = getVolume();
+    setVolume(0);
+  }
+}
+
+// Funkcje pomocnicze
+function setVolume(volume) {
+  sliderThumb.style.left = `${volume}%`;
+  sliderTrack.style.width = `${volume}%`;
+  updateVolumeIcons(volume);
+  updateVolumeBarColor(volume);
+  saveVolumePreference(volume);
+}
+
+function getVolume() {
+  return parseInt(sliderThumb.style.left.replace('%', '') || 50);
+}
+
+// Aktualizacja ikon głośności
+function updateVolumeIcons(volume) {
+  if (volume === 0) {
+    volumeDownIcon.classList.remove('active');
+    volumeUpIcon.classList.remove('active');
+    volumeMuteIcon.classList.add('active');
+  } else if (volume < 50) {
+    volumeDownIcon.classList.add('active');
+    volumeUpIcon.classList.remove('active');
+    volumeMuteIcon.classList.remove('active');
+  } else {
+    volumeDownIcon.classList.remove('active');
+    volumeUpIcon.classList.add('active');
+    volumeMuteIcon.classList.remove('active');
+  }
+}
+
+// Aktualizacja koloru paska w zależności od poziomu głośności
+function updateVolumeBarColor(volume) {
+  if (volume === 0) {
+    sliderTrack.style.backgroundColor = '#ccc'; // Szary kolor dla wyciszenia
+  } else if (volume < 30) {
+    sliderTrack.style.backgroundColor = '#ff5733'; // Czerwony kolor dla niskiej głośności
+  } else if (volume < 70) {
+    sliderTrack.style.backgroundColor = '#ffd633'; // Żółty kolor dla średniej głośności
+  } else {
+    sliderTrack.style.backgroundColor = '#1aff66'; // Zielony kolor dla wysokiej głośności
+  }
+}
+
+// Zapisywanie preferencji użytkownika
+function saveVolumePreference(volume) {
+  localStorage.setItem('volumePreference', volume);
+}
+
+// Odczytanie preferencji użytkownika
+function getVolumePreference() {
+  return localStorage.getItem('volumePreference');
+}
+
+// Wyświetlanie podpowiedzi przy najechaniu kursorem
+volumeBar.addEventListener('mouseover', function() {
+  const volume = sliderThumb.style.left.replace('%', '') || 50;
+  volumeBar.title = `Current volume: ${volume}%`;
+});
+
+// Inicjalizacja paska głośności
+function initVolumeBar() {
+  const savedVolume = getVolumePreference();
+  const initialVolume = savedVolume ? savedVolume : 50;
+  const initialPercentage = `${initialVolume}%`;
+  
+  sliderThumb.style.left = initialPercentage;
+  sliderTrack.style.width = initialPercentage;
+  
+  updateVolumeIcons(initialVolume);
+  updateVolumeBarColor(initialVolume);
+}
+
+initVolumeBar();
+
+// Obsługa przeciągania paska głośności
+sliderThumb.addEventListener('mousedown', startDragging);
+
+function startDragging(e) {
+  document.addEventListener('mousemove', dragThumb);
+  document.addEventListener('mouseup', stopDragging);
+}
+
+function stopDragging() {
+  document.removeEventListener('mousemove', dragThumb);
+}
+
+function dragThumb(e) {
+  const offsetX = e.clientX - volumeBar.getBoundingClientRect().left;
+  const percentage = Math.min(100, Math.max(0, (offsetX / volumeBar.offsetWidth) * 100));
+  
+  sliderThumb.style.left = `${percentage}%`;
+  sliderTrack.style.width = `${percentage}%`;
+
+  saveVolumePreference(percentage);
+  updateVolumeIcons(percentage);
+  updateVolumeBarColor(percentage);
+}
+
+// Dodaj obsługę kliknięcia w dowolnym punkcie paska głośności
+volumeBar.addEventListener('click', function(e) {
+    // Oblicz poziom głośności na podstawie pozycji kliknięcia
+    const offsetX = e.clientX - volumeBar.getBoundingClientRect().left;
+    const percentage = Math.min(100, Math.max(0, (offsetX / volumeBar.offsetWidth) * 100));
+    
+    // Ustaw nowy poziom głośności
+    setVolume(percentage);
 });
