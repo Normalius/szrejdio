@@ -62,14 +62,34 @@ h2, h3 {
             height: 100px; /* Zwiększenie wysokości przycisku */
         }
 
-        /* Suwak regulacji głośności */
-        #volume-control {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-        }
+ /* Suwak regulacji głośności */
+#volume-control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 10px; /* Zwiększenie wysokości suwaka dla lepszej interakcji */
+    background-color: #f0f0f0; /* Ustawienie tła suwaka */
+    border-radius: 5px; /* Zaokrąglenie krawędzi suwaka */
+}
+
+#volume-control::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: orange; /* Kolor kciuka suwaka */
+    border-radius: 50%; /* Okrągły kciuk suwaka */
+    cursor: pointer;
+}
+
+#volume-control::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: orange; /* Kolor kciuka suwaka */
+    border-radius: 50%; /* Okrągły kciuk suwaka */
+    cursor: pointer;
+}
 
         /* Stylizacja przycisków udostępniania */
         #share-buttons {
