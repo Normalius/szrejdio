@@ -72,6 +72,8 @@ h2, h3 {
     background-color: #f0f0f0;
     border-radius: 10px;
     padding: 5px;
+    cursor: pointer;
+    touch-action: none;
 }
 
 #volume-slider {
@@ -95,6 +97,20 @@ h2, h3 {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+}
+
+#volume-value {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #333;
+}
+
+#volume-slider:hover #volume-handle {
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
         /* Stylizacja przycisków udostępniania */
