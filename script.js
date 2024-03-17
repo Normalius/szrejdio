@@ -1,134 +1,65 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const radioPlayer = document.getElementById('radioPlayer');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const sliderTrack = document.getElementById('sliderTrack');
+    const sliderThumb = document.getElementById('sliderThumb');
+    const volumeMuteIcon = document.getElementById('volumeMuteIcon');
+    const volumeUpIcon = document.getElementById('volumeUpIcon');
 
-const sliderThumb = document.getElementById('sliderThumb');
-const sliderTrack = document.getElementById('sliderTrack');
-const volumeUpIcon = document.getElementById('volumeUpIcon');
-const volumeDownIcon = document.getElementById('volumeDownIcon');
-const volumeMuteIcon = document.getElementById('volumeMuteIcon');
-const volumeBar = document.getElementById('volumeBar');
+    // Ustawienie głośności na 100% po załadowaniu strony
+    radioPlayer.volume = 1;
 
-let previousVolume = 50;
+    // Funkcja do aktualizacji głośności na podstawie pozycji paska głośności
+    function setVolume() {
+        const volume = volumeSlider.value / 100; // Przeliczenie wartości z zakresu 0-100 na zakres 0-1
+        radioPlayer.volume = volume;
+    }
 
-// Wyciszanie dźwięku
-volumeMuteIcon.addEventListener('click', toggleMute);
+    // Funkcja do obsługi przycisku ściszania/włączania dźwięku
+    function toggleMute() {
+        if (radioPlayer.volume === 0) {
+            // Jeśli dźwięk jest wyciszony, przywróć poprzednią głośność
+            radioPlayer.volume = volumeSlider.value / 100;
+            volumeMuteIcon.classList.remove('fa-volume-mute');
+            volumeMuteIcon.classList.add('fa-volume-up');
+        } else {
+            // W przeciwnym razie wycisz dźwięk
+            radioPlayer.volume = 0;
+            volumeMuteIcon.classList.remove('fa-volume-up');
+            volumeMuteIcon.classList.add('fa-volume-mute');
+        }
+    }
 
-function toggleMute() {
-  if (volumeMuteIcon.classList.contains('muted')) {
-    volumeMuteIcon.classList.remove('muted');
-    setVolume(previousVolume);
-  } else {
-    volumeMuteIcon.classList.add('muted');
-    previousVolume = getVolume();
-    setVolume(0);
-  }
-}
+    // Obsługa przesuwania suwaka głośności
+    volumeSlider.addEventListener('input', function() {
+        setVolume();
+    });
 
-// Funkcje pomocnicze
-function setVolume(volume) {
-  sliderThumb.style.left = `${volume}%`;
-  sliderTrack.style.width = `${volume}%`;
-  updateVolumeIcons(volume);
-  updateVolumeBarColor(volume);
-  saveVolumePreference(volume);
-}
+    // Obsługa kliknięcia na suwak głośności
+    volumeSlider.addEventListener('mousedown', function() {
+        setVolume();
+    });
 
-function getVolume() {
-  return parseInt(sliderThumb.style.left.replace('%', '') || 50);
-}
+    // Obsługa kliknięcia na ikonę wyciszenia
+    volumeMuteIcon.addEventListener('click', function() {
+        toggleMute();
+    });
 
-// Aktualizacja ikon głośności
-function updateVolumeIcons(volume) {
-  if (volume === 0) {
-    volumeDownIcon.classList.remove('active');
-    volumeUpIcon.classList.remove('active');
-    volumeMuteIcon.classList.add('active');
-  } else if (volume < 50) {
-    volumeDownIcon.classList.add('active');
-    volumeUpIcon.classList.remove('active');
-    volumeMuteIcon.classList.remove('active');
-  } else {
-    volumeDownIcon.classList.remove('active');
-    volumeUpIcon.classList.add('active');
-    volumeMuteIcon.classList.remove('active');
-  }
-}
+    // Aktualizacja paska głośności na podstawie aktualnej głośności
+    radioPlayer.addEventListener('volumechange', function() {
+        const volume = radioPlayer.volume;
+        volumeSlider.value = volume * 100; // Przeliczenie wartości z zakresu 0-1 na zakres 0-100
 
-// Aktualizacja koloru paska w zależności od poziomu głośności
-function updateVolumeBarColor(volume) {
-  if (volume === 0) {
-    sliderTrack.style.backgroundColor = '#ccc'; // Szary kolor dla wyciszenia
-  } else if (volume < 30) {
-    sliderTrack.style.backgroundColor = '#ff5733'; // Czerwony kolor dla niskiej głośności
-  } else if (volume < 70) {
-    sliderTrack.style.backgroundColor = '#ffd633'; // Żółty kolor dla średniej głośności
-  } else {
-    sliderTrack.style.backgroundColor = '#1aff66'; // Zielony kolor dla wysokiej głośności
-  }
-}
-
-// Zapisywanie preferencji użytkownika
-function saveVolumePreference(volume) {
-  localStorage.setItem('volumePreference', volume);
-}
-
-// Odczytanie preferencji użytkownika
-function getVolumePreference() {
-  return localStorage.getItem('volumePreference');
-}
-
-// Wyświetlanie podpowiedzi przy najechaniu kursorem
-volumeBar.addEventListener('mouseover', function() {
-  const volume = sliderThumb.style.left.replace('%', '') || 50;
-  volumeBar.title = `Current volume: ${volume}%`;
+        // Aktualizacja wyglądu ikony wyciszenia w zależności od głośności
+        if (volume === 0) {
+            volumeMuteIcon.classList.remove('fa-volume-up');
+            volumeMuteIcon.classList.add('fa-volume-mute');
+        } else {
+            volumeMuteIcon.classList.remove('fa-volume-mute');
+            volumeMuteIcon.classList.add('fa-volume-up');
+        }
+    });
 });
-
-// Inicjalizacja paska głośności
-function initVolumeBar() {
-  const savedVolume = getVolumePreference();
-  const initialVolume = savedVolume ? savedVolume : 50;
-  const initialPercentage = `${initialVolume}%`;
-  
-  sliderThumb.style.left = initialPercentage;
-  sliderTrack.style.width = initialPercentage;
-  
-  updateVolumeIcons(initialVolume);
-  updateVolumeBarColor(initialVolume);
-}
-
-initVolumeBar();
-
-// Obsługa przeciągania paska głośności
-sliderThumb.addEventListener('mousedown', startDragging);
-
-function startDragging(e) {
-  document.addEventListener('mousemove', dragThumb);
-  document.addEventListener('mouseup', stopDragging);
-}
-
-function stopDragging() {
-  document.removeEventListener('mousemove', dragThumb);
-}
-
-function dragThumb(e) {
-  const offsetX = e.clientX - volumeBar.getBoundingClientRect().left;
-  const percentage = Math.min(100, Math.max(0, (offsetX / volumeBar.offsetWidth) * 100));
-  
-  sliderThumb.style.left = `${percentage}%`;
-  sliderTrack.style.width = `${percentage}%`;
-
-  saveVolumePreference(percentage);
-  updateVolumeIcons(percentage);
-  updateVolumeBarColor(percentage);
-}
-
-// Dodaj obsługę kliknięcia w dowolnym punkcie paska głośności
-volumeBar.addEventListener('click', function(e) {
-    // Oblicz poziom głośności na podstawie pozycji kliknięcia
-    const offsetX = e.clientX - volumeBar.getBoundingClientRect().left;
-    const percentage = Math.min(100, Math.max(0, (offsetX / volumeBar.offsetWidth) * 100));
-    
-    // Ustaw nowy poziom głośności
-    setVolume(percentage);
-  });
 
 // Zmienna do przechowywania informacji o stanie przycisku
 let isPlaying = false;
