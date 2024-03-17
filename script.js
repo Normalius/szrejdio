@@ -1,16 +1,3 @@
-// Zmienna do przechowywania referencji do elementu suwaka głośności
-const volumeSlider = document.getElementById('volumeSlider');
-
-// Obsługa zmiany głośności za pomocą suwaka głośności
-volumeSlider.addEventListener('input', function() {
-    const volume = volumeSlider.value;
-    setVolume(volume);
-});
-
-// Inicjalizacja wartości suwaka głośności
-volumeSlider.value = getVolumePreference();
-To jest fragment kodu, który obsługuje zmiany głośności za pomocą suwaka g
-
 const sliderThumb = document.getElementById('sliderThumb');
 const sliderTrack = document.getElementById('sliderTrack');
 const volumeUpIcon = document.getElementById('volumeUpIcon');
