@@ -502,6 +502,14 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
+.volume-bar {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    margin: 10px auto;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Dodaj subtelny cień */
+}
+
 .volume-icon,
 .mute-icon {
     font-size: 24px;
@@ -554,7 +562,6 @@ nav ul li a:hover i {
 #volumeSlider:hover #volumeMuteIcon {
     animation: pulse 1s alternate infinite; /* Poprawiona wartość animacji */
 }
-
 
 @keyframes pulse {
     from {
