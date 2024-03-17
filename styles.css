@@ -503,7 +503,7 @@ nav ul li a:hover i {
 }
 
 .volume-slider {
-  width: 100%;
+  width: 300px; /* Szerokość paska */
   margin: 20px auto;
 }
 
