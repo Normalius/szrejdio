@@ -1,9 +1,10 @@
-const sliderThumb = document.getElementById('sliderThumb');
+onst sliderThumb = document.getElementById('sliderThumb');
 const sliderTrack = document.getElementById('sliderTrack');
 const volumeUpIcon = document.getElementById('volumeUpIcon');
 const volumeDownIcon = document.getElementById('volumeDownIcon');
 const volumeMuteIcon = document.getElementById('volumeMuteIcon');
 const volumeBar = document.getElementById('volumeBar');
+const radioPlayer = document.getElementById('radioPlayer');
 
 let previousVolume = 50;
 
@@ -23,6 +24,7 @@ function toggleMute() {
 
 // Funkcje pomocnicze
 function setVolume(volume) {
+  radioPlayer.volume = volume / 100; // Ustawia poziom głośności dla elementu audio
   sliderThumb.style.left = `${volume}%`;
   sliderTrack.style.width = `${volume}%`;
   updateVolumeIcons(volume);
@@ -111,12 +113,7 @@ function dragThumb(e) {
   const offsetX = e.clientX - volumeBar.getBoundingClientRect().left;
   const percentage = Math.min(100, Math.max(0, (offsetX / volumeBar.offsetWidth) * 100));
   
-  sliderThumb.style.left = `${percentage}%`;
-  sliderTrack.style.width = `${percentage}%`;
-
-  saveVolumePreference(percentage);
-  updateVolumeIcons(percentage);
-  updateVolumeBarColor(percentage);
+  setVolume(percentage);
 }
 
 // Dodaj obsługę kliknięcia w dowolnym punkcie paska głośności
