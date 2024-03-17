@@ -99,16 +99,16 @@ window.addEventListener('scroll', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  var slider = document.getElementById("myRange");
-  var radioPlayer = document.getElementById("radioPlayer"); // Załóżmy, że radioPlayer jest elementem audio.
+  var slider = document.getElementById("volumeRange");
+  var audioPlayer = document.getElementById("audioPlayer");
 
   slider.oninput = function() {
     var volume = this.value;
     console.log("Aktualna głośność: " + volume);
     
-    // Ustawianie głośności odtwarzania muzyki
-    if (radioPlayer) {
-      radioPlayer.volume = volume / 100; // Dzielimy przez 100, ponieważ głośność oczekuje wartości od 0.0 do 1.0
+    // Ustawianie głośności odtwarzania dźwięku
+    if (audioPlayer) {
+      audioPlayer.volume = volume / 100;
     }
   };
 });
