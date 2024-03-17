@@ -1,4 +1,24 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const volumeSlider = document.getElementById("volume-slider");
+    const volumeFill = document.getElementById("volume-fill");
+    const volumeHandle = document.getElementById("volume-handle");
+    const volumeProgress = document.getElementById("volume-progress");
 
+    // Dodajemy nasłuchiwacz na zdarzenie przesunięcia suwaka
+    volumeSlider.addEventListener("input", function() {
+        const value = volumeSlider.value;
+        const percent = value / 100;
+        const handlePosition = percent * (volumeSlider.offsetWidth - volumeHandle.offsetWidth);
+        
+        // Aktualizujemy wygląd suwaka
+        volumeFill.style.width = `${percent * 100}%`;
+        volumeHandle.style.left = `${handlePosition}px`;
+        volumeProgress.style.width = `${percent * 100}%`;
+
+        // Możesz tutaj wykonać dodatkowe operacje, np. zmienić głośność odtwarzania dźwięku
+        // na podstawie wartości `value`
+    });
+});
 
 // Zmienna do przechowywania informacji o stanie przycisku
 let isPlaying = false;
