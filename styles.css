@@ -503,6 +503,76 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
+.volume-bar {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Dodaj subtelny cień */
+}
+
+.volume-icon,
+.mute-icon {
+    font-size: 24px;
+    color: #555;
+}
+
+.volume-slider {
+    flex: 1;
+    position: relative;
+    margin: 0 10px;
+    height: 20px; /* Zwiększ wysokość paska */
+    cursor: pointer;
+}
+
+.slider-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 10px;
+    transform: translateY(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+.volume-slider:hover ~ .slider-track {
+    width: 100%;
+}
+
+.slider-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #555;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-thumb:hover {
+    background-color: #333;
+}
+
+#volumeSlider:hover #volumeUpIcon,
+#volumeSlider:hover #volumeMuteIcon {
+    animation: pulse 1s alternate infinite; /* Poprawiona wartość animacji */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
 /* Responsywność */
 @media screen and (max-width: 768px) {
     #radio-stats {
