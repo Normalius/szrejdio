@@ -1,3 +1,4 @@
+
 /* Resetowanie domyślnych styli */
 * {
     margin: 0;
@@ -62,66 +63,14 @@ h2, h3 {
             height: 100px; /* Zwiększenie wysokości przycisku */
         }
 
-/* styles.css */
-.radio-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.volume-control {
-    width: 200px;
-    margin-bottom: 20px;
-}
-
-.volume-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 10px;
-    background: linear-gradient(to right, #2196F3, #FFEB3B);
-    border-radius: 5px;
-    outline: none;
-    margin-bottom: 10px;
-}
-
-.volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #FFFFFF;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
-}
-
-.volume-icon-container {
-    text-align: center;
-}
-
-.volume-icon-container i {
-    font-size: 20px;
-    color: #000000;
-}
-
-.play-pause-btn {
-    background-color: #2196F3;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.play-pause-btn:hover {
-    background-color: #1976D2;
-}
+        /* Suwak regulacji głośności */
+        #volume-control {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+        }
 
         /* Stylizacja przycisków udostępniania */
         #share-buttons {
@@ -458,6 +407,9 @@ nav ul li a:hover i {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
+    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
+    background-size: cover;
+    background-position: center;
     animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
     transition: all 0.3s ease; /* Płynne przejścia */
 }
@@ -493,6 +445,9 @@ nav ul li a:hover i {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
+    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
+    background-size: cover;
+    background-position: center;
     animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
     transition: all 0.3s ease; /* Płynne przejścia */
 }
