@@ -1,4 +1,3 @@
-
 // Zmienna do przechowywania informacji o stanie przycisku
 let isPlaying = false;
 
