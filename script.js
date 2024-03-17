@@ -100,9 +100,15 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   var slider = document.getElementById("myRange");
+  var radioPlayer = document.getElementById("radioPlayer"); // Załóżmy, że radioPlayer jest elementem audio.
+
   slider.oninput = function() {
     var volume = this.value;
     console.log("Aktualna głośność: " + volume);
-    // Tutaj możesz wstawić kod do ustawiania głośności w twojej aplikacji muzycznej
+    
+    // Ustawianie głośności odtwarzania muzyki
+    if (radioPlayer) {
+      radioPlayer.volume = volume / 100; // Dzielimy przez 100, ponieważ głośność oczekuje wartości od 0.0 do 1.0
+    }
   };
 });
