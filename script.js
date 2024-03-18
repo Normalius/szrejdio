@@ -59,30 +59,3 @@ fetchRadioStats();
 
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
-
-// Inicjalizacja odtwarzacza
-var radio = new Howl({
-    src: ['https://s3.slotex.pl/shoutcast/7466/stream?sid=1;'], // Źródło strumienia radiowego
-    format: ['mp3'], // Format audio
-    autoplay: false, // Czy odtwarzać automatycznie po załadowaniu
-    volume: 1.0, // Głośność początkowa (od 0 do 1)
-    html5: true // Użyj natywnego odtwarzacza HTML5
-});
-
-// Obsługa przycisku play/pause
-var playPauseBtn = document.getElementById('playPauseBtn');
-playPauseBtn.addEventListener('click', function() {
-    if (radio.playing()) {
-        radio.pause();
-        playPauseBtn.textContent = 'Play';
-    } else {
-        radio.play();
-        playPauseBtn.textContent = 'Pause';
-    }
-});
-
-// Obsługa zmiany głośności
-var volumeRange = document.querySelector('#volumeRange input[type="range"]');
-volumeRange.addEventListener('input', function() {
-    radio.volume(parseFloat(this.value) / 100);
-});
