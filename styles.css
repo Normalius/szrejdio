@@ -524,6 +524,22 @@ nav ul li a:hover i {
   margin: 0 auto;
 }
 
+.volume-slider .slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #007bff; /* Kolor wskaźnika postępu */
+  transition: width 0.3s; /* Animacja zmiany szerokości */
+}
+
+/* Zwiększenie szerokości wskaźnika postępu w zależności od wartości suwaka */
+.volume-slider .slider:after {
+  width: calc((100% / 100) * var(--slider-value));
+}
+
 .volume-slider .slider:hover {
   opacity: 1;
   transform: scale(1.1);
