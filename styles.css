@@ -370,8 +370,9 @@ nav ul li a:hover i {
 }
 
 #audioWrapper {
-  margin: 0 auto;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #audioPlayer {
