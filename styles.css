@@ -549,6 +549,19 @@ nav ul li a:hover i {
   transition: background 0.3s; /* Płynna zmiana koloru kciuka */
 }
 
+.volume-level {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  background: #007bff;
+  width: 4px;
+  height: 70%;
+  border-radius: 2px;
+  z-index: 1;
+  pointer-events: none; /* Zapobiega interakcji z wskaźnikiem */
+}
+
 .icon-left {
   position: absolute;
   top: 50%;
