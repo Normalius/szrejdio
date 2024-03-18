@@ -522,13 +522,7 @@ nav ul li a:hover i {
   opacity: 0.7;
   transition: background 0.3s, transform 0.2s;
   margin: 0 auto;
-  background: linear-gradient(to right, 
-              #ff0000 0%,  /* Czerwony od 0% */
-              #ff7f00 25%, /* Pomarańczowy od 25% */
-              #ffff00 50%, /* Żółty od 50% */
-              #00ff00 75%, /* Zielony od 75% */
-              #0000ff 100% /* Niebieski od 100% */
-            ); 
+  background: none
 }
 
 .volume-slider .slider::after {
