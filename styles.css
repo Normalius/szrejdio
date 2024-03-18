@@ -565,6 +565,7 @@ nav ul li a:hover i {
   font-size: 20px;
   -webkit-text-stroke-width: 1px;
   text-stroke-width: 1px;
+  color: #ccc;
 }
 
 /* Tooltip */
