@@ -14,7 +14,11 @@
 <header id="top-bar">
     <div class="container">
         <div class="actions">
-             <button id="playRadio" class="btn-play" style="display: none;"><i class="fas fa-play"></i></button>
+            <!-- Ukryty przycisk odtwarzania radia -->
+            <button id="playRadio" class="btn-play" style="display: none;"><i class="fas fa-play"></i></button>
+            <!-- Odtwarzacz audio -->
+            <audio controls preload="none" id="radioPlayer" style="display: none;">
+                <source src="https://s3.slotex.pl/shoutcast/7466/stream?sid=1">
 </div>
         </div>
 <div class="volume-slider">
