@@ -104,9 +104,7 @@ h2, h3 {
 /* Drugi header */
 #sub-header {
     background-color: #fff;
-    padding: 10px 20px;
     border-bottom: 1px solid #ddd;
-    margin-top: 115px; /* Zwiększenie marginesu górnego */
 }
 
 #sub-header .container {
