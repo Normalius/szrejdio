@@ -522,7 +522,7 @@ nav ul li a:hover i {
   opacity: 0.7;
   transition: background 0.3s, transform 0.2s;
   margin: 0 auto;
-  background: none
+  background: #83a400;
 }
 
 .volume-slider .slider::after {
