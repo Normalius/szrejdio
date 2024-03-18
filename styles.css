@@ -63,6 +63,7 @@ h2, h3 {
     cursor: pointer; /* Ustawienie kursora na wskaźnik */
     width: 100px; /* Zwiększenie szerokości przycisku */
     height: 100px; /* Zwiększenie wysokości przycisku */
+    margin-bottom: 20px; /* Zwiększenie marginesu na dole paska */
 }
 
 /* Stylizacja ikony na przycisku odtwarzania */
@@ -508,7 +509,9 @@ nav ul li a:hover i {
 .volume-slider {
   position: relative;
   width: 300px;
-  margin: 20px auto;
+  margin: 40px auto 20px; /* Zwiększenie marginesu na dole */
+}
+    
 }
 
 /* Suwak głośności */
