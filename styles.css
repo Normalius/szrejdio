@@ -503,23 +503,25 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
+/* Kontener suwaka głośności */
 .volume-slider {
   position: relative;
   width: 300px;
   margin: 20px auto;
 }
 
+/* Suwak głośności */
 .volume-slider .slider {
   -webkit-appearance: none;
-  width: calc(100% - 40px); /* Szerokość paska suwaka z odjęciem szerokości ikon */
+  width: calc(100% - 40px);
   height: 10px;
   background: linear-gradient(to right, #83a400, #5b7e00);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   outline: none;
   opacity: 0.7;
   transition: background 0.3s, transform 0.2s;
-  margin: 0 auto; /* Wyśrodkowanie suwaka */
+  margin: 0 auto;
 }
 
 .volume-slider .slider:hover {
@@ -527,50 +529,45 @@ nav ul li a:hover i {
   transform: scale(1.1);
 }
 
-.volume-slider .slider::-webkit-slider-thumb {
+/* Kciuk suwaka */
+.volume-slider .slider::-webkit-slider-thumb,
+.volume-slider .slider::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #83a400; /* Kolor kciuka */
+  background: #83a400;
   cursor: pointer;
   border-radius: 50%;
-  border: 2px solid #fff; /* Dodajemy obramowanie */
-  transition: background 0.3s; /* Płynna zmiana koloru kciuka */
+  border: 2px solid #fff;
+  transition: background 0.3s;
 }
 
-.volume-slider .slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: #83a400; /* Kolor kciuka */
-  cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid #fff; /* Dodajemy obramowanie */
-  transition: background 0.3s; /* Płynna zmiana koloru kciuka */
-}
-
-.icon-left {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0px; /* Dodaj odstęp od lewej strony */
-}
-
+/* Ikony głośników */
+.icon-left,
 .icon-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: -10px; /* Dodaj odstęp od prawej strony */
+}
+
+.icon-left {
+  left: 0;
+}
+
+.icon-right {
+  right: -10px;
 }
 
 .fa-volume-down,
 .fa-volume-up {
-  color: #FFF /* Kolor ikon */
-  font-size: 20px; /* Rozmiar ikon */
+  color: #fff;
+  font-size: 20px;
   -webkit-text-stroke-width: 1px;
   text-stroke-width: 1px;
 }
 
+/* Animacja pulsacji */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -582,13 +579,13 @@ nav ul li a:hover i {
 
 /* Responsywność */
 @media screen and (max-width: 768px) {
-    #radio-stats {
-        width: 90%;
-    }
+  .volume-slider {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    #radio-stats {
-        padding: 15px;
-    }
+  .volume-slider {
+    padding: 15px;
+  }
 }
