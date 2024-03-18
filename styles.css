@@ -515,6 +515,7 @@ nav ul li a:hover i {
   -webkit-appearance: none;
   width: calc(100% - 40px);
   height: 10px;
+  position: relative; /* Dodanie pozycji względnej dla kontenera suwaka */
   background: linear-gradient(to right, #83a400, #5b7e00);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
