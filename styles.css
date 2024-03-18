@@ -60,6 +60,47 @@ body {
     font-size: 36px; /* Zmniejszenie rozmiaru ikony */
 }
 
+/* Animacja rozbłysku */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0);
+    }
+}
+
+/* Dodanie animacji rozbłysku po naciśnięciu */
+#top-bar button#play:active {
+    animation: glow 0.5s ease-out;
+}
+
+/* Stylizacja koła */
+#top-bar button#play::before {
+    content: '';
+    position: absolute;
+    border: 2px solid #fff;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    /* Zaktualizowane wartości szerokości i wysokości koła */
+    width: calc(100% - 30px); /* Szerokość przycisku minus podwójna wartość paddingu */
+    height: calc(100% - 30px); /* Wysokość przycisku minus podwójna wartość paddingu */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin-circle 3s linear infinite;
+}
+
+/* Animacja obracania koła */
+@keyframes spin-circle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 /* Nawigacja */
 nav {
     background-color: #83a400;
