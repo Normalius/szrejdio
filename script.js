@@ -59,3 +59,44 @@ fetchRadioStats();
 
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
+
+const radioPlayer = document.getElementById('radioPlayer');
+const playPauseButton = document.getElementById('playPauseButton');
+const stopButton = document.getElementById('stopButton');
+const volumeControl = document.getElementById('volumeControl');
+const songInfo = document.getElementById('songInfo');
+const stationInfo = document.getElementById('stationInfo');
+
+playPauseButton.addEventListener('click', function() {
+  if (radioPlayer.paused) {
+    radioPlayer.play();
+    playPauseButton.textContent = 'Pause';
+  } else {
+    radioPlayer.pause();
+    playPauseButton.textContent = 'Play';
+  }
+});
+
+stopButton.addEventListener('click', function() {
+  radioPlayer.pause();
+  radioPlayer.currentTime = 0;
+  playPauseButton.textContent = 'Play';
+});
+
+volumeControl.addEventListener('input', function() {
+  radioPlayer.volume = volumeControl.value;
+});
+
+radioPlayer.addEventListener('play', function() {
+  playPauseButton.textContent = 'Pause';
+});
+
+radioPlayer.addEventListener('pause', function() {
+  playPauseButton.textContent = 'Play';
+});
+
+radioPlayer.addEventListener('timeupdate', function() {
+  // Aktualizacja informacji o utworze i stacji (to tylko przykładowe dane)
+  songInfo.textContent = 'Nazwa utworu: Song Title';
+  stationInfo.textContent = 'Stacja: Your Radio Station';
+});
