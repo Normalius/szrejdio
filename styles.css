@@ -1,626 +1,115 @@
-
-/* Resetowanie domyślnych styli */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Wspólne style dla wszystkich ekranów */
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    color: #000000;
-    line-height: 1.6;
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #333333;
-    font-weight: bold;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-        /* Górny pasek */
-        #top-bar {
-            background-color: orange;
-            color: white;
-            padding: 1px; /* Zmniejszenie paddingu */
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: top 0.3s ease;
-        }
-
-        #top-bar.transparent {
-            background-color: rgba(255, 165, 0, 0.7);
-        }
-
-        body {
-            margin-top: 60px; /* Zwiększenie marginesu górnego */
-        }
-
-        /* Stylizacja przycisku odtwarzania */
-        #top-bar button#play {
-            position: relative; /* Dodanie pozycji względnej dla przycisku */
-            float: left; /* Przesunięcie przycisku na lewą stronę */
-            font-size: 32px; /* Zwiększenie rozmiaru czcionki */
-            padding: 30px; /* Zwiększenie paddingu */
-            background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
-            border: none; /* Usunięcie obramowania */
-            cursor: pointer; /* Ustawienie kursora na wskaźnik */
-            width: 100px; /* Zwiększenie szerokości przycisku */
-            height: 100px; /* Zwiększenie wysokości przycisku */
-        }
-
-/* Stylizacja ikony na przycisku odtwarzania */
-#top-bar button#play i {
-    color: white; /* Ustawienie koloru ikony na biały */
-    font-size: 48px; /* Zwiększenie rozmiaru ikony */
-}
-
-@keyframes spin-circle {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Dodanie animacji rozbłysku po naciśnięciu */
-#top-bar button#play:active {
-    animation: glow 0.5s ease-out;
-}
-
-/* Stylizacja koła */
-#top-bar button#play::before {
-    content: '';
-    position: absolute;
-    border: 2px solid #fff;
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    /* Zaktualizowane wartości szerokości i wysokości koła */
-    width: calc(100% - 30px); /* Szerokość przycisku minus podwójna wartość paddingu */
-    height: calc(100% - 30px); /* Wysokość przycisku minus podwójna wartość paddingu */
-    top: 53%;
-    left: 47%;
-    transform: translate(-50%, -50%);
-    animation: spin-circle 3s linear infinite;
-}
-
-/* Drugi header */
-#sub-header {
-    background-color: #fff;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-    margin-top: 115px; /* Zwiększenie marginesu górnego */
-}
-
-#sub-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Przyciski wsparcia i kontaktu */
-.support-contact .action-button {
-    background-color: #659F22; /* Zachowanie koloru przycisków */
-    color: #fff;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    margin-left: 5px; /* Zmniejszenie marginesu na lewej stronie przycisków */
-}
-
-.support-contact .action-button:hover {
-    background-color: #4F7F16;
-}
-/* Nawigacja */
-nav {
-    background-color: #83a400; /* Jednolity kolor tła nawigacji */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dostosowany kolor i intensywność cienia pod menu */
-    padding: 8px 0;
-    overflow: auto;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-right: 10px; /* Zmniejszenie marginesu między pozycjami w nawigacji */
-}
-
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-    font-size: 14px;
-    position: relative;
-    background-color: transparent; /* Przejrzyste przyciski */
-}
-
-nav ul li a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0);
-    transition: background-color 0.3s ease;
-    z-index: -1;
-}
-
-nav ul li a:hover::before {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-nav ul li a:hover {
-    background-color: #97b914; /* Zmiana koloru po najechaniu na opcję menu */
-    transform: translateY(-2px);
-    text-decoration: underline; /* Efekt podkreślenia przy najechaniu */
-}
-
-/* Animacje dla ikon */
-nav ul li a i {
-    transition: transform 0.3s ease; /* Dodanie animacji */
-}
-
-nav ul li a:hover i {
-    transform: scale(1.1); /* Powiększenie ikony przy najechaniu myszką */
-}
-
-/* Responsywność */
-@media screen and (max-width: 768px) {
-    .actions {
-        display: none;
-    }
-
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        padding: 8px 12px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    nav ul li a {
-        font-size: 12px;
-    }
-}
-
-
-.footer {
-    background-color: #222; /* Zmiana koloru tła na ciemniejszy odcień */
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Dodanie wyśrodkowania ikon */
-    margin-right: 15px; /* Powrót do pierwotnej wartości marginesu */
-}
-
-.footer-section {
-    flex: 1;
-    margin-right: 20px; /* Zwiększenie odstępu między sekcjami */
-}
-
-.footer-section:last-child {
-    margin-right: 0; /* Usunięcie marginesu po prawej stronie ostatniej sekcji */
-}
-
-.footer-section h3 {
-    color: #fff;
-    padding-bottom: 10px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-   margin-bottom: 15px; /* Zwiększenie marginesu między pozycjami w stopce */
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #ffcc00;
-}
-
-.social-icons-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-right: 20px; /* Dodanie marginesu do oddzielenia od innych elementów stopki */
-}
-
-.social-icons-right .social-icon {
-    text-decoration: none;
-    font-size: 24px;
-    margin-left: 20px;
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.social-icons-right .social-icon:hover {
-    color: #ffcc00;
-}
-
-.social-icons-right .facebook:hover {
-    color: #3b5998;
-}
-
-.social-icons-right .instagram:hover {
-    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #E2ED8A, #A1D0E8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.social-icons-right .discord:hover {
-    color: #7289da;
-}
-
-.social-icons-right .twitter:hover {
-    color: #000000;
-}
-
-.back-to-top {
-    margin-top: 40px; /* Zwiększenie marginesu na górę */
-}
-
-.back-to-top a {
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.back-to-top a:hover {
-    background-color: #ffcc00;
-}
-
-.news-section {
-    max-width: 800px;
-    margin: 20px auto 40px;
-    text-align: left;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-}
-
-.news-section h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.news-list {
-    list-style: none;
-    padding: 0;
-}
-
-.news-list li {
-    margin-bottom: 20px;
-}
-
-.news-list h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.news-list p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-#radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
-    background-size: cover;
-    background-position: center;
-    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
-    transition: all 0.3s ease; /* Płynne przejścia */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#radio-stats h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease; /* Płynne przejścia kolorów */
-}
-
-#radio-stats ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
-    background-size: cover;
-    background-position: center;
-    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
-    transition: all 0.3s ease; /* Płynne przejścia */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#radio-stats h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease; /* Płynne przejścia kolorów */
-}
-
-#radio-stats ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#radio-stats li {
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease; /* Płynne przejścia */
-}
-
-#radio-stats li:last-child {
-    margin-bottom: 0;
-}
-
-/* Zwiększenie kontrastu kolorów */
-#radio-stats {
-    color: #000; /* Czarny tekst dla większego kontrastu */
-    background-color: #fff; /* Białe tło dla większego kontrastu */
-}
-
-#radio-stats h2 {
-    color: #333; /* Kolor tytułu */
-}
-
-#radio-stats li {
-    color: #555; /* Kolor treści */
-}
-
-/* Dopasowanie czcionek */
-#radio-stats h2 {
-    font-family: 'Montserrat', sans-serif; /* Wybrana czcionka dla tytułu */
-}
-
-/* Przemyślane ułożenie elementów */
-#radio-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#radio-stats li {
-    width: 100%;
-    text-align: left;
-}
-
-/* Dodanie efektów cieniowania i głębi */
-#radio-stats {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Delikatne cieniowanie */
-}
-
-#radio-stats li {
-    border-bottom: 1px solid #ddd; /* Dodanie podziału między poszczególnymi statystykami */
-}
-
-/* Dodanie efektów hover */
-#radio-stats li:hover {
-    transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
-}
-/* Kontener suwaka głośności */
-.volume-slider {
-  position: relative;
-  width: 300px;
-  margin: 20px auto;
-}
-
-/* Nowe tło suwaka z gradientem */
-.volume-slider .slider-background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 5px;
-  background: linear-gradient(to right, #008000, #00ff00); /* Zielony gradient */
-}
-
-/* Nowy element do reprezentacji postępu */
-.volume-slider .slider-progress {
-  height: 100%;
-  border-radius: 5px;
-  background-color: #007bff; /* Kolor wskaźnika postępu */
-}
-
-/* Suwak głośności */
-.volume-slider .slider {
-  -webkit-appearance: none;
-  width: calc(100% - 40px);
-  height: 10px;
-  position: relative;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  outline: none;
-  opacity: 0;
-  margin: 0 auto;
-  background: none; /* Usuwamy domyślne tło */
-}
-
-/* Kciuk suwaka */
-.volume-slider .slider::-webkit-slider-thumb,
-.volume-slider .slider::-moz-range-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #83a400;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-
-/* Ikony głośników */
-.icon-left,
-.icon-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.icon-left {
-  left: -10px;
-}
-
-.icon-right {
-  right: -10px;
-}
-
-.fa-volume-down,
-.fa-volume-up {
-  color: #fff;
-  font-size: 20px;
-  -webkit-text-stroke-width: 1px;
-  text-stroke-width: 1px;
-}
-
-.icon-left:hover .fa-volume-down,
-.icon-right:hover .fa-volume-up {
-  color: #ccc; /* Nowy kolor ikon po najechaniu kursorem */
-}
-
-/* Tooltip */
-.tooltip {
-  visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-align: center;
-  border-radius: 4px;
-  padding: 4px 8px;
-  position: absolute;
-  z-index: 1;
-  top: calc(-20px - 1em);
-  left: calc(-1em + 50%);
-  transform: translateX(-50%);
-}
-
-.tooltip.show {
-  visibility: visible;
-}
-
-/* Animacja pulsacji */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-/* Responsywność */
-@media screen and (max-width: 768px) {
-  .volume-slider {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .volume-slider {
-    padding: 15px;
-  }
-}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowy Układ Czcionek</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/a4c00a89bc.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header id="top-bar">
+    <div class="container">
+        <div class="actions">
+            <button id="play" class="btn-play"><i class="fas fa-play"></i></button>
+</div>
+        </div>
+<div class="volume-slider">
+  <input type="range" min="0" max="100" value="50" class="slider" id="volumeRange">
+     <div class="tooltip" id="volumeTooltip">50</div> <!-- Tooltip -->
+  <div class="icon-left">
+    <i class="fas fa-volume-down"></i> <!-- Ikona dźwięku niskiego poziomu -->
+  </div>
+  <div class="icon-right">
+    <i class="fas fa-volume-up"></i> <!-- Ikona dźwięku wysokiego poziomu -->
+  </div>
+</div>
+</header>
+
+<header id="sub-header">
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo SZRejdio">
+        </div>
+        <div class="support-contact">
+            <button class="action-button">Wsparcie</button>
+            <button class="action-button">Kontakt</button>
+        </div>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Index</a></li>
+        <li><a href="#"><i class="fas fa-newspaper"></i> Aktualności</a></li>
+        <li><a href="#"><i class="fas fa-comments"></i> Forum</a></li>
+        <li><a href="#"><i class="fas fa-headphones"></i> Jak słuchać?</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i> Ramówka</a></li>
+        <li><a href="#"><i class="fas fa-users"></i> Ekipa</a></li>
+        <li><a href="#"><i class="fas fa-music"></i> Audycje</a></li>
+        <li><a href="#"><i class="fas fa-star"></i> Lista Przebojów</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i> Pomoc</a></li>
+    </ul>
+</nav>
+<main>
+    <section id="radio-stats">
+        <h2>Statystyki Radia</h2>           
+            <li><span class="label">Prowadzący:</span> <span id="serverTitle">...</span></li>
+            <li><span class="label">Liczba Słuchaczy:</span> <span id="currentListeners">...</span></li>
+            <li><span class="label">Rekord ilości słuchaczy:</span> <span id="peakListeners">...</span></li>
+            <li><span class="label">Maxymalna Liczba Słuchaczy:</span> <span id="maxListeners">...</span></li>
+            <li><span class="label">Aktualna Piosenka:</span> <span id="currentSong">...</span></li>
+        </ul>
+    </section>
+    <section class="news-section">
+        <h2>Aktualności</h2>
+        <ul class="news-list">
+            <li>
+                <h3>Nowy program na antenie - "Szalona Niedziela"</h3>
+                <p>Mamy przyjemność ogłosić premierę naszego najnowszego programu radiowego - "Szalona Niedziela"! To niezwykłe wydarzenie, które ma na celu zapewnić Ci rozrywkę i radość w każdą niedzielę wieczorem.</p>
+                <p>W programie "Szalona Niedziela" możesz spodziewać się dynamicznej muzyki, fascynujących rozmów z gośćmi specjalnymi oraz konkursów z atrakcyjnymi nagrodami. Przygotuj się na niezapomniane doświadczenie, które sprawi, że każda niedziela stanie się wyjątkowa!</p>
+                <p>Dołącz do nas już w najbliższą niedzielę o godzinie 20:00 i weź udział w szalonym show, które rozświetli Twój wieczór!</p>
+                <p>Nie przegap premiery programu "Szalona Niedziela" tylko na SZRejdio!</p>
+            </li>
+        </ul>
+    </section>
+    <!-- Radio player -->
+    <audio id="radioPlayer" src="https://s3.slotex.pl:7466/;" type="audio/mpeg"></audio>
+</main>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>O Nas</h3>
+            <p>Jesteśmy firmą zajmującą się...</p>
+            <p>Nasze biuro znajdziesz pod adresem:</p>
+            <p>ul. Przykładowa 123, 00-000 Warszawa</p>
+        </div>
+        <div class="footer-section">
+            <h3>Linki Szybkiego Dostępu</h3>
+            <ul>
+                <li><a href="#">Warunki Korzystania</a></li>
+                <li><a href="#">Polityka Prywatności</a></li>
+                <li><a href="#">Regulaminy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p>Telefon: 123-456-789</p>
+            <p>Email: kontakt@example.com</p>
+        </div>
+    </div>
+    <div class="social-icons-right">
+        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon discord"><i class="fab fa-discord"></i></a>
+        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="back-to-top">
+        <a href="#top">Do Góry</a>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
