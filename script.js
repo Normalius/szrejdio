@@ -139,4 +139,10 @@ document.addEventListener("DOMContentLoaded", function() {
       radioPlayer.volume = volume / 100;
     }
   }
+
+  // Aktualizacja wartości suwaka z korelacją ze wskaźnikiem postępu
+  slider.addEventListener("input", function() {
+    var volume = this.value;
+    this.style.setProperty('--slider-value', volume); // Aktualizacja wartości suwaka
+  });
 });
