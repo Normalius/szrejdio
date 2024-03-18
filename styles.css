@@ -357,64 +357,16 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
-/* Stylizacja dla odtwarzacza radiowego */
-#radioPlayer {
-    text-align: center;
-    margin-top: 20px;
+#radioControls {
+  margin-top: 10px;
 }
 
-#playPauseBtn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+#volumeControl {
+  width: 100px;
 }
 
-#playPauseBtn:hover {
-    background-color: #45a049;
-}
-
-#volumeRange {
-    display: block;
-    margin-top: 10px;
-}
-
-#volumeRange input[type="range"] {
-    width: 150px;
-    -webkit-appearance: none;
-    height: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    border-radius: 5px;
-}
-
-#volumeRange input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #4CAF50;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-#volumeRange input[type="range"]::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    background: #4CAF50;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-#volumeRange input[type="range"]:hover {
-    opacity: 1;
+#radioInfo {
+  margin-top: 20px;
 }
 
 /* Responsywność */
