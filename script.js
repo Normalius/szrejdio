@@ -102,6 +102,13 @@ document.addEventListener("DOMContentLoaded", function() {
   var slider = document.getElementById("volumeRange");
   var volumeTooltip = document.getElementById("volumeTooltip");
 
+  // Funkcja aplikująca funkcję easing do animacji zmiany koloru gradientu
+  function applyEasing(element, property, duration, easingFunction) {
+    element.style.transitionProperty = property;
+    element.style.transitionDuration = duration + "s";
+    element.style.transitionTimingFunction = easingFunction;
+  }
+
   // Sprawdzamy, czy istnieją zapisane ustawienia głośności
   var savedVolume = localStorage.getItem("volume");
   if (savedVolume) {
@@ -153,16 +160,17 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Wybór koloru gradientu na podstawie wartości głośności
     if (volume < 25) {
-      gradientColor = "linear-gradient(to right, #ff0000, #ff7f00)";
+      gradientColor = "linear-gradient(to right, #ff0000 0%, #ff7f00 100%)";
     } else if (volume < 50) {
-      gradientColor = "linear-gradient(to right, #ff7f00, #ffff00)";
+      gradientColor = "linear-gradient(to right, #ff7f00 0%, #ffff00 100%)";
     } else if (volume < 75) {
-      gradientColor = "linear-gradient(to right, #ffff00, #00ff00)";
+      gradientColor = "linear-gradient(to right, #ffff00 0%, #00ff00 100%)";
     } else {
-      gradientColor = "linear-gradient(to right, #00ff00, #0000ff)";
+      gradientColor = "linear-gradient(to right, #00ff00 0%, #0000ff 100%)";
     }
     
-    // Ustawienie koloru suwaka
+    // Ustawienie płynniejszego przejścia między gradientami z użyciem funkcji easing
+    applyEasing(this, "background-color", 0.3, "cubic-bezier(0.42, 0, 0.58, 1)");
     this.style.background = gradientColor;
   });
 });
