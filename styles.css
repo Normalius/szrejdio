@@ -50,18 +50,20 @@ h2, h3 {
             margin-top: 60px; /* Zwiększenie marginesu górnego */
         }
 
-        /* Stylizacja przycisku odtwarzania */
-        #top-bar button#play {
-            position: relative; /* Dodanie pozycji względnej dla przycisku */
-            float: left; /* Przesunięcie przycisku na lewą stronę */
-            font-size: 32px; /* Zwiększenie rozmiaru czcionki */
-            padding: 30px; /* Zwiększenie paddingu */
-            background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
-            border: none; /* Usunięcie obramowania */
-            cursor: pointer; /* Ustawienie kursora na wskaźnik */
-            width: 100px; /* Zwiększenie szerokości przycisku */
-            height: 100px; /* Zwiększenie wysokości przycisku */
-        }
+/* Stylizacja przycisku odtwarzania */
+#top-bar button#play {
+    position: absolute; /* Zmiana na pozycję absolutną */
+    top: 50%; /* Przesunięcie na środek pionowo */
+    left: 50%; /* Przesunięcie na środek poziomo */
+    transform: translate(-50%, -50%); /* Dopasowanie na środek */
+    font-size: 32px; /* Zwiększenie rozmiaru czcionki */
+    padding: 30px; /* Zwiększenie paddingu */
+    background-color: transparent; /* Ustawienie tła przycisku na przezroczyste */
+    border: none; /* Usunięcie obramowania */
+    cursor: pointer; /* Ustawienie kursora na wskaźnik */
+    width: 100px; /* Zwiększenie szerokości przycisku */
+    height: 100px; /* Zwiększenie wysokości przycisku */
+}
 
 /* Stylizacja ikony na przycisku odtwarzania */
 #top-bar button#play i {
@@ -93,8 +95,8 @@ h2, h3 {
     /* Zaktualizowane wartości szerokości i wysokości koła */
     width: calc(100% - 30px); /* Szerokość przycisku minus podwójna wartość paddingu */
     height: calc(100% - 30px); /* Wysokość przycisku minus podwójna wartość paddingu */
-    top: 53%;
-    left: 47%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     animation: spin-circle 3s linear infinite;
 }
