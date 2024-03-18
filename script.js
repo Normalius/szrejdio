@@ -131,18 +131,3 @@ document.addEventListener("DOMContentLoaded", function() {
       volumeTooltip.classList.remove("show");
     }, 1000);
   });
-
-  // Funkcja aktualizująca głośność
-  function updateVolume(volume) {
-    var radioPlayer = document.getElementById("radioPlayer");
-    if (radioPlayer) {
-      radioPlayer.volume = volume / 100;
-    }
-  }
-
-  // Aktualizacja wartości suwaka z korelacją ze wskaźnikiem postępu
-  slider.addEventListener("input", function() {
-    var volume = this.value;
-    this.style.setProperty('--slider-value', volume); // Aktualizacja wartości suwaka
-  });
-});
