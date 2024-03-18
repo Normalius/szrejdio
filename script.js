@@ -1,3 +1,28 @@
+// Zmienna do przechowywania informacji o stanie przycisku
+let isPlaying = false;
+
+// Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
+function toggleRadio() {
+    const playButton = document.getElementById('play');
+    const radioPlayer = document.getElementById('radioPlayer');
+    if (isPlaying) {
+        // Zatrzymywanie odtwarzania radia
+        radioPlayer.pause();
+
+        // Zmiana ikony przycisku na "Play"
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
+    } else {
+        // Rozpoczynanie odtwarzania radia
+        radioPlayer.play();
+
+        // Zmiana ikony przycisku na "Stop"
+        playButton.innerHTML = '<i class="fas fa-stop"></i>';
+    }
+
+    // Odwrócenie stanu przycisku
+    isPlaying = !isPlaying;
+}
+
 // Nasłuchujemy kliknięcia na przycisku
 document.getElementById('play').addEventListener('click', toggleRadio);
 
@@ -71,4 +96,53 @@ window.addEventListener('scroll', function() {
     } else {
         topBar.classList.remove('transparent');
     }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var slider = document.getElementById("volumeRange");
+  var volumeTooltip = document.getElementById("volumeTooltip");
+
+  // Sprawdzamy, czy istnieją zapisane ustawienia głośności
+  var savedVolume = localStorage.getItem("volume");
+  if (savedVolume) {
+    slider.value = savedVolume; // Załaduj zapisaną wartość głośności
+    updateVolume(savedVolume); // Aktualizujemy głośność na podstawie zapisanej wartości
+  }
+
+  // Obsługa zmiany wartości suwaka
+  slider.addEventListener("input", function() {
+    var volume = this.value;
+    updateVolume(volume); // Aktualizujemy głośność
+
+    // Zapisujemy aktualną wartość głośności w localStorage
+    localStorage.setItem("volume", volume);
+
+    // Aktualizujemy wartość głośności wewnątrz tooltipa
+    volumeTooltip.innerHTML = volume;
+    volumeTooltip.classList.add("show"); // Wyświetlamy tooltip
+
+    // Pozycjonujemy tooltip nad suwakiem
+    var sliderRect = slider.getBoundingClientRect();
+    volumeTooltip.style.left = (sliderRect.left + sliderRect.width / 2) + "px";
+    volumeTooltip.style.top = (sliderRect.top - 20) + "px";
+
+    // Ukrywamy tooltip po pewnym czasie
+    setTimeout(function() {
+      volumeTooltip.classList.remove("show");
+    }, 1000);
+  });
+
+  // Funkcja aktualizująca głośność
+  function updateVolume(volume) {
+    var radioPlayer = document.getElementById("radioPlayer");
+    if (radioPlayer) {
+      radioPlayer.volume = volume / 100;
+    }
+  }
+
+  // Aktualizacja wartości suwaka z korelacją ze wskaźnikiem postępu
+  slider.addEventListener("input", function() {
+    var volume = this.value;
+    this.style.setProperty('--slider-value', volume); // Aktualizacja wartości suwaka
+  });
 });
