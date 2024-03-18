@@ -100,27 +100,43 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   var slider = document.getElementById("volumeRange");
-  var volumeTooltip = document.getElementById("volumeTooltip"); // Zmieniona nazwa zmiennej dla tooltipa
-  var radioPlayer = document.getElementById("radioPlayer");
+  var volumeTooltip = document.getElementById("volumeTooltip");
 
-  // Obsługa zmiany głośności za pomocą suwaka
-  slider.oninput = function() {
+  // Sprawdzamy, czy istnieją zapisane ustawienia głośności
+  var savedVolume = localStorage.getItem("volume");
+  if (savedVolume) {
+    slider.value = savedVolume; // Załaduj zapisaną wartość głośności
+    updateVolume(savedVolume); // Aktualizujemy głośność na podstawie zapisanej wartości
+  }
+
+  // Obsługa zmiany wartości suwaka
+  slider.addEventListener("input", function() {
     var volume = this.value;
-    console.log("Aktualna głośność: " + volume);
+    updateVolume(volume); // Aktualizujemy głośność
 
-    // Ustawianie głośności odtwarzania radia
+    // Zapisujemy aktualną wartość głośności w localStorage
+    localStorage.setItem("volume", volume);
+
+    // Aktualizujemy wartość głośności wewnątrz tooltipa
+    volumeTooltip.innerHTML = volume;
+    volumeTooltip.classList.add("show"); // Wyświetlamy tooltip
+
+    // Pozycjonujemy tooltip nad suwakiem
+    var sliderRect = slider.getBoundingClientRect();
+    volumeTooltip.style.left = (sliderRect.left + sliderRect.width / 2) + "px";
+    volumeTooltip.style.top = (sliderRect.top - 20) + "px";
+
+    // Ukrywamy tooltip po pewnym czasie
+    setTimeout(function() {
+      volumeTooltip.classList.remove("show");
+    }, 1000);
+  });
+
+  // Funkcja aktualizująca głośność
+  function updateVolume(volume) {
+    var radioPlayer = document.getElementById("radioPlayer");
     if (radioPlayer) {
       radioPlayer.volume = volume / 100;
     }
-
-    // Aktualizacja wartości głośności wewnątrz tooltipa
-    volumeTooltip.innerHTML = volume;
-    volumeTooltip.classList.add("show"); // Wyświetla tooltip
-    var sliderRect = slider.getBoundingClientRect();
-    volumeTooltip.style.left = (sliderRect.left + sliderRect.width / 2) + "px"; // Pozycjonuje tooltip nad suwakiem
-    volumeTooltip.style.top = (sliderRect.top - 20) + "px";
-    setTimeout(function() {
-      volumeTooltip.classList.remove("show"); // Ukrywa tooltip po pewnym czasie
-    }, 1000);
-  };
+  }
 });
