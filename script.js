@@ -60,4 +60,3 @@ fetchRadioStats();
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
   });
-});
