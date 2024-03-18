@@ -514,15 +514,17 @@ nav ul li a:hover i {
   width: calc(100% - 40px); /* Szerokość paska suwaka z odjęciem szerokości ikon */
   height: 10px;
   background: linear-gradient(to right, #83a400, #5b7e00);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  
   border-radius: 5px;
   outline: none;
   opacity: 0.7;
-  transition: opacity 0.2s;
+  transition: background 0.3s, transform 0.2s;
   margin: 0 auto; /* Wyśrodkowanie suwaka */
 }
 
 .volume-slider .slider:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .volume-slider .slider::-webkit-slider-thumb {
@@ -565,6 +567,8 @@ nav ul li a:hover i {
 .fa-volume-up {
   color: #FFF /* Kolor ikon */
   font-size: 20px; /* Rozmiar ikon */
+  -webkit-text-stroke-width: 1px;
+  text-stroke-width: 1px;
 }
 
 /* Responsywność */
