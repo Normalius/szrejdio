@@ -1,28 +1,3 @@
-// Zmienna do przechowywania informacji o stanie przycisku
-let isPlaying = false;
-
-// Funkcja obsługująca kliknięcie przycisku "Stop" lub "Play"
-function toggleRadio() {
-    const playButton = document.getElementById('play');
-    const radioPlayer = document.getElementById('radioPlayer');
-    if (isPlaying) {
-        // Zatrzymywanie odtwarzania radia
-        radioPlayer.pause();
-
-        // Zmiana ikony przycisku na "Play"
-        playButton.innerHTML = '<i class="fas fa-play"></i>';
-    } else {
-        // Rozpoczynanie odtwarzania radia
-        radioPlayer.play();
-
-        // Zmiana ikony przycisku na "Stop"
-        playButton.innerHTML = '<i class="fas fa-stop"></i>';
-    }
-
-    // Odwrócenie stanu przycisku
-    isPlaying = !isPlaying;
-}
-
 // Nasłuchujemy kliknięcia na przycisku
 document.getElementById('play').addEventListener('click', toggleRadio);
 
@@ -131,3 +106,18 @@ document.addEventListener("DOMContentLoaded", function() {
       volumeTooltip.classList.remove("show");
     }, 1000);
   });
+
+  // Funkcja aktualizująca głośność
+  function updateVolume(volume) {
+    var radioPlayer = document.getElementById("radioPlayer");
+    if (radioPlayer) {
+      radioPlayer.volume = volume / 100;
+    }
+  }
+
+  // Aktualizacja wartości suwaka z korelacją ze wskaźnikiem postępu
+  slider.addEventListener("input", function() {
+    var volume = this.value;
+    this.style.setProperty('--slider-value', volume); // Aktualizacja wartości suwaka
+  });
+});
