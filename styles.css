@@ -509,13 +509,6 @@ nav ul li a:hover i {
   margin: 20px auto;
 }
 
-/* Kontener suwaka głośności */
-.volume-slider {
-  position: relative;
-  width: 300px;
-  margin: 20px auto;
-}
-
 /* Suwak głośności */
 .volume-slider .slider {
   -webkit-appearance: none;
@@ -526,41 +519,19 @@ nav ul li a:hover i {
   border-radius: 5px;
   outline: none;
   opacity: 0.7;
-  transition: background 0.3s, transform 0.2s;
   margin: 0 auto;
-  background: linear-gradient(to right, #ff0000 0%, #ff7f00 25%, #ffff00 50%, #00ff00 75%, #0000ff 100%);
-  animation: changeColor 3s infinite alternate; /* Animacja zmiany koloru gradientu */
-}
-
-/* Animacja zmiany koloru gradientu */
-@keyframes changeColor {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-.volume-slider .slider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #007bff; /* Kolor wskaźnika postępu */
-  transition: width 0.3s; /* Animacja zmiany szerokości */
+  background: linear-gradient(to right, #008000, #00ff00); /* Zielony gradient */
 }
 
 /* Zwiększenie szerokości wskaźnika postępu w zależności od wartości suwaka */
 .volume-slider .slider:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: calc((100% / 100) * var(--slider-value));
-}
-
-.volume-slider .slider:hover {
-  opacity: 1;
-  transform: scale(1.1);
+  height: 100%;
+  background-color: #007bff; /* Kolor wskaźnika postępu */
 }
 
 /* Kciuk suwaka */
@@ -574,7 +545,6 @@ nav ul li a:hover i {
   cursor: pointer;
   border-radius: 50%;
   border: 2px solid #fff;
-  transition: background 0.3s;
 }
 
 /* Ikony głośników */
@@ -647,3 +617,4 @@ nav ul li a:hover i {
     padding: 15px;
   }
 }
+
