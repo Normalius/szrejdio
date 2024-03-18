@@ -98,6 +98,13 @@ window.addEventListener('scroll', function() {
     }
 });
 
+    // Ustawianie głośności odtwarzania radia
+    if (radioPlayer) {
+      radioPlayer.volume = volume / 100;
+    }
+  };
+});
+
 document.addEventListener("DOMContentLoaded", function() {
   var slider = document.getElementById("volumeRange");
   var volumeTooltip = document.getElementById("volumeTooltip"); // Zmieniona nazwa zmiennej dla tooltipa
