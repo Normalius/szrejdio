@@ -569,7 +569,7 @@ nav ul li a:hover i {
 }
 
 .icon-left {
-  left: 0;
+  left: -10px;
 }
 
 .icon-right {
