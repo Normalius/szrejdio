@@ -145,4 +145,24 @@ document.addEventListener("DOMContentLoaded", function() {
     var volume = this.value;
     this.style.setProperty('--slider-value', volume); // Aktualizacja wartości suwaka
   });
+
+  // Dodanie zmiany koloru suwaka w zależności od wartości głośności
+  slider.addEventListener("input", function() {
+    var volume = this.value;
+    var gradientColor;
+    
+    // Wybór koloru gradientu na podstawie wartości głośności
+    if (volume < 25) {
+      gradientColor = "linear-gradient(to right, #ff0000, #ff7f00)";
+    } else if (volume < 50) {
+      gradientColor = "linear-gradient(to right, #ff7f00, #ffff00)";
+    } else if (volume < 75) {
+      gradientColor = "linear-gradient(to right, #ffff00, #00ff00)";
+    } else {
+      gradientColor = "linear-gradient(to right, #00ff00, #0000ff)";
+    }
+    
+    // Ustawienie koloru suwaka
+    this.style.background = gradientColor;
+  });
 });
