@@ -109,6 +109,29 @@ document.addEventListener("DOMContentLoaded", function() {
     element.style.transitionTimingFunction = easingFunction;
   }
 
+  // Funkcja do generowania gradientu
+  function generateGradient(volume) {
+    var startColor, endColor;
+
+    // Wybór koloru gradientu na podstawie wartości głośności
+    if (volume < 25) {
+      startColor = "#ff0000"; // Czerwony
+      endColor = "#ff7f00";   // Pomarańczowy
+    } else if (volume < 50) {
+      startColor = "#ff7f00"; // Pomarańczowy
+      endColor = "#ffff00";   // Żółty
+    } else if (volume < 75) {
+      startColor = "#ffff00"; // Żółty
+      endColor = "#00ff00";   // Zielony
+    } else {
+      startColor = "#00ff00"; // Zielony
+      endColor = "#0000ff";   // Niebieski
+    }
+
+    // Generowanie gradientu
+    return "linear-gradient(to right, " + startColor + " 0%, " + endColor + " 100%)";
+  }
+
   // Sprawdzamy, czy istnieją zapisane ustawienia głośności
   var savedVolume = localStorage.getItem("volume");
   if (savedVolume) {
@@ -158,17 +181,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var volume = this.value;
     var gradientColor;
     
-    // Wybór koloru gradientu na podstawie wartości głośności
-    if (volume < 25) {
-      gradientColor = "linear-gradient(to right, #ff0000 0%, #ff7f00 100%)";
-    } else if (volume < 50) {
-      gradientColor = "linear-gradient(to right, #ff7f00 0%, #ffff00 100%)";
-    } else if (volume < 75) {
-      gradientColor = "linear-gradient(to right, #ffff00 0%, #00ff00 100%)";
-    } else {
-      gradientColor = "linear-gradient(to right, #00ff00 0%, #0000ff 100%)";
-    }
-    
+    // Wygenerowanie gradientu
+    gradientColor = generateGradient(volume);
+
     // Ustawienie płynniejszego przejścia między gradientami z użyciem funkcji easing
     applyEasing(this, "background-color", 0.3, "cubic-bezier(0.42, 0, 0.58, 1)");
     this.style.background = gradientColor;
