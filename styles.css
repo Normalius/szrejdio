@@ -524,8 +524,9 @@ nav ul li a:hover i {
 }
 
 /* Zwiększenie szerokości wskaźnika postępu w zależności od wartości suwaka */
-.volume-slider .slider:after {
-  content: '';
+.volume-slider .slider::after {
+  content: ' '; /* Dodajemy pustą zawartość */
+  display: block; /* Ustawiamy jako blok */
   position: absolute;
   top: 0;
   left: 0;
