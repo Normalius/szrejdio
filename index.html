@@ -11,6 +11,23 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+<header id="top-bar">
+    <div class="container">
+        <div class="actions">
+            <button id="play" class="btn-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="volume-slider">
+            <input type="range" min="0" max="100" value="50" class="slider" id="volumeRange">
+            <div class="icon-left">
+                <i class="fas fa-volume-down"></i> <!-- Ikona dźwięku niskiego poziomu -->
+            </div>
+            <div class="icon-right">
+                <i class="fas fa-volume-up"></i> <!-- Ikona dźwięku wysokiego poziomu -->
+            </div>
+        </div>
+    </div>
+</header>
+
 <header id="sub-header">
     <div class="container">
         <div class="logo">
@@ -53,30 +70,44 @@
                 <h3>Nowy program na antenie - "Szalona Niedziela"</h3>
                 <p>Mamy przyjemność ogłosić premierę naszego najnowszego programu radiowego - "Szalona Niedziela"! To niezwykłe wydarzenie, które ma na celu zapewnić Ci rozrywkę i radość w każdą niedzielę wieczorem.</p>
                 <p>W programie "Szalona Niedziela" możesz spodziewać się dynamicznej muzyki, fascynujących rozmów z gośćmi specjalnymi oraz konkursów z atrakcyjnymi nagrodami. Przygotuj się na niezapomniane doświadczenie, które sprawi, że każda niedziela stanie się wyjątkowa!</p>
-                <a href="#" class="read-more-link">Czytaj więcej...</a>
-            </li>
-            <li>
-                <h3>Nowy konkurs dla słuchaczy - "Słuchawki Roku 2024"</h3>
-                <p>Już niedługo rusza nasz najnowszy konkurs dla słuchaczy - "Słuchawki Roku 2024"! To doskonała okazja, aby wygrać fantastyczne nagrody i przetestować najnowsze technologie audio.</p>
-                <p>W konkursie "Słuchawki Roku 2024" będziesz miał okazję ocenić i wybrać najlepsze słuchawki dostępne na rynku. Nie przegap szansy na udział w tym ekscytującym wydarzeniu - śledź naszą stronę internetową i nasze media społecznościowe, aby dowiedzieć się więcej!</p>
-                <a href="#" class="read-more-link">Czytaj więcej...</a>
+                <p>Dołącz do nas już w najbliższą niedzielę o godzinie 20:00 i weź udział w szalonym show, które rozświetli Twój wieczór!</p>
+                <p>Nie przegap premiery programu "Szalona Niedziela" tylko na SZRejdio!</p>
             </li>
         </ul>
     </section>
+    <!-- Radio player -->
+    <audio id="radioPlayer" src="https://s3.slotex.pl:7466/;" type="audio/mpeg"></audio>
 </main>
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2024 SZRejdio. Wszelkie prawa zastrzeżone.</p>
-            </div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>O Nas</h3>
+            <p>Jesteśmy firmą zajmującą się...</p>
+            <p>Nasze biuro znajdziesz pod adresem:</p>
+            <p>ul. Przykładowa 123, 00-000 Warszawa</p>
         </div>
+        <div class="footer-section">
+            <h3>Linki Szybkiego Dostępu</h3>
+            <ul>
+                <li><a href="#">Warunki Korzystania</a></li>
+                <li><a href="#">Polityka Prywatności</a></li>
+                <li><a href="#">Regulaminy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p>Telefon: 123-456-789</p>
+            <p>Email: kontakt@example.com</p>
+        </div>
+    </div>
+    <div class="social-icons-right">
+        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon discord"><i class="fab fa-discord"></i></a>
+        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="back-to-top">
+        <a href="#top">Do Góry</a>
     </div>
 </footer>
 <script src="script.js"></script>
