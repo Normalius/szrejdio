@@ -506,15 +506,9 @@ nav ul li a:hover i {
 }
 /* Kontener suwaka głośności */
 .volume-slider {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Zmniejszenie odstępu między przyciskiem a paskiem */
-.animation-wheel {
-    margin-bottom: 10px;
+  position: relative;
+  width: 300px;
+  margin: 20px auto;
 }
 
 /* Suwak głośności */
