@@ -62,7 +62,7 @@ setInterval(fetchRadioStats, 60000);
 
 // Inicjalizacja odtwarzacza
 var radio = new Howl({
-    src: ['https://s3.slotex.pl:7466/;'], // Źródło strumienia radiowego
+    src: ['https://s3.slotex.pl/shoutcast/7466/stream?sid=1;'], // Źródło strumienia radiowego
     format: ['mp3'], // Format audio
     autoplay: false, // Czy odtwarzać automatycznie po załadowaniu
     volume: 1.0, // Głośność początkowa (od 0 do 1)
