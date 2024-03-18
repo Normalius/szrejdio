@@ -571,18 +571,6 @@ nav ul li a:hover i {
   text-stroke-width: 1px;
 }
 
-.volume-visualization {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  width: 20px;
-  height: 20px;
-  background: #007bff;
-  border-radius: 50%;
-  animation: pulse 1s infinite alternate; /* Animacja pulsacji */
-}
-
 @keyframes pulse {
   0% {
     transform: scale(1);
