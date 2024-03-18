@@ -100,31 +100,18 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   var slider = document.getElementById("volumeRange");
-  var radioPlayer = document.getElementById("radioPlayer");
+  var volumeTooltip = document.getElementById("volumeTooltip"); // Zmieniona nazwa zmiennej dla tooltipa
 
   slider.oninput = function() {
     var volume = this.value;
-    console.log("Aktualna głośność: " + volume);
-    
-    // Ustawianie głośności odtwarzania radia
-    if (radioPlayer) {
-      radioPlayer.volume = volume / 100;
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function() {
-  var slider = document.getElementById("volumeRange");
-  var tooltip = document.getElementById("volumeTooltip");
-
-  slider.oninput = function() {
-    var volume = this.value;
-    tooltip.innerHTML = volume; // Ustawia wartość głośności wewnątrz tooltipa
-    tooltip.classList.add("show"); // Wyświetla tooltip
+    volumeTooltip.innerHTML = volume; // Ustawia wartość głośności wewnątrz tooltipa
+    volumeTooltip.classList.add("show"); // Wyświetla tooltip
     var sliderRect = slider.getBoundingClientRect();
-    tooltip.style.left = (sliderRect.left + sliderRect.width / 2) + "px"; // Pozycjonuje tooltip nad suwakiem
-    tooltip.style.top = (sliderRect.top - 20) + "px";
+    volumeTooltip.style.left = (sliderRect.left + sliderRect.width / 2) + "px"; // Pozycjonuje tooltip nad suwakiem
+    volumeTooltip.style.top = (sliderRect.top - 20) + "px";
     setTimeout(function() {
-      tooltip.classList.remove("show"); // Ukrywa tooltip po pewnym czasie
+      volumeTooltip.classList.remove("show"); // Ukrywa tooltip po pewnym czasie
     }, 1000);
   };
-});  
 });
+
