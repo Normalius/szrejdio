@@ -145,4 +145,15 @@ document.addEventListener("DOMContentLoaded", function() {
     var volume = this.value;
     this.style.setProperty('--slider-value', volume); // Aktualizacja wartości suwaka
   });
-});
+
+    // Sprawdzanie czy strona jest przeglądana na urządzeniu mobilnym
+    function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    }
+
+    // Dodawanie przycisku do odtwarzania radia na urządzeniach mobilnych
+    window.onload = function() {
+        if (isMobileDevice()) {
+            document.getElementById('playRadio').style.display = 'block';
+        }
+    };
