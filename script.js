@@ -98,35 +98,17 @@ window.addEventListener('scroll', function() {
     }
 });
 
-const volumeSlider = document.getElementById('volumeRange'); // Zmiana nazwy zmiennej na volumeRange zgodnie z kodem HTML
-const volumeDisplay = document.querySelector('.volume-display');
-const volumeLevels = document.querySelectorAll('.volume-level');
+document.addEventListener("DOMContentLoaded", function() {
+  var slider = document.getElementById("volumeRange");
+  var radioPlayer = document.getElementById("radioPlayer");
 
-// Funkcja aktualizująca wyświetlanie wartości głośności
-function updateVolumeDisplay(value) {
-    volumeDisplay.textContent = value;
-    volumeDisplay.classList.add('show');
-}
-
-// Funkcja aktualizująca wskaźniki graficzne
-function updateVolumeLevel(value) {
-    volumeLevels.forEach((level, index) => {
-        if (index < value / 20) {
-            level.classList.add('active');
-        } else {
-            level.classList.remove('active');
-        }
-    });
-}
-
-// Nasłuchuj zmian w suwaku głośności
-volumeSlider.addEventListener('input', () => {
-    const volumeValue = volumeSlider.value;
-    updateVolumeDisplay(volumeValue);
-    updateVolumeLevel(volumeValue);
-});
-
-// Ukryj wskaźnik liczbowy po zakończeniu animacji pojawiania się
-volumeDisplay.addEventListener('transitionend', () => {
-    volumeDisplay.classList.remove('show');
+  slider.oninput = function() {
+    var volume = this.value;
+    console.log("Aktualna głośność: " + volume);
+    
+    // Ustawianie głośności odtwarzania radia
+    if (radioPlayer) {
+      radioPlayer.volume = volume / 100;
+    }
+  };
 });
