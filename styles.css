@@ -1,4 +1,3 @@
-
 /* Resetowanie domyślnych styli */
 * {
     margin: 0;
@@ -27,27 +26,27 @@ h2, h3 {
     margin: 0 auto;
 }
 
-        /* Górny pasek */
-        #top-bar {
-            background-color: orange;
-            color: white;
-            padding: 1px; /* Zmniejszenie paddingu */
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: top 0.3s ease;
-        }
+/* Górny pasek */
+#top-bar {
+    background-color: orange;
+    color: white;
+    padding: 1px; /* Zmniejszenie paddingu */
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
 
-        #top-bar.transparent {
-            background-color: rgba(255, 165, 0, 0.7);
-        }
+#top-bar.transparent {
+    background-color: rgba(255, 165, 0, 0.7);
+}
 
-        body {
-            margin-top: 25px; /* Zwiększenie marginesu górnego */
-        }
+body {
+    margin-top: 25px; /* Zwiększenie marginesu górnego */
+}
 
 /* Stylizacja przycisku odtwarzania */
 #top-bar button#play {
@@ -365,44 +364,6 @@ nav ul li a:hover i {
     color: #555;
     line-height: 1.6;
     margin-bottom: 15px;
-}
-
-#radio-stats {
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    background-image: url('dynamic-background.jpg'); /* Dodanie dynamicznego tła */
-    background-size: cover;
-    background-position: center;
-    animation: fadeIn 1s ease; /* Dodanie animacji na wejście */
-    transition: all 0.3s ease; /* Płynne przejścia */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#radio-stats h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease; /* Płynne przejścia kolorów */
-}
-
-#radio-stats ul {
-    list-style-type: none;
-    padding: 0;
 }
 
 #radio-stats {
