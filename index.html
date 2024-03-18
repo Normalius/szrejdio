@@ -14,22 +14,18 @@
 <header id="top-bar">
     <div class="container">
         <div class="actions">
-            <!-- Ukryty przycisk odtwarzania radia -->
-            <button id="playRadio" class="btn-play" style="display: none;"><i class="fas fa-play"></i></button>
-            <!-- Odtwarzacz audio -->
-            <audio controls preload="none" id="radioPlayer" style="display: none;">
-                <source src="https://s3.slotex.pl/shoutcast/7466/stream?sid=1">
-</div>
+            <button id="play" class="btn-play"><i class="fas fa-play"></i></button>
         </div>
-<div class="volume-slider">
-  <input type="range" min="0" max="100" value="50" class="slider" id="volumeRange">
-  <div class="icon-left">
-    <i class="fas fa-volume-down"></i> <!-- Ikona dźwięku niskiego poziomu -->
-  </div>
-  <div class="icon-right">
-    <i class="fas fa-volume-up"></i> <!-- Ikona dźwięku wysokiego poziomu -->
-  </div>
-</div>
+        <div class="volume-slider">
+            <input type="range" min="0" max="100" value="50" class="slider" id="volumeRange">
+            <div class="icon-left">
+                <i class="fas fa-volume-down"></i> <!-- Ikona dźwięku niskiego poziomu -->
+            </div>
+            <div class="icon-right">
+                <i class="fas fa-volume-up"></i> <!-- Ikona dźwięku wysokiego poziomu -->
+            </div>
+        </div>
+    </div>
 </header>
 
 <header id="sub-header">
@@ -58,7 +54,8 @@
 </nav>
 <main>
     <section id="radio-stats">
-        <h2>Statystyki Radia</h2>           
+        <h2>Statystyki Radia</h2>
+        <ul>
             <li><span class="label">Prowadzący:</span> <span id="serverTitle">...</span></li>
             <li><span class="label">Liczba Słuchaczy:</span> <span id="currentListeners">...</span></li>
             <li><span class="label">Rekord ilości słuchaczy:</span> <span id="peakListeners">...</span></li>
