@@ -155,5 +155,6 @@ document.addEventListener("DOMContentLoaded", function() {
     window.onload = function() {
         if (isMobileDevice()) {
             document.getElementById('playRadio').style.display = 'block';
+            document.getElementById('radioPlayer').style.display = 'block';
         }
     };
