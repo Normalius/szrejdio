@@ -502,6 +502,12 @@ nav ul li a:hover i {
 #radio-stats li:hover {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
+/* Kontener suwaka głośności */
+.volume-slider {
+  position: relative;
+  width: 300px;
+  margin: 20px auto;
+}
 
 /* Kontener suwaka głośności */
 .volume-slider {
@@ -520,10 +526,10 @@ nav ul li a:hover i {
   border-radius: 5px;
   outline: none;
   opacity: 0.7;
-  transition: transform 0.2s;
+  transition: background 0.3s, transform 0.2s;
   margin: 0 auto;
   background: linear-gradient(to right, #ff0000 0%, #ff7f00 25%, #ffff00 50%, #00ff00 75%, #0000ff 100%);
-  animation: changeColor 3s infinite alternate;
+  animation: changeColor 3s infinite alternate; /* Animacja zmiany koloru gradientu */
 }
 
 /* Animacja zmiany koloru gradientu */
