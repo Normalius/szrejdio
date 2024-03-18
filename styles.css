@@ -369,6 +369,16 @@ nav ul li a:hover i {
   margin-top: 20px;
 }
 
+#audioWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#audioPlayer {
+  max-width: 400px; /* Możesz dostosować szerokość według potrzeb */
+}
+
+
 /* Responsywność */
 @media screen and (max-width: 768px) {
   .volume-slider {
