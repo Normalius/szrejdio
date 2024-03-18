@@ -154,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Dodawanie przycisku do odtwarzania radia na urządzeniach mobilnych
     window.onload = function() {
         if (isMobileDevice()) {
-            document.getElementById('playRadio').style.display = 'block';
             document.getElementById('radioPlayer').style.display = 'block';
         }
     };
