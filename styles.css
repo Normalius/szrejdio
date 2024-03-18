@@ -551,14 +551,14 @@ nav ul li a:hover i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 20px; /* Dodaj odstęp od lewej strony */
+  left: 60px; /* Dodaj odstęp od lewej strony */
 }
 
 .icon-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 20px; /* Dodaj odstęp od prawej strony */
+  right: 60px; /* Dodaj odstęp od prawej strony */
 }
 
 .fa-volume-down,
