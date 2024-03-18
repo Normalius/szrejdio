@@ -558,7 +558,7 @@ nav ul li a:hover i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 0px; /* Dodaj odstęp od prawej strony */
+  right: -10px; /* Dodaj odstęp od prawej strony */
 }
 
 .fa-volume-down,
