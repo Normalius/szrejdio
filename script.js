@@ -113,13 +113,5 @@ document.addEventListener("DOMContentLoaded", function() {
       volumeTooltip.classList.remove("show"); // Ukrywa tooltip po pewnym czasie
     }, 1000);
   };
-
-    // Ustawianie głośności odtwarzania radia
-    if (radioPlayer) {
-      radioPlayer.volume = volume / 100;
-    }
-  };
-});
-    
 });
 
