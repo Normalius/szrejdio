@@ -111,4 +111,20 @@ document.addEventListener("DOMContentLoaded", function() {
       radioPlayer.volume = volume / 100;
     }
   };
+  document.addEventListener("DOMContentLoaded", function() {
+  var slider = document.getElementById("volumeRange");
+  var tooltip = document.getElementById("volumeTooltip");
+
+  slider.oninput = function() {
+    var volume = this.value;
+    tooltip.innerHTML = volume; // Ustawia wartość głośności wewnątrz tooltipa
+    tooltip.classList.add("show"); // Wyświetla tooltip
+    var sliderRect = slider.getBoundingClientRect();
+    tooltip.style.left = (sliderRect.left + sliderRect.width / 2) + "px"; // Pozycjonuje tooltip nad suwakiem
+    tooltip.style.top = (sliderRect.top - 20) + "px";
+    setTimeout(function() {
+      tooltip.classList.remove("show"); // Ukrywa tooltip po pewnym czasie
+    }, 1000);
+  };
+});  
 });
