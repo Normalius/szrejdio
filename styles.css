@@ -565,7 +565,11 @@ nav ul li a:hover i {
   font-size: 20px;
   -webkit-text-stroke-width: 1px;
   text-stroke-width: 1px;
-  color: #ccc;
+}
+
+.icon-left:hover .fa-volume-down,
+.icon-right:hover .fa-volume-up {
+  color: #ccc; /* Nowy kolor ikon po najechaniu kursorem */
 }
 
 /* Tooltip */
