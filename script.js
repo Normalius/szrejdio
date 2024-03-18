@@ -101,10 +101,20 @@ window.addEventListener('scroll', function() {
 document.addEventListener("DOMContentLoaded", function() {
   var slider = document.getElementById("volumeRange");
   var volumeTooltip = document.getElementById("volumeTooltip"); // Zmieniona nazwa zmiennej dla tooltipa
+  var radioPlayer = document.getElementById("radioPlayer");
 
+  // Obsługa zmiany głośności za pomocą suwaka
   slider.oninput = function() {
     var volume = this.value;
-    volumeTooltip.innerHTML = volume; // Ustawia wartość głośności wewnątrz tooltipa
+    console.log("Aktualna głośność: " + volume);
+
+    // Ustawianie głośności odtwarzania radia
+    if (radioPlayer) {
+      radioPlayer.volume = volume / 100;
+    }
+
+    // Aktualizacja wartości głośności wewnątrz tooltipa
+    volumeTooltip.innerHTML = volume;
     volumeTooltip.classList.add("show"); // Wyświetla tooltip
     var sliderRect = slider.getBoundingClientRect();
     volumeTooltip.style.left = (sliderRect.left + sliderRect.width / 2) + "px"; // Pozycjonuje tooltip nad suwakiem
@@ -114,4 +124,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1000);
   };
 });
-
