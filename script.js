@@ -59,11 +59,3 @@ fetchRadioStats();
 
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
-
- const audioPlayer = document.getElementById('audioPlayer');
-  const volumeRange = document.getElementById('volumeRange');
-
-  volumeRange.addEventListener('input', function() {
-    const volumeValue = parseFloat(volumeRange.value) / 100;
-    audioPlayer.volume = volumeValue;
-  });
