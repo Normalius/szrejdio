@@ -357,17 +357,6 @@ nav ul li a:hover i {
     transform: translateY(-3px); /* Podniesienie elementu po najechaniu myszką */
 }
 
-#radioControls {
-  margin-top: 10px;
-}
-
-#volumeControl {
-  width: 100px;
-}
-
-#radioInfo {
-  margin-top: 20px;
-}
 
 #audioWrapper {
   display: flex;
