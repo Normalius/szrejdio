@@ -59,3 +59,16 @@ fetchRadioStats();
 
 // Odświeżanie danych co 60 sekund
 setInterval(fetchRadioStats, 60000);
+
+// Dodajemy płynne przewijanie strony po kliknięciu na linki w nawigacji
+$(document).ready(function(){
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 1000); // Czas animacji w milisekundach
+        }
+    });
+});
