@@ -68,7 +68,9 @@ $(document).ready(function(){
             event.preventDefault();
             $('html, body').stop().animate({
                 scrollTop: target.offset().top
-            }, 1000); // Czas animacji w milisekundach
+            }, 1000, 'swing', function() {
+                // Po zakończeniu animacji możemy wykonać dodatkowe operacje, jeśli to konieczne
+            });
         }
     });
 });
