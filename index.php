@@ -60,6 +60,34 @@
                 <p>Nie przegap premiery programu "Szalona Niedziela" tylko na SZRejdio!</p>
             </li>
         </ul>
+
+<form action="add_comment.php" method="POST">
+    <input type="hidden" name="news_id" value="1">
+    <input type="hidden" name="user_id" value="1">
+    <input type="text" name="username" placeholder="Twoja nazwa użytkownika" required><br> <!-- Dodajemy pole do wprowadzenia nazwy użytkownika -->
+    <textarea name="content" placeholder="Dodaj komentarz" required></textarea>
+    <button type="submit">Dodaj komentarz</button>
+</form>
+
+    <!-- Dodaj przyciski sortowania tutaj -->
+    <div class="sort-buttons">
+        <button onclick="sortComments('date')">Sortuj wg daty</button>
+        <button onclick="sortComments('rating')">Sortuj wg oceny</button>
+    </div>
+
+<div id="comments-container">
+    <h2>Komentarze:</h2>
+<div id="comments-list">
+    <!-- Tutaj będą wyświetlane komentarze -->
+    <?php include 'show_comments.php'; ?>
+</div>
+</div>
+<div class="pagination">
+    <a href="?page=<?php echo $page - 1; ?>&limit=3">Poprzednia strona</a>
+    <a href="?page=<?php echo $page + 1; ?>&limit=3">Następna strona</a>
+</div>
+
+
     </section>
 </main>
 <footer class="footer">
@@ -95,6 +123,6 @@
     </div>
 </footer>
 <script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 </html>
